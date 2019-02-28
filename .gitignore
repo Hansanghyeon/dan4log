@@ -1,6 +1,7 @@
 *.0
 *.bak
 *.log
+package-lock.json
 
 code/node_modules/
 bak/
