@@ -1,0 +1,345 @@
+/********************************************************
+	
+				CONTENTS LIST
+	
+*********************************************************
+
+    01.00 GENERAL & BASIC STYLES
+        01.01 - TYPOGRAPHY                    
+        01.02 - LAYOUT
+        01.03 - HEADER & FOOTER & NAVIGATION
+        01.04 - POST
+
+    02.00 DIVI LIBRARY
+        02.01 - [ CPT:SingleTemplate ] post type
+        02.02 - [ Taxonomy ] Server
+        02.03 - [ Taxonomy ] 블로그
+
+*********************************************************/
+
+
+/*---------------------------------------------------
+
+    01.00 - GENERAL & BASIC STYLES
+    
+    Font Size : 13px, 16px, 20px, 24px ...
+
+---------------------------------------------------*/
+
+/* 	본문 폰트 : 영문 Montserrat, 한글 노토 산스 */
+body, div, a, span, p, input, td, label, li, b{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* 	제목 폰트 : 영문 Montserrat, 한글 나눔스퀘어 */
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .header a,
+strong, b, textarea, select, input{
+    font-family: 'Noto Sans KR', sans-serif !important;
+    word-break: keep-all;
+    line-height: 1.4em;
+}
+
+a, a:focus{
+    outline: 0 !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+    line-height: 1.4em;
+}
+
+strong, b {
+    font-weight: 700 !important;
+    line-height: 1.4em;
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+
+
+
+    /*---------------------------------------------------
+        01.01 - TYPOGRAPHY  
+    ---------------------------------------------------*/
+    // light color var
+    $L_default: #666;
+    $L_bold: #333;
+    $L_bg: #f2f4f7;
+    $L_header: #fff;
+    $L_border: #c5c5c5;
+    // dark color var
+    $D_default: #c5c5c5;
+    $D_bold: #ebebeb;
+    $D_black: #000;
+    $D_bg: #1c1c1c;
+    $D_header: #131313;
+
+    // divi content bg remove
+    #main-content{background-color: transparent}
+    .et_pb_section{background-color: transparent;}
+
+    body.light{
+        background-color: $L_bg;
+        color: $L_default;
+        
+        a{color: $L_default;}
+        .et_pb_cpt_text{
+            a{
+                color: $pointcolor;
+                text-decoration: underline;
+            }
+        }
+        p{color: $L_default}
+        h1, h2, h3, h4, h5{color: $L_bold;}
+        .et_pb_bg_layout_dark{
+            color: $L_bold !important;
+            h1, h2, h3, h4, h5{color: $L_bold !important;}
+        }
+
+        .et_pb_section{background-color: $L_bg;}
+        #main-content .container:before{background-color: $L_border;}
+    }
+
+    body.dark{
+        background-color: $D_bg;
+        color: $D_default;
+
+        a{color: $D_default}
+        .et_pb_cpt_text{
+            a{
+                color: $pointcolor;
+                text-decoration: underline;
+            }
+        }
+        p{color: $D_default}
+        h1, h2, h3, h4, h5{color: $D_bold;}
+
+        .et_pb_section{background-color: $D_bg;}
+        #main-content .container:before{background-color: $D_black;}
+    }
+
+
+
+    /*---------------------------------------------------
+        01.02 - LAYOUT
+    ---------------------------------------------------*/
+
+    /*---------------------------------------------------
+        01.03 - HEADER & FOOTER & NAVIGATION
+    ---------------------------------------------------*/
+
+    #top-menu{
+        i{
+            margin-right: 6px;
+            text-align: center;
+            width: 24px;
+        }
+    }
+
+    .et_pb_widget_area_left{
+        border: none;
+        border-left: 1px solid rgba(0,0,0,.1);
+        padding-right: 0;
+        padding-left: 30px;
+    }
+
+    // mobile menu 
+    @include media("(max-width:980)"){
+        .et_header_style_left #et-top-navigation, .et_header_style_left .et-fixed-header #et-top-navigation{padding-top:24px !important;}
+        .et_header_style_left #logo, .et_header_style_split #logo{max-width: 30%;}
+    }
+
+
+
+
+    /*---------------------------------------------------
+        01.04 - POST
+    ---------------------------------------------------*/
+
+    /* global */
+    span.author.vcard{float:left;}
+
+    .et_pb_post_title.et_pb_featured_bg{background-position: top center;}
+
+    /* mac */
+    .read-link {padding-left: 0 !important;}
+    .alfred{
+        li{
+            margin-bottom: 20px;
+
+            i:nth-of-type(1) {color: $pointcolor;}
+            article>p {display: inline-block;margin: 0;}
+        }
+        .alf-title {width: 100px;display: inline-block;}
+    }
+    .al-img{
+        overflow: hidden;
+
+        img {width: 50px;display: block;margin: auto;margin-bottom: 10px;}
+        div {float: left;padding: 10px;}
+    }
+    body.post-mac-001 section{overflow:hidden;}
+
+    /**/
+    blockquote{
+        background: linear-gradient(to right, #212121,#4c4c4c);
+        padding: 15px 20px 20px 20px;
+        color: #e0e0e0;
+        border-radius: 5px;
+        box-shadow: 5px 10px 20px rgba(0,0,0,.2);
+    }
+
+
+
+/*---------------------------------------------------
+
+        02.00 DIVI LIBRARY
+
+---------------------------------------------------*/
+
+
+
+    /*---------------------------------------------------
+        02.01 - [ CPT:SingleTemplate ] post type
+    ---------------------------------------------------*/
+
+    // thumbnail on
+    .fallex {padding-top: 30% !important;}
+
+    // no_thumbnail disable
+    body.no_thumbnail .post_featured_thumbnail{display: none !important;}
+
+    // thumbnail disable
+    @include media ("(min-width:981px)"){
+        .blog_list .et_pb_column_single{
+            padding: 0;
+        }
+    }
+    .blog_list{
+        .et_pb_row{padding-top:0;padding-bottom: 16px;}
+        .cpt_title{
+            display: inline-block;
+            padding-right: 10px;
+            font-size: 18px;
+            padding-bottom: 0;
+        }
+        .et_pb_title_meta_container{
+            display: inline-block;
+        }
+    }
+    @include media("(min-width: 1600px)"){
+        .blog_list .cpt_title{padding-bottom: 0;}
+        .et_pb_cpt_loop_archive .et_pb_title_meta_container{color:#000}
+    }
+
+    
+    
+    /*---------------------------------------------------
+        02.02 - [ Taxonomy ] Server
+    ---------------------------------------------------*/
+
+    // 위젯관련 스타일
+    .server_sidebar > div{
+        width: 100% !important;
+        margin: 0 !important;
+    }
+        // ssh
+        body.category-linux-ubuntu{
+            .ssh{ display: block; }
+            .docker, .synology{ display: none; }
+        }
+        // docker
+        body.category-docker{
+            .docker{ display: block; }
+            .ssh, .synology{ display: none; }
+        }
+        // synolog nas
+        body.category-nas{
+            .synology{ display: block; }
+            .dokcer, .ssh{ display: none; }
+        }
+
+
+    /*---------------------------------------------------
+        02.03 - [ Taxonomy ] 블로그
+    ---------------------------------------------------*/
+    body.category-blog .desk_view .et_pb_section{background:transparent !important;}
+    .et_pb_cpt_loop_archive.desk_view{margin-bottom:50px !important;}
+
+    /* btn */
+    .btn-cs .button{
+        font-size: 14px !important;
+        margin-top: 0;
+        margin-bottom: 20px;
+
+        &:hover{
+            background-color:#212121;
+            border-radius: 3px;
+        }
+        &:after{
+            line-height: 21px;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+        p:nth-of-type(2){text-align: right;}
+    }
+
+
+    // 책상 벳지
+    .region_badge{
+        position: absolute;
+        bottom: 10px;
+        color: white;
+        background: #eb5255;
+        padding-left: 4px;
+
+        &:after, &:before{
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            bottom: 0;
+            right: -20px;
+            border-right: 20px solid transparent;
+        }
+        &:after{border-bottom: 23px solid #eb5255;}
+        &:before{border-top: 23px solid #eb5255;}
+    }
+    // 책상 날짜
+    .desk_date{
+        position: absolute;
+        bottom: 36px;
+        left: 4px;
+    }
+    /*---------------------------------------------------
+        02.04 - [ Taxonomy:Tag ] 태그
+    ---------------------------------------------------*/
+    body.tag-how-to-guide{
+        .writing{
+            display: none;
+
+            ul{
+                list-style: disc !important;
+                padding-left: 20px !important;
+            }
+            &>p{
+                border-bottom: 1px dashed $border-color;
+                padding: 10px 0;
+                margin-bottom: 20px;
+                font-style: italic;
+                font-size: 12px;
+            }
+            .content p{font-size: 12px;}
+        }
+    }
+    body.tag-reference .reference,
+    body.tag-how-to-guide .how-to{display: block !important;}
