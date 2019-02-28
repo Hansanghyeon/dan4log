@@ -1,0 +1,6 @@
+*.0
+*.bak
+*.log
+
+code/node_modules/
+bak/
