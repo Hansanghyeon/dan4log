@@ -21,6 +21,7 @@ Version:        0.1.0
         02.01 - [ CPT:SingleTemplate ] post type
         02.02 - [ Taxonomy ] Server
         02.03 - [ Taxonomy ] 블로그
+        02.04 - [ Taxonomy:Tag ] 태그
 
 *********************************************************/
 /*---------------------------------------------------
@@ -327,6 +328,9 @@ body.tag-how-to-guide .how-to {
 /*---------------------------------------------------
         01.00 syntaxhighlighter
 ---------------------------------------------------*/
+body.dark div[id*='highlighter_'].syntaxhighlighter {
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1); }
+
 div[id*='highlighter_'].syntaxhighlighter {
   padding: 40px 20px 20px 0 !important;
   border-radius: 5px;
