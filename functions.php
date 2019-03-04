@@ -98,3 +98,17 @@ function check_thumbnail_add_body_class( $classes ) {
     }
 }
 add_filter( 'body_class', 'check_thumbnail_add_body_class' );
+
+// 포스트의 태그를 가져오기
+function tag_list() {
+	//taxonomy tag
+	$terms = get_the_terms($post, 'post_tag');
+	$tag_html = '';
+	foreach($terms as $term) {
+		$term_link = get_term_link($term);
+		$tag_html .= '<div class="tag_item"><a class="'.$term->name.'" href="'.$term_link.'">'. $term->name . '</a></div>';
+	};
+	
+	return '<div class="grid_tag">'.$tag_html.'</div>';
+}
+add_shortcode('tag_list', 'tag_list');
