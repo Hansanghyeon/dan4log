@@ -368,9 +368,12 @@ strong, b {
     // post tag
     .grid_tag{
         display: flex;
+        align-items: center;
 
+        i{margin-right: 4px;}
         .tag_item{
-            padding: 3px 8px;
+            font-size: 12px;
+            padding: 0px 8px;
             margin-right: 5px;
             border-radius: 5px;
             transition: all .5s;
@@ -386,10 +389,17 @@ strong, b {
                 margin-right: 2px;
                 display: inline-block;
                 text-rendering: auto;
+                transition: color .5s;
             }
         }
     }
-    body .grid_tag .tag_item:hover{ border: 2px solid $pointcolor;}
+    body .grid_tag .tag_item:hover{
+        border: 2px solid $pointcolor;
+
+        &::before{
+            color: $pointcolor;
+        }
+    }
 
     // dark mode
     body.dark .tagcloud a{
