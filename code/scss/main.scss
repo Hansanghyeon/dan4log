@@ -15,6 +15,7 @@
         02.02 - [ Taxonomy ] Server
         02.03 - [ Taxonomy ] 블로그
         02.04 - [ Taxonomy:Tag ] 태그
+        02.05 - [ Taxonomy:module ] 기본 (섬네일 off)
 
 *********************************************************/
 
@@ -344,3 +345,81 @@ strong, b {
     }
     body.tag-reference .reference,
     body.tag-how-to-guide .how-to{display: block !important;}
+
+
+
+    /*---------------------------------------------------
+        02.05 - [ Taxonomy:module ] 기본 (섬네일 off)
+    ---------------------------------------------------*/
+    $dark-tag_bg : #2b2b2b;
+    $light-tag_bg : transparent;
+    
+    // dark mode
+    body.dark .grid_tag .tag_item{ 
+        background: $dark-tag_bg; 
+        border: 2px solid $dark-tag_bg;
+    }
+    // light mode
+    body.light .grid_tag .tag_item{
+        background: $light-tag_bg;
+        border: 2px solid $border-color;
+    }
+
+    // post tag
+    .grid_tag{
+        display: flex;
+
+        .tag_item{
+            padding: 3px 8px;
+            margin-right: 5px;
+            border-radius: 5px;
+            transition: all .5s;
+            cursor: pointer;
+
+            &::before{
+                content: '\f292';
+                font-weight: 600;
+                font-style: normal;
+                font-variant: normal;
+                font-size: 12px;
+                font-family: "Font Awesome 5 Free";
+                margin-right: 2px;
+                display: inline-block;
+                text-rendering: auto;
+            }
+        }
+    }
+    body .grid_tag .tag_item:hover{ border: 2px solid $pointcolor;}
+
+    // dark mode
+    body.dark .tagcloud a{
+        background: $dark-tag_bg; 
+        border: 2px solid $dark-tag_bg;
+    }
+    // light mode
+    body.light .tagcloud a{
+        background: $light-tag_bg; 
+        border: 2px solid $border-color;
+    }
+
+    // tag clude
+    .tagcloud a{
+        padding: 3px 8px;
+        margin-right: 5px;
+        border-radius: 5px;
+        transition: all .5s;
+        cursor: pointer;
+
+        &::before{
+            content: '\f292';
+            font-weight: 600;
+            font-style: normal;
+            font-variant: normal;
+            font-size: 10px;
+            font-family: "Font Awesome 5 Free";
+            margin-right: 2px;
+            display: inline-block;
+            text-rendering: auto;
+        }
+    }
+    body .tagcloud a:hover{border: 2px solid $pointcolor;}
