@@ -3,6 +3,7 @@
 function themeslug_enqueue_style() {
 	wp_enqueue_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
 	wp_enqueue_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false ); 
+	wp_enqueue_style( 'D2coding', '//cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css', false ); 
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 
