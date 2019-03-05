@@ -3,7 +3,7 @@
 function themeslug_enqueue_style() {
 	wp_enqueue_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
 	wp_enqueue_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false ); 
-	wp_enqueue_style( 'D2coding', '//cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css', false ); 
+	wp_enqueue_style( 'D2coding', '//cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css', false );
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 
@@ -11,6 +11,7 @@ function themeslug_enqueue_script() {
 	wp_enqueue_script( 'ScrollReveal', 'https://unpkg.com/scrollreveal', false);
 	wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', false );
 	wp_enqueue_script( 'jQuery cookie', '//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', false );
+    wp_enqueue_script('infiniti.js', '//unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js', false );
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
 
@@ -36,6 +37,7 @@ function add_this_script_footer(){ ?>
 <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/ScrollReaval.js"></script>
 <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/color_ver_btn.js"></script>
 <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/slick-default.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/infinitiScroll.js"></script>
 <?php } 
 add_action('wp_footer', 'add_this_script_footer');
 
@@ -105,10 +107,14 @@ function tag_list() {
 	//taxonomy tag
 	$terms = get_the_terms($post, 'post_tag');
 	$tag_html = '';
-	foreach($terms as $term) {
-		$term_link = get_term_link($term);
-		$tag_html .= '<div class="tag_item"><a class="'.$term->name.'" href="'.$term_link.'">'. $term->name . '</a></div>';
-	};
+	if(has_tag()){
+	    $tag_html = '<i class="fas fa-tags"></i>';
+        foreach($terms as $term) {
+            $term_link = get_term_link($term);
+            $tag_html .= '<div class="tag_item"><a class="'.$term->name.'" href="'.$term_link.'">'. $term->name . '</a></div>';
+        };
+    }
+
 	
 	return '<div class="grid_tag">'.$tag_html.'</div>';
 }
