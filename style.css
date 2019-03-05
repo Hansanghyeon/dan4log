@@ -314,6 +314,9 @@ body.tag-how-to-guide .how-to {
 /*---------------------------------------------------
         02.05 - [ Taxonomy:module ] 기본 (섬네일 off)
     ---------------------------------------------------*/
+.pagination.clearfix {
+  display: none !important; }
+
 body.dark .grid_tag .tag_item {
   background: #2b2b2b;
   border: 2px solid #2b2b2b; }
@@ -323,9 +326,13 @@ body.light .grid_tag .tag_item {
   border: 2px solid #e5e5e5; }
 
 .grid_tag {
-  display: flex; }
+  display: flex;
+  align-items: center; }
+  .grid_tag i {
+    margin-right: 8px; }
   .grid_tag .tag_item {
-    padding: 3px 8px;
+    font-size: 12px;
+    padding: 0px 8px;
     margin-right: 5px;
     border-radius: 5px;
     transition: all .5s;
@@ -339,10 +346,13 @@ body.light .grid_tag .tag_item {
       font-family: "Font Awesome 5 Free";
       margin-right: 2px;
       display: inline-block;
-      text-rendering: auto; }
+      text-rendering: auto;
+      transition: color .5s; }
 
 body .grid_tag .tag_item:hover {
   border: 2px solid #eb5255; }
+  body .grid_tag .tag_item:hover::before {
+    color: #eb5255; }
 
 body.dark .tagcloud a {
   background: #2b2b2b;
@@ -824,6 +834,9 @@ body.dark div[id*='highlighter_'].syntaxhighlighter {
   background-color: #282a36 !important; }
 
 /* Literal.Number.Integer.Long */
+.markdown-body > h1:nth-of-type(1) {
+  display: none; }
+
 .instapaper_body .highlight {
   position: relative;
   border-radius: 15px;
@@ -1262,3 +1275,54 @@ button.slick-prev.slick-arrow:after {
 .cloud-day {
   opacity: 1 !important;
   left: 40% !important; }
+
+.loader-ellips {
+  font-size: 10px;
+  /* change size here */
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 10px auto; }
+
+.loader-ellips__dot {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: #555;
+  /* change color here */
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite; }
+
+.loader-ellips__dot:nth-child(1),
+.loader-ellips__dot:nth-child(2) {
+  left: 0; }
+
+.loader-ellips__dot:nth-child(3) {
+  left: 1.5em; }
+
+.loader-ellips__dot:nth-child(4) {
+  left: 3em; }
+
+@keyframes reveal {
+  from {
+    transform: scale(0.001); }
+  to {
+    transform: scale(1); } }
+
+@keyframes slide {
+  to {
+    transform: translateX(1.5em); } }
+
+.loader-ellips__dot:nth-child(1) {
+  animation-name: reveal; }
+
+.loader-ellips__dot:nth-child(2),
+.loader-ellips__dot:nth-child(3) {
+  animation-name: slide; }
+
+.loader-ellips__dot:nth-child(4) {
+  animation-name: reveal;
+  animation-direction: reverse; }

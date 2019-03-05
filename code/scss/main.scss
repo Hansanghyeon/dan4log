@@ -351,6 +351,10 @@ strong, b {
     /*---------------------------------------------------
         02.05 - [ Taxonomy:module ] 기본 (섬네일 off)
     ---------------------------------------------------*/
+    // infiniti scroll, disable pagena
+    .pagination.clearfix{display: none !important;}
+
+    // tags setting
     $dark-tag_bg : #2b2b2b;
     $light-tag_bg : transparent;
     
@@ -370,7 +374,7 @@ strong, b {
         display: flex;
         align-items: center;
 
-        i{margin-right: 4px;}
+        i{margin-right: 8px;}
         .tag_item{
             font-size: 12px;
             padding: 0px 8px;
