@@ -1326,3 +1326,70 @@ button.slick-prev.slick-arrow:after {
 .loader-ellips__dot:nth-child(4) {
   animation-name: reveal;
   animation-direction: reverse; }
+
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 85vh;
+  font-family: Arial, "D2 coding", Helvetica, sans-serif; }
+  .error-page h1 {
+    font-size: 30vh;
+    font-weight: bold;
+    position: relative;
+    margin: -8vh 0 0;
+    padding: 0; }
+    .error-page h1:after {
+      content: attr(data-h1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      color: transparent;
+      /* webkit only for graceful degradation to IE */
+      background: -webkit-repeating-linear-gradient(-45deg, #EB5255, #D0E9EF, #93ACC8, #97A0B6, #B8BCC7, #B8B3B9, #E3A7A0, #AD898F, #56445F, #4C4764, #373D61, #23365A, #142F4A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+      animation: animateTextBackground 10s ease-in-out infinite; }
+    .error-page h1 + p {
+      color: #d6d6d6;
+      font-size: 8vh;
+      font-weight: bold;
+      line-height: 10vh;
+      max-width: 600px;
+      position: relative;
+      margin: auto; }
+      .error-page h1 + p:after {
+        content: attr(data-p);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: transparent;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text; }
+
+@keyframes animateTextBackground {
+  0% {
+    background-position: 0 0; }
+  25% {
+    background-position: 100% 0; }
+  50% {
+    background-position: 100% 100%; }
+  75% {
+    background-position: 0 100%; }
+  100% {
+    background-position: 0 0; } }
+
+@media (max-width: 767px) {
+  .error-page h1 {
+    font-size: 32vw; }
+    .error-page h1 + p {
+      font-size: 8vw;
+      line-height: 10vw;
+      max-width: 70vw; } }
