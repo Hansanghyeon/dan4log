@@ -22,10 +22,12 @@
             append: '.thumbX_default',
             history: 'false',
             status: '.page-load-status',
-        }).infiniteScroll('loadNextPage');
+        });
+
+        $container.infiniteScroll('loadNextPage');
 
         $container.on( 'append.infiniteScroll', function(){
-            console.log('test');
+            $container.infiniteScroll('loadNextPage');
         });
     }
     post_taxonomy_default_thumbX_sideX();
