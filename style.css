@@ -919,22 +919,25 @@ body.dark .instapaper_body .highlight {
   margin-top: 0; }
   .wpsm-content p.wpsm-hide {
     display: inline-block;
-    padding: 6px 13.5px !important;
     border-radius: 50%;
     background: #e5e5e5;
     color: white !important;
     text-decoration: none !important;
     position: absolute;
     right: 0;
-    margin-top: -36px;
-    transition: background .3s; }
+    margin-top: -27px;
+    transition: background .3s;
+    width: 20px;
+    height: 20px; }
     .wpsm-content p.wpsm-hide:last-child {
       margin-top: 0; }
     .wpsm-content p.wpsm-hide:hover {
       background: #eb5255; }
     .wpsm-content p.wpsm-hide i {
-      vertical-align: middle;
-      letter-spacing: 0; }
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
 
 /*---------------------------------------------------
         03.00 slick
