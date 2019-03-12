@@ -244,7 +244,7 @@ body.category-nas .dokcer, body.category-nas .ssh {
 /*---------------------------------------------------
         02.03 - [ Taxonomy ] 블로그
     ---------------------------------------------------*/
-body.category-blog .desk_view .et_pb_section {
+.desk_view .et_pb_section {
   background: transparent !important; }
 
 .et_pb_cpt_loop_archive.desk_view {
