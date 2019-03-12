@@ -75,9 +75,6 @@ body.light {
   color: #666; }
   body.light a {
     color: #666; }
-  body.light .et_pb_cpt_text a {
-    color: #eb5255;
-    text-decoration: underline; }
   body.light p {
     color: #666; }
   body.light h1, body.light h2, body.light h3, body.light h4, body.light h5 {
@@ -96,9 +93,6 @@ body.dark {
   color: #c5c5c5; }
   body.dark a {
     color: #c5c5c5; }
-  body.dark .et_pb_cpt_text a {
-    color: #eb5255;
-    text-decoration: underline; }
   body.dark p {
     color: #c5c5c5; }
   body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5 {
@@ -107,6 +101,26 @@ body.dark {
     background-color: #1c1c1c; }
   body.dark #main-content .container:before {
     background-color: #000; }
+
+body .et_pb_cpt_text a {
+  position: relative; }
+  body .et_pb_cpt_text a:hover {
+    text-decoration: none; }
+    body .et_pb_cpt_text a:hover::after {
+      opacity: 1;
+      bottom: 0; }
+  body .et_pb_cpt_text a::after {
+    content: '';
+    background: #eb5255;
+    width: 100%;
+    position: absolute;
+    height: .3em;
+    bottom: .2em;
+    left: 0;
+    opacity: .4;
+    transition: all .5s; }
+  body .et_pb_cpt_text a.anchor::after {
+    content: none; }
 
 /*---------------------------------------------------
         01.02 - LAYOUT
@@ -215,6 +229,17 @@ body.no_thumbnail .post_featured_thumbnail {
     padding-bottom: 0; }
   .et_pb_cpt_loop_archive .et_pb_title_meta_container {
     color: #000; } }
+
+body.dark .post_content_box {
+  background-color: #212121; }
+
+body.light .post_content_box {
+  background-color: #fff; }
+
+body #main-content .post_content_box {
+  padding: 3%;
+  border-radius: 8px;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1); }
 
 /*---------------------------------------------------
         02.02 - [ Taxonomy ] Server

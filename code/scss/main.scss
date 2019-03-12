@@ -76,12 +76,14 @@ strong, b {
     $L_bold: #333;
     $L_bg: #f2f4f7;
     $L_header: #fff;
+    $L_post: #fff;
     $L_border: #c5c5c5;
     // dark color var
     $D_default: #c5c5c5;
     $D_bold: #ebebeb;
     $D_black: #000;
     $D_bg: #1c1c1c;
+    $D_post: #212121;
     $D_header: #131313;
 
     // divi content bg remove
@@ -93,12 +95,6 @@ strong, b {
         color: $L_default;
         
         a{color: $L_default;}
-        .et_pb_cpt_text{
-            a{
-                color: $pointcolor;
-                text-decoration: underline;
-            }
-        }
         p{color: $L_default}
         h1, h2, h3, h4, h5{color: $L_bold;}
         .et_pb_bg_layout_dark{
@@ -115,12 +111,6 @@ strong, b {
         color: $D_default;
 
         a{color: $D_default}
-        .et_pb_cpt_text{
-            a{
-                color: $pointcolor;
-                text-decoration: underline;
-            }
-        }
         p{color: $D_default}
         h1, h2, h3, h4, h5{color: $D_bold;}
 
@@ -128,7 +118,29 @@ strong, b {
         #main-content .container:before{background-color: $D_black;}
     }
 
+    body .et_pb_cpt_text a{
+        position: relative;
 
+        &:hover{
+            text-decoration: none;
+            &::after{
+                opacity: 1;
+                bottom: 0;
+            }
+        }
+        &::after{
+            content: '';
+            background: #eb5255;
+            width: 100%;
+            position: absolute;
+            height: .3em;
+            bottom: .2em;
+            left: 0;
+            opacity: .4;
+            transition: all .5s;
+        }
+        &.anchor::after{content: none;}
+    }
 
     /*---------------------------------------------------
         01.02 - LAYOUT
@@ -240,6 +252,15 @@ strong, b {
     @include media("(min-width: 1600px)"){
         .blog_list .cpt_title{padding-bottom: 0;}
         .et_pb_cpt_loop_archive .et_pb_title_meta_container{color:#000}
+    }
+
+    // post container
+    body.dark .post_content_box{background-color: $D_post;}
+    body.light .post_content_box{background-color: $L_post;}
+    body #main-content .post_content_box{
+        padding: 3%;
+        border-radius: 8px;
+        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
     }
 
     
