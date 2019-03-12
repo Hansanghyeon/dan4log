@@ -17,7 +17,10 @@ add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
 
 //add header
 function child_theme_head_script() {
+	$theme_url = get_stylesheet_directory_uri();
 ?>
+	<!-- Open Graph -->
+	<meta property="og:image" content="<?php echo $theme_url ?>/seo/seoimg.jpg" />
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112785015-4"></script>
 	<script>
