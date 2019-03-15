@@ -1,4 +1,7 @@
 <?php
+
+include('code/php/unctions_secret.php');
+
 //custom css or js for header
 function themeslug_enqueue_style() {
 	wp_enqueue_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
@@ -122,3 +125,4 @@ function tag_list() {
 	return '<div class="grid_tag">'.$tag_html.'</div>';
 }
 add_shortcode('tag_list', 'tag_list');
+
