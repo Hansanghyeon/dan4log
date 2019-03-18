@@ -14,4 +14,19 @@
         var scroll = $(this).scrollTop();
         $('.fallex').css('background-position-y',-scroll);
     });
+
+    //Markdown Github
+    //이미지 부모태그 클래스
+    $('.markdown-body img').parent().addClass('img_wrap_a');
+    $('.markdown-body img').each(function(){
+        let alt = $(this).attr('alt');
+        let location = alt.indexOf('#');
+        if(location !== -1){
+            let addId = alt.substr(location+1);
+            $(this).parent().parent().attr('id',addId);
+        }
+        // if(alt == 'slick-slider'){
+        //     $(this).parent().addClass('slick-slider');
+        // }
+    });
 })(jQuery);

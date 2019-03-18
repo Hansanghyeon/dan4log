@@ -100,7 +100,12 @@ body.dark{
 ---------------------------------------------------*/
 @import 'git_md_draculra.scss';
 
-.markdown-body > h1:nth-of-type(1){display: none;}
+.markdown-body {
+    .img_wrap_a{
+        &::after{content: none;}
+    }
+    > h1:nth-of-type(1){display: none;}
+}
 .instapaper_body .highlight{
     position: relative;
     border-radius: 15px;
