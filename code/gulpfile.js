@@ -5,9 +5,9 @@ var pug = require('gulp-pug');
 
 // 일반 컴파일
 gulp.task('sass', function () {
-  return gulp.src('./scss/style.scss')  // 입력 경로
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('../'));  // 출력 경로
+  return gulp.src('./scss/style.min.scss')  // 입력 경로
+      .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+      .pipe(gulp.dest('../'));  // 출력 경로
 });
 
 // 런타임 중 파일 감시
