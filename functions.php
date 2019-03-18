@@ -126,18 +126,4 @@ function tag_list() {
 }
 add_shortcode('tag_list', 'tag_list');
 
-function myguten_admin_notice() {
-    $screen = get_current_screen();
-    // Only render this notice in the post editor.
-    if ( ! $screen || 'post' !== $screen->base ) {
-        return;
-    }
-    // Render the notice's HTML.
-    // Each notice should be wrapped in a <div>
-    // with a 'notice' class.
-    echo '<div class="notice notice-success is-dismissible"><p>';
-    echo sprintf( __( '[md_github token=3f9d1c57c2cc2658701e243fbf8bc10211d2bf21 url=]' ), get_preview_post_link() );
-    echo '</p></div>';
-};
-add_action( 'admin_notices', 'myguten_admin_notice' );
 
