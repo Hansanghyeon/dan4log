@@ -1,6 +1,7 @@
 <?php
 
-include('code/php/unctions_secret.php');
+include('code/php/function_secret.php');
+
 
 //custom css or js for header
 function themeslug_enqueue_style() {
@@ -125,5 +126,4 @@ function tag_list() {
 	return '<div class="grid_tag">'.$tag_html.'</div>';
 }
 add_shortcode('tag_list', 'tag_list');
-
 
