@@ -3,6 +3,6 @@
 *.log
 package-lock.json
 
-code/php/function_secret.php
+code/secret/
 code/node_modules/
 bak/
