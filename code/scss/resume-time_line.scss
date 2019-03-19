@@ -1,0 +1,55 @@
+/* Mobile Timeline */
+.timeLine_wrap{
+    padding-bottom: 170px;
+}
+
+// time line
+.timeline {
+    list-style: none;
+
+    >li{
+        margin-bottom: 60px;
+        overflow: hidden;
+        margin: 0;
+        position: relative;
+    }
+    .timeline-date {
+        width: 110px;
+        float: left;
+        margin-top: 20px;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .timeline-content {
+        width: 75%;
+        float: left;
+        border-left: 3px green solid;
+        padding-left: 30px;
+
+        &:before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: green;
+            position: absolute;
+            left: 106px;
+            top: 24px;
+            border-radius: 100%;
+        }
+    }
+}
+@include media("(max-width: 640px)"){
+    .timeline{
+        .timeline-content {
+            width: calc(100% - 4.5px);
+            margin-left: 4.5px;
+            :before {
+                left: 0;
+                top: 70px;
+            }
+        }
+        .timeline-date{
+            margin-bottom: 0px;
+        }
+    }
+}
