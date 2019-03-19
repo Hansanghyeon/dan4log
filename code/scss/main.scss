@@ -11,11 +11,12 @@
         01.04 - POST
 
     02.00 DIVI LIBRARY
-        02.01 - [ CPT:SingleTemplate ] post type
-        02.02 - [ Taxonomy ] Server
-        02.03 - [ Taxonomy ] 블로그
-        02.04 - [ Taxonomy:Tag ] 태그
-        02.05 - [ Taxonomy:module ] 기본 (섬네일 off)
+        02.01 - [ 포스트 | CPT ] 글
+        02.02 - [ 포스트 | Taxonomy ] Server&nas
+        02.03 - [ 포스트 | Taxonomy ] 블로그
+        02.04 - [ 포스트 | Taxonomy:Tag ] 태그전체
+        02.05 - [ 포스트 | Taxonomy:module ] 기본 (섬네일 off)
+        02.06 - [ Docs | Taxonomy&Page ] 기본
 
 *********************************************************/
 
@@ -142,13 +143,25 @@ strong, b {
         &.anchor::after{content: none;}
     }
 
+
+
     /*---------------------------------------------------
         01.02 - LAYOUT
     ---------------------------------------------------*/
+    .fullpage .et_pb_row{
+        max-width: none;
+        width: 100%;
+        padding: 0 20px;
+    }
 
     /*---------------------------------------------------
         01.03 - HEADER & FOOTER & NAVIGATION
     ---------------------------------------------------*/
+
+    //page disable setting
+    .et_vertical_nav #page-container #main-header{
+        transition: all .5s;
+    }
 
     #top-menu{
         i{
@@ -222,7 +235,7 @@ strong, b {
 
 
     /*---------------------------------------------------
-        02.01 - [ CPT:SingleTemplate ] post type
+        02.01 - [ 포스트 | CPT ] 글
     ---------------------------------------------------*/
 
     // thumbnail on
@@ -266,7 +279,7 @@ strong, b {
     
     
     /*---------------------------------------------------
-        02.02 - [ Taxonomy ] Server
+        02.02 - [ 포스트 | Taxonomy ] Server&nas
     ---------------------------------------------------*/
 
     // 위젯관련 스타일
@@ -291,8 +304,9 @@ strong, b {
         }
 
 
+
     /*---------------------------------------------------
-        02.03 - [ Taxonomy ] 블로그
+        02.03 - [ 포스트 | Taxonomy ] 블로그
     ---------------------------------------------------*/
     .desk_view .et_pb_section{background:transparent !important;}
     .et_pb_cpt_loop_archive.desk_view{margin-bottom:50px !important;}
@@ -343,9 +357,13 @@ strong, b {
         bottom: 36px;
         left: 4px;
     }
+
+
+
     /*---------------------------------------------------
-        02.04 - [ Taxonomy:Tag ] 태그
+        02.04 - [ 포스트 | Taxonomy:Tag ] 태그전체
     ---------------------------------------------------*/
+    // 하우투?
     body.tag-how-to-guide{
         .writing{
             display: none;
@@ -370,7 +388,7 @@ strong, b {
 
 
     /*---------------------------------------------------
-        02.05 - [ Taxonomy:module ] 기본 (섬네일 off)
+        02.05 - [ 포스트 | Taxonomy:module ] 기본 (섬네일 off)
     ---------------------------------------------------*/
     // infiniti scroll, disable pagena
     .pagination.clearfix{display: none !important;}
@@ -458,3 +476,9 @@ strong, b {
         }
     }
     body .tagcloud a:hover{border: 2px solid $pointcolor;}
+
+
+
+    /*---------------------------------------------------
+        02.06 - [ Docs | Taxonomy&Page ] 기본
+    ---------------------------------------------------*/
