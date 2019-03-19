@@ -1,6 +1,6 @@
 <?php
 
-include('code/php/function_secret.php');
+include('code/secret/function_secret.php');
 
 
 //custom css or js for header
