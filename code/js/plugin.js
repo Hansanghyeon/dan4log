@@ -1,6 +1,6 @@
 (function($){
     //theme
-    if($('body').hasClass('logined-in') !== true){
+    if($('body').hasClass('logged-in') !== true){
         $('#top-menu .login_show').remove();
     }
 
