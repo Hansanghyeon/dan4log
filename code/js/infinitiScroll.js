@@ -17,7 +17,7 @@
             }
         }
 
-        $container = $('.blog_list').infiniteScroll({
+        $container = $('#infiniti').infiniteScroll({
             path: getPenPath,
             append: '.thumbX_default',
             history: 'false',
