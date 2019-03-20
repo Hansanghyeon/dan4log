@@ -1,4 +1,9 @@
 (function($){
+    //theme
+    if($('body').hasClass('logined-in') !== true){
+        $('#top-menu .login_show').remove();
+    }
+
     //show-more close btn
     //더보기 닫기버튼 복제
     if($('.wpsm-hide').length !== -1){
