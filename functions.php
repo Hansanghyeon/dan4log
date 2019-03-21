@@ -45,6 +45,7 @@ function add_this_script_footer(){ ?>
 <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/color_ver_btn.js"></script>
 <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/slick-default.js"></script>
     <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/infinitiScroll.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/arrow_animation.js"></script>
 <?php } 
 add_action('wp_footer', 'add_this_script_footer');
 
@@ -127,3 +128,20 @@ function tag_list() {
 }
 add_shortcode('tag_list', 'tag_list');
 
+// Docs Taxonomy list
+function docs_list(){
+    $args = array(
+        'taxonomy' => 'library',
+        'hide_empty' => false
+    );
+    $terms = get_terms($args);
+
+    $output = '<ul>';
+    foreach($terms as $term){
+        $output .= '<li><a href ="'.get_term_link($term).'">'.$term->name.'</a></li>';
+    }
+    $output .= '</ul>';
+
+    return $output;
+}
+add_shortcode('docs_list', 'docs_list');
