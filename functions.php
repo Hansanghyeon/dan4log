@@ -138,10 +138,36 @@ function docs_list(){
 
     $output = '<ul>';
     foreach($terms as $term){
-        $output .= '<li><a href ="'.get_term_link($term).'">'.$term->name.'</a></li>';
+        $output .= '<li><a href ="'.get_term_link($term).'"><i class="fas fa-book"></i> '.$term->name.'</a></li>';
     }
     $output .= '</ul>';
 
     return $output;
 }
 add_shortcode('docs_list', 'docs_list');
+
+//python post list
+function python_post_list(){
+    $args = array(
+        'post_type' => 'docs',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'library',
+                'field' => 'slug',
+                'terms' => 'doit-python'
+            )
+        )
+    );
+    $terms = get_posts($args);
+    //    title
+    $output = '<div class="book_title"><i class="fas fa-book"></i> Doit 점프투파이썬</div>';
+
+    $output .= '<ul>';
+    foreach($terms as $term){
+        $output .= '<li><a href ="/'.$term->post_name.'">'.$term->post_title.'</a></li>';
+    }
+    $output .= '</ul>';
+
+    return  $output;
+}
+add_shortcode('python_post_list', 'python_post_list');

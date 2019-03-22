@@ -395,30 +395,72 @@ strong, b {
     // infiniti scroll, disable pagena
     .pagination.clearfix{display: none !important;}
 
-    // tags setting
-    $dark-tag_bg : #2b2b2b;
-    $light-tag_bg : transparent;
-    
-    // dark mode
-    body.dark .grid_tag .tag_item{ 
-        background: $dark-tag_bg; 
-        border: 2px solid $dark-tag_bg;
-    }
-    // light mode
-    body.light .grid_tag .tag_item{
-        background: $light-tag_bg;
-        border: 2px solid $border-color;
-    }
+    // 02.05.01 - tag, tag cloud
+        // tags setting
+        $dark-tag_bg : #2b2b2b;
+        $light-tag_bg : transparent;
 
-    // post tag
-    .grid_tag{
-        display: flex;
-        align-items: center;
+        // dark mode
+        body.dark .grid_tag .tag_item{
+            background: $dark-tag_bg;
+            border: 2px solid $dark-tag_bg;
+        }
+        // light mode
+        body.light .grid_tag .tag_item{
+            background: $light-tag_bg;
+            border: 2px solid $border-color;
+        }
 
-        i{margin-right: 8px;}
-        .tag_item{
-            font-size: 12px;
-            padding: 0px 8px;
+        // post tag
+        .grid_tag{
+            display: flex;
+            align-items: center;
+
+            i{margin-right: 8px;}
+            .tag_item{
+                font-size: 12px;
+                padding: 0px 8px;
+                margin-right: 5px;
+                border-radius: 5px;
+                transition: all .5s;
+                cursor: pointer;
+
+                &::before{
+                    content: '\f292';
+                    font-weight: 600;
+                    font-style: normal;
+                    font-variant: normal;
+                    font-size: 12px;
+                    font-family: "Font Awesome 5 Free";
+                    margin-right: 2px;
+                    display: inline-block;
+                    text-rendering: auto;
+                    transition: color .5s;
+                }
+            }
+        }
+        body .grid_tag .tag_item:hover{
+            border: 2px solid $pointcolor;
+
+            &::before{
+                color: $pointcolor;
+            }
+        }
+
+        // dark mode
+        body.dark .tagcloud a{
+            background: $dark-tag_bg;
+            border: 2px solid $dark-tag_bg;
+        }
+        // light mode
+        body.light .tagcloud a{
+            background: $light-tag_bg;
+            border: 2px solid $border-color;
+        }
+
+        // tag clude
+        .tagcloud a{
+            padding: 3px 8px;
             margin-right: 5px;
             border-radius: 5px;
             transition: all .5s;
@@ -429,55 +471,50 @@ strong, b {
                 font-weight: 600;
                 font-style: normal;
                 font-variant: normal;
-                font-size: 12px;
+                font-size: 10px;
                 font-family: "Font Awesome 5 Free";
                 margin-right: 2px;
                 display: inline-block;
                 text-rendering: auto;
-                transition: color .5s;
             }
         }
-    }
-    body .grid_tag .tag_item:hover{
-        border: 2px solid $pointcolor;
+        body .tagcloud a:hover{border: 2px solid $pointcolor;}
 
-        &::before{
-            color: $pointcolor;
-        }
-    }
-
-    // dark mode
-    body.dark .tagcloud a{
-        background: $dark-tag_bg; 
+    // Creative Commons
+    //daark mode
+    body.dark .cc_box{
+        background: $dark-tag_bg;
         border: 2px solid $dark-tag_bg;
     }
-    // light mode
-    body.light .tagcloud a{
-        background: $light-tag_bg; 
+    //light mode
+    body.light .cc_box{
+        background: $light-tag_bg;
         border: 2px solid $border-color;
     }
-
-    // tag clude
-    .tagcloud a{
-        padding: 3px 8px;
-        margin-right: 5px;
-        border-radius: 5px;
+    body .cc_box{
+        float: left;
+        display: flex;
+        border-radius: 999px;
+        font-size: 15px;
+        padding: 1px 8px;
+        margin-right: 15px;
+        align-items: center;
+        justify-content: center;
+        height: 28px;
         transition: all .5s;
-        cursor: pointer;
-
-        &::before{
-            content: '\f292';
-            font-weight: 600;
-            font-style: normal;
-            font-variant: normal;
-            font-size: 10px;
-            font-family: "Font Awesome 5 Free";
-            margin-right: 2px;
-            display: inline-block;
-            text-rendering: auto;
+        div{display:flex}
+        div:nth-of-type(1){
+            padding-right: 6px;
+        }
+        div:nth-of-type(2){
+            transition: all .5s;
+            i{margin-right: 3px;}
+        }
+        &:hover{
+            border: 2px solid $pointcolor;
+            div:nth-of-type(2){color: $pointcolor}
         }
     }
-    body .tagcloud a:hover{border: 2px solid $pointcolor;}
 
 
 
@@ -530,7 +567,7 @@ strong, b {
         //sub_menu
         .sub_menu{
             position: fixed;
-            left: 450px;
+            left: 225px;
             z-index: 1;
             margin: 0;
             padding: 0;
@@ -542,7 +579,19 @@ strong, b {
 
             .docs_sub_list{
                 padding: 0 20px;
+
+                .book_title{
+                    text-align: center;
+                    padding-bottom: 5px;
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid;
+                }
+                ul{
+                    list-style: none;
+                    padding: 0;
+                }
             }
+
         }
         //
         .content_wrap{
@@ -553,14 +602,14 @@ strong, b {
     body.page-library, body.tax-library, body[class*='docs-']{
         //test용
         #et-main-area{
-            margin-left: 675px !important;
+            margin-left: 450px !important;
             transition: margin-left .5s;
         }
         #et-main-area.oneColum{
-            margin-left: 450px !important;
+            margin-left: 225px !important;
 
             .sub_menu{
-                left: 225px;
+                left: 0px;
             }
         }
         #et-main-area.threeColum{
