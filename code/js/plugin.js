@@ -25,11 +25,21 @@
     $('.markdown-body img').parent().addClass('img_wrap_a');
     $('.markdown-body img').each(function(){
         let alt = $(this).attr('alt');
-        let location = alt.indexOf('#');
-        if(location !== -1){
-            let addId = alt.substr(location+1);
+
+        // Add slick-slider id
+        let id_location = alt.indexOf('#');
+        if(id_location !== -1){
+            let addId = alt.substr(id_location+1);
             $(this).parent().parent().attr('id',addId);
         }
+
+        // Add img size class
+        if(alt.indexOf('size-small') !== -1){
+            $(this).parent().addClass('size_small');
+        }else if(alt.indexOf('size-middle') !== -1){
+            $(this).parent().addClass('size_middle');
+        }
+
         // if(alt == 'slick-slider'){
         //     $(this).parent().addClass('slick-slider');
         // }
