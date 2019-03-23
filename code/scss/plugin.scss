@@ -105,6 +105,7 @@ body.dark{
         &::after{content: none;}
     }
     > h1:nth-of-type(1){display: none;}
+    .anchor{display: none;}
 }
 .instapaper_body .highlight{
     position: relative;
