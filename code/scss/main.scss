@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .header a,
 strong, b, textarea, select, input{
     font-family: 'Noto Sans KR', sans-serif !important;
     word-break: keep-all;
-    line-height: 1.4em;
+    line-height: 1.6em;
 }
 
 a, a:focus{
@@ -54,12 +54,12 @@ a:hover {
 h1, h2, h3, h4, h5, h6, p {
     letter-spacing: -0.02em;
     word-break: keep-all;
-    line-height: 1.4em;
+    line-height: 1.6em;
 }
 
 strong, b {
     font-weight: 700 !important;
-    line-height: 1.4em;
+    line-height: 1.6em;
 }
 
 .cursor{
@@ -219,11 +219,9 @@ strong, b {
 
     /**/
     blockquote{
-        background: linear-gradient(to right, #212121,#4c4c4c);
-        padding: 15px 20px 20px 20px;
+        padding: 15px 20px 15px 20px !important;
         color: #e0e0e0;
-        border-radius: 5px;
-        box-shadow: 5px 10px 20px rgba(0,0,0,.2);
+        box-shadow: 0px 3px 5px 1px rgba(0,0,0,.1);
     }
 
 
@@ -562,6 +560,8 @@ strong, b {
             }
         }
     }
+
+    // post list menu & content -> CPT
     .docs_content{
         padding: 0 !important;
         //sub_menu
