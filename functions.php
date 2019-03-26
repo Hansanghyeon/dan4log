@@ -149,25 +149,51 @@ add_shortcode('docs_list', 'docs_list');
 
 //python post list
 function python_post_list(){
-    $args = array(
-        'post_type' => 'docs',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'library',
-                'field' => 'slug',
-                'terms' => 'doit-python'
-            )
-        )
-    );
-    $terms = get_posts($args);
-    //    title
-    $output = '<div class="book_title"><i class="fas fa-book"></i> Doit 점프투파이썬</div>';
 
-    $output .= '<ul>';
-    foreach($terms as $term){
-        $output .= '<li><a href ="/'.$term->post_name.'">'.$term->post_title.'</a></li>';
+
+    //    title
+    $output = '<a href="/library/doit-python/"><div class="book_title"><i class="fas fa-book"></i> Doit 점프투파이썬</div></a>';
+
+    $output .= '<div class="book_list_wrap">';
+
+    // current 분류용 변수
+    $current_tax = get_queried_object()->term_id;
+    $current_filter_post = get_post()->ID;
+    // 중간 장
+    $custom_tax_name = 'library';
+    $custom_tax_id = 99; //99 -> python
+    $termchildren = get_term_children( $custom_tax_id, $custom_tax_name );
+    foreach ( $termchildren as $child ) {
+        $term = get_term_by( 'id', $child, $custom_tax_name );
+        $output .= '<a href="' . get_term_link( $child, $custom_tax_name ) . '">' . $term->name . '</a>';
+
+        // 해당 장의 post
+        $args = array(
+            'post_type' => 'docs',
+            'order' => 'ASC',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => $custom_tax_name,
+                    'field' => 'slug',
+                    'terms' => $term->slug,
+
+                )
+            )
+        );
+        $terms = get_posts($args);
+        $output .= '<ul>';
+        foreach($terms as $term){
+            $output .= '<li id="docs_'.$term->ID.'" class="';
+            if($current_tax !== 99 && $current_tax !== 101){
+                if($current_filter_post == $term->ID){
+                    $output .= 'current';
+                }
+            }
+            $output .= '"><a href ="/'.$term->post_name.'">'.$term->post_title.'</a></li>';
+        }
+        $output .= '</ul>';
     }
-    $output .= '</ul>';
+    $output .= '</div>';
 
     return  $output;
 }
