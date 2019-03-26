@@ -573,22 +573,41 @@ strong, b {
             padding: 0;
             padding-top: 40px;
             height: 100%;
-            width: 225px;
+            width: 325px;
             box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.4);
             transition: all .5s;
 
             .docs_sub_list{
-                padding: 0 20px;
-
                 .book_title{
                     text-align: center;
                     padding-bottom: 5px;
-                    margin-bottom: 10px;
+                    margin-bottom: 20px;
                     border-bottom: 1px solid;
+                }
+                .book_list_wrap{
+                    letter-spacing: .07em;
+
+                    a{
+                        display: block;
+                        padding: 0 20px;
+                    }
                 }
                 ul{
                     list-style: none;
                     padding: 0;
+
+                    li{
+                        padding-left: 1em;
+                        margin: .5em 0;
+                        a{line-height: 1.4em;}
+                    }
+                    li.current{
+                        background: $pointcolor;
+                        font-weight: bold;
+                        padding-top: .5em;
+                        padding-bottom: .5em;
+                        a{color:#fff}
+                    }
                 }
             }
 
@@ -596,11 +615,24 @@ strong, b {
         //
         .content_wrap{
             width: 100%;
-            padding-top: 4%;
+            padding: 4% 0;
         }
     }
-    body.page-library, body.tax-library, body[class*='docs-']{
+    body.tax-library, body[class*='docs-']{
         //test용
+        #et-main-area{
+            margin-left: 550px !important;
+            transition: margin-left .5s;
+        }
+        #et-main-area.oneColum{
+            margin-left: 325px !important;
+
+            .sub_menu{
+                left: 0px;
+            }
+        }
+    }
+    body.page-library{
         #et-main-area{
             margin-left: 450px !important;
             transition: margin-left .5s;
@@ -611,15 +643,6 @@ strong, b {
             .sub_menu{
                 left: 0px;
             }
-        }
-        #et-main-area.threeColum{
-            margin-left: 675px !important;
-        }
-    }
-    body.page-library{
-        #et-main-area{
-            margin-left: 450px !important;
-            transition: margin-left .5s;
         }
     }
     // menu close button animation
