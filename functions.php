@@ -132,7 +132,8 @@ add_shortcode('tag_list', 'tag_list');
 function docs_list(){
     $args = array(
         'taxonomy' => 'library',
-        'hide_empty' => false
+        'hide_empty' => false,
+        'parent' => 0
     );
     $terms = get_terms($args);
 
