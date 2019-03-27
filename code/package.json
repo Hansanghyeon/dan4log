@@ -1,0 +1,31 @@
+{
+  "name": "dan4log",
+  "version": "1.0.0",
+  "description": "dan4log Divi-child theme develop setting",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test!"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dan9509/dan4log-DIvi.git"
+  },
+  "keywords": [
+    "dan4log",
+    "wordpress",
+    "child-theme"
+  ],
+  "author": "Dan9509",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dan9509/dan4log-DIvi/issues"
+  },
+  "homepage": "https://github.com/Dan9509/dan4log-DIvi#readme"
+}
