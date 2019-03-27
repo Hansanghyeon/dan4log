@@ -198,3 +198,7 @@ function python_post_list(){
     return  $output;
 }
 add_shortcode('python_post_list', 'python_post_list');
+
+
+//custom wp-login.php
+include('template/login.php');
