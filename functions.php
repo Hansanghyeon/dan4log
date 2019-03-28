@@ -152,9 +152,10 @@ add_shortcode('docs_list', 'docs_list');
 //python post list
 function python_post_list(){
 
-
-    //    title
-    $output = '<a href="/library/doit-python/"><div class="book_title"><i class="fas fa-book"></i> Doit 점프투파이썬</div></a>';
+    //  여기에만 사용할 폰트
+    $output = '<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">';
+    //  title
+    $output .= '<a href="/library/doit-python/"><div class="book_title"><i class="fas fa-book"></i> Doit 점프투파이썬</div></a>';
 
     $output .= '<div class="book_list_wrap">';
 
@@ -185,13 +186,14 @@ function python_post_list(){
         $terms = get_posts($args);
         $output .= '<ul>';
         foreach($terms as $term){
+            $order = get_field('order',$term->ID);
             $output .= '<li id="docs_'.$term->ID.'" class="';
             if($current_tax !== 99 && $current_tax !== 101){
                 if($current_filter_post == $term->ID){
                     $output .= 'current';
                 }
             }
-            $output .= '"><a href ="/'.$term->post_name.'">'.$term->post_title.'</a></li>';
+            $output .= '"><a href ="/'.$term->post_name.'"><span class="order">'.$order.' <i class="fas fa-leaf"></i></span>'.$term->post_title.'</a></li>';
         }
         $output .= '</ul>';
     }

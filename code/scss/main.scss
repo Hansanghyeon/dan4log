@@ -17,6 +17,9 @@
         02.04 - [ 포스트 | Taxonomy:Tag ] 태그전체
         02.05 - [ 포스트 | Taxonomy:module ] 기본 (섬네일 off)
         02.06 - [ Docs | Taxonomy&Page ] 기본
+            02.06.01 - [ 레이아웃 | PreContent ] DocsMenu
+                02.06.01.01 - Menu close button
+            02.06.02 - [ Docs | CPT ] Doit 점프투파이썬
 
 *********************************************************/
 
@@ -72,6 +75,7 @@ strong, b {
     /*---------------------------------------------------
         01.01 - TYPOGRAPHY  
     ---------------------------------------------------*/
+    $shadow : 0px 3px 5px 1px rgba(0,0,0,.1);
     // light color var
     $L_default: #666;
     $L_bold: #333;
@@ -221,7 +225,7 @@ strong, b {
     blockquote{
         padding: 15px 20px 15px 20px !important;
         color: #e0e0e0;
-        box-shadow: 0px 3px 5px 1px rgba(0,0,0,.1);
+        box-shadow: $shadow;
     }
 
 
@@ -273,7 +277,7 @@ strong, b {
     body #main-content .post_content_box{
         padding: 3%;
         border-radius: 8px;
-        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+        box-shadow: $shadow;
     }
 
     
@@ -560,8 +564,38 @@ strong, b {
             }
         }
     }
+        // 02.06.01.01 - Menu close button
+        .action_wrap{
+            position: absolute;
+            bottom: 32px;
+            padding: 0 !important;
 
-    // post list menu & content -> CPT
+            @import 'arrow_animation.scss';
+
+            .arrow{
+                position: absolute;
+                bottom: 0;
+                left: -64px;
+                transition: all .5s;
+                opacity: 1;
+
+                &.click{
+                    left: -64px !important;
+                    opacity: 0;
+                }
+                &.not_click{
+                    left: 20px;
+                }
+                &.left{left:20px;}
+                &.right{opacity: 0;}
+            }
+        }
+
+    //  02.06.02 - [ Docs | CPT ] Doit 점프투파이썬
+        //  [ Docs | Taxonomy ] Doit 점프투파이썬 – 01장 
+        //  [ Docs | Taxonomy ] Doit 점프투파이썬 – 02장 
+    
+    $chateau : #46AD64;
     .docs_content{
         padding: 0 !important;
         //sub_menu
@@ -591,24 +625,50 @@ strong, b {
                         display: block;
                         padding: 0 20px;
                     }
-                }
-                ul{
-                    list-style: none;
-                    padding: 0;
+                    ul{
+                        list-style: none;
+                        padding: 0;
 
-                    li{
-                        padding-left: 1em;
-                        margin: .5em 0;
-                        a{line-height: 1.4em;}
-                    }
-                    li.current{
-                        background: $pointcolor;
-                        font-weight: bold;
-                        padding-top: .5em;
-                        padding-bottom: .5em;
-                        a{color:#fff}
+                        li{
+                            padding-left: 1em;
+                            margin: .5em 0;
+                            a{line-height: 1.4em;}
+
+                            .order{
+                                font-size: 10px;
+                                transition: all .5s;
+                                margin-right: 10px;
+                                display: inline-block;
+                                font-family: 'Allerta Stencil', sans-serif;
+                                i{
+                                    font-size: 10px;
+                                    opacity: 0;
+                                    transition: all .5s;
+                                }
+                                &:hover{
+                                    color: $chateau;
+                                    i{
+                                        color: $chateau;
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                        li.current{
+                            background: $chateau;
+                            font-weight: bold;
+                            padding-top: .5em;
+                            padding-bottom: .5em;
+                            a{color:#fff}
+                            .order{
+                                text-shadow: 3px 3px 2px rgba(0,0,0,.2);
+                                color: $D_post;
+                                i{color: $D_post;}
+                            }
+                        }
                     }
                 }
+                
             }
 
         }
@@ -645,29 +705,4 @@ strong, b {
             }
         }
     }
-    // menu close button animation
-    .action_wrap{
-        position: absolute;
-        bottom: 32px;
-        padding: 0 !important;
-
-        @import 'arrow_animation.scss';
-
-        .arrow{
-            position: absolute;
-            bottom: 0;
-            left: -64px;
-            transition: all .5s;
-            opacity: 1;
-
-            &.click{
-                left: -64px !important;
-                opacity: 0;
-            }
-            &.not_click{
-                left: 20px;
-            }
-            &.left{left:20px;}
-            &.right{opacity: 0;}
-        }
-    }
+    
