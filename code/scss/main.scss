@@ -12,14 +12,15 @@
 
     02.00 DIVI LIBRARY
         02.01 - [ 포스트 | CPT ] 글
+            02.01.01 - [ 포스트 | Taxonomy:module ] 기본 (섬네일 off)
+            02.01.02 - tag, tag cloud, cc
         02.02 - [ 포스트 | Taxonomy ] Server&nas
         02.03 - [ 포스트 | Taxonomy ] 블로그
         02.04 - [ 포스트 | Taxonomy:Tag ] 태그전체
-        02.05 - [ 포스트 | Taxonomy:module ] 기본 (섬네일 off)
-        02.06 - [ Docs | Taxonomy&Page ] 기본
-            02.06.01 - [ 레이아웃 | PreContent ] DocsMenu
-                02.06.01.01 - Menu close button
-            02.06.02 - [ Docs | CPT ] Doit 점프투파이썬
+        02.05 - [ Docs | Taxonomy&Page ] 기본
+            02.05.01 - [ 레이아웃 | PreContent ] DocsMenu
+                02.05.01.01 - Menu close button
+            02.05.02 - [ Docs | CPT ] Doit 점프투파이썬
 
 *********************************************************/
 
@@ -280,6 +281,134 @@ strong, b {
         box-shadow: $shadow;
     }
 
+    // 02.01.01 - [ 포스트 | Taxonomy:module ] 기본 (섬네일 off)
+    // infiniti scroll, disable pagena
+    .pagination.clearfix{display: none !important;}
+
+    // 02.01.02 - tag, tag cloud, cc
+    // tags setting
+    $dark-tag_bg : #2b2b2b;
+    $light-tag_bg : transparent;
+
+    // dark mode
+    body.dark .grid_tag .tag_item{
+        background: $dark-tag_bg;
+        border: 2px solid $dark-tag_bg;
+    }
+    // light mode
+    body.light .grid_tag .tag_item{
+        background: $light-tag_bg;
+        border: 2px solid $border-color;
+    }
+
+    // post tag
+    .grid_tag{
+        display: flex;
+        align-items: center;
+
+        i{margin-right: 8px;}
+        .tag_item{
+            font-size: 12px;
+            padding: 0px 8px;
+            margin-right: 5px;
+            border-radius: 5px;
+            transition: all .5s;
+            cursor: pointer;
+
+            &::before{
+                content: '\f292';
+                font-weight: 600;
+                font-style: normal;
+                font-variant: normal;
+                font-size: 12px;
+                font-family: "Font Awesome 5 Free";
+                margin-right: 2px;
+                display: inline-block;
+                text-rendering: auto;
+                transition: color .5s;
+            }
+        }
+    }
+    body .grid_tag .tag_item:hover{
+        border: 2px solid $pointcolor;
+
+        &::before{
+            color: $pointcolor;
+        }
+    }
+
+    // dark mode
+    body.dark .tagcloud a{
+        background: $dark-tag_bg;
+        border: 2px solid $dark-tag_bg;
+    }
+    // light mode
+    body.light .tagcloud a{
+        background: $light-tag_bg;
+        border: 2px solid $border-color;
+    }
+
+    // tag clude
+    .tagcloud a{
+        padding: 3px 8px;
+        margin-right: 5px;
+        border-radius: 5px;
+        transition: all .5s;
+        cursor: pointer;
+
+        &::before{
+            content: '\f292';
+            font-weight: 600;
+            font-style: normal;
+            font-variant: normal;
+            font-size: 10px;
+            font-family: "Font Awesome 5 Free";
+            margin-right: 2px;
+            display: inline-block;
+            text-rendering: auto;
+        }
+    }
+    body .tagcloud a:hover{border: 2px solid $pointcolor;}
+
+
+    // Creative Commons
+    //daark mode
+    body.dark .cc_box{
+        background: $dark-tag_bg;
+        border: 2px solid $dark-tag_bg;
+    }
+    //light mode
+    body.light .cc_box{
+        background: $light-tag_bg;
+        border: 2px solid $border-color;
+    }
+    body .cc_box{
+        float: left;
+        display: flex;
+        border-radius: 999px;
+        font-size: 15px;
+        padding: 1px 8px;
+        margin-right: 15px;
+        align-items: center;
+        justify-content: center;
+        height: 28px;
+        transition: all .5s;
+        div{display:flex}
+        div:nth-of-type(1){
+            padding-right: 6px;
+        }
+        div:nth-of-type(2){
+            transition: all .5s;
+            i{margin-right: 3px;}
+        }
+        &:hover{
+            border: 2px solid $pointcolor;
+            div:nth-of-type(2){color: $pointcolor}
+        }
+    }
+    .cc_tag_wrap{overflow: hidden;}
+
+
     
     
     /*---------------------------------------------------
@@ -389,139 +518,8 @@ strong, b {
     body.tag-reference .reference,
     body.tag-how-to-guide .how-to{display: block !important;}
 
-
-
     /*---------------------------------------------------
-        02.05 - [ 포스트 | Taxonomy:module ] 기본 (섬네일 off)
-    ---------------------------------------------------*/
-    // infiniti scroll, disable pagena
-    .pagination.clearfix{display: none !important;}
-
-    // 02.05.01 - tag, tag cloud
-        // tags setting
-        $dark-tag_bg : #2b2b2b;
-        $light-tag_bg : transparent;
-
-        // dark mode
-        body.dark .grid_tag .tag_item{
-            background: $dark-tag_bg;
-            border: 2px solid $dark-tag_bg;
-        }
-        // light mode
-        body.light .grid_tag .tag_item{
-            background: $light-tag_bg;
-            border: 2px solid $border-color;
-        }
-
-        // post tag
-        .grid_tag{
-            display: flex;
-            align-items: center;
-
-            i{margin-right: 8px;}
-            .tag_item{
-                font-size: 12px;
-                padding: 0px 8px;
-                margin-right: 5px;
-                border-radius: 5px;
-                transition: all .5s;
-                cursor: pointer;
-
-                &::before{
-                    content: '\f292';
-                    font-weight: 600;
-                    font-style: normal;
-                    font-variant: normal;
-                    font-size: 12px;
-                    font-family: "Font Awesome 5 Free";
-                    margin-right: 2px;
-                    display: inline-block;
-                    text-rendering: auto;
-                    transition: color .5s;
-                }
-            }
-        }
-        body .grid_tag .tag_item:hover{
-            border: 2px solid $pointcolor;
-
-            &::before{
-                color: $pointcolor;
-            }
-        }
-
-        // dark mode
-        body.dark .tagcloud a{
-            background: $dark-tag_bg;
-            border: 2px solid $dark-tag_bg;
-        }
-        // light mode
-        body.light .tagcloud a{
-            background: $light-tag_bg;
-            border: 2px solid $border-color;
-        }
-
-        // tag clude
-        .tagcloud a{
-            padding: 3px 8px;
-            margin-right: 5px;
-            border-radius: 5px;
-            transition: all .5s;
-            cursor: pointer;
-
-            &::before{
-                content: '\f292';
-                font-weight: 600;
-                font-style: normal;
-                font-variant: normal;
-                font-size: 10px;
-                font-family: "Font Awesome 5 Free";
-                margin-right: 2px;
-                display: inline-block;
-                text-rendering: auto;
-            }
-        }
-        body .tagcloud a:hover{border: 2px solid $pointcolor;}
-
-    // Creative Commons
-    //daark mode
-    body.dark .cc_box{
-        background: $dark-tag_bg;
-        border: 2px solid $dark-tag_bg;
-    }
-    //light mode
-    body.light .cc_box{
-        background: $light-tag_bg;
-        border: 2px solid $border-color;
-    }
-    body .cc_box{
-        float: left;
-        display: flex;
-        border-radius: 999px;
-        font-size: 15px;
-        padding: 1px 8px;
-        margin-right: 15px;
-        align-items: center;
-        justify-content: center;
-        height: 28px;
-        transition: all .5s;
-        div{display:flex}
-        div:nth-of-type(1){
-            padding-right: 6px;
-        }
-        div:nth-of-type(2){
-            transition: all .5s;
-            i{margin-right: 3px;}
-        }
-        &:hover{
-            border: 2px solid $pointcolor;
-            div:nth-of-type(2){color: $pointcolor}
-        }
-    }
-
-
-
-    /*---------------------------------------------------
-        02.06 - [ Docs | Taxonomy&Page ] 기본
+        02.05 - [ Docs | Taxonomy&Page ] 기본
     ---------------------------------------------------*/
     //  02.06.01 - [ 레이아웃 | PreContent ] DocsMenu
     .docs_menu{
