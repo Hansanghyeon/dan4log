@@ -16,6 +16,7 @@ function themeslug_enqueue_script() {
 	wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', false );
 	wp_enqueue_script( 'jQuery cookie', '//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', false );
     wp_enqueue_script('infiniti.js', '//unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js', false );
+    wp_enqueue_script('Vue', '//cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js', false );
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
 
@@ -40,12 +41,13 @@ add_action( 'wp_head', 'child_theme_head_script' );
 
 //add footer javascript
 function add_this_script_footer(){ ?>
-<script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/plugin.js"></script>
-<script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/ScrollReaval.js"></script>
-<script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/color_ver_btn.js"></script>
-<script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/slick-default.js"></script>
-    <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/infinitiScroll.js"></script>
-    <script type="text/javascript" src="/wp-content/themes/Divi-child/code/js/arrow_animation.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/plugin.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/ScrollReaval.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/color_ver_btn.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/slick-default.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/infinitiScroll.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/arrow_animation.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/Babel/ParallaxDepthCard.js"></script>
 <?php } 
 add_action('wp_footer', 'add_this_script_footer');
 
