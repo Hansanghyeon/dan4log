@@ -110,6 +110,7 @@ strong, b {
 
         .et_pb_section{background-color: $L_bg;}
         #main-content .container:before{background-color: $L_border;}
+        #footer-bottom{background: $L_header}
     }
 
     body.dark{
@@ -122,6 +123,7 @@ strong, b {
 
         .et_pb_section{background-color: $D_bg;}
         #main-content .container:before{background-color: $D_black;}
+        #footer-bottom{background: $D_header}
     }
 
     body .et_pb_cpt_text a{
@@ -186,8 +188,9 @@ strong, b {
     }
 
     // mobile menu 
-    @include media("(max-width:980)"){
-        .et_header_style_left #et-top-navigation, .et_header_style_left .et-fixed-header #et-top-navigation{padding-top:24px !important;}
+    @include media("(max-width:980px)"){
+        .et_header_style_left .mobile_menu_bar{padding-bottom: 8px;}
+        .et_header_style_left #et-top-navigation, .et_header_style_left .et-fixed-header #et-top-navigation{padding-top:8px !important;}
         .et_header_style_left #logo, .et_header_style_split #logo{max-width: 30%;}
     }
 
