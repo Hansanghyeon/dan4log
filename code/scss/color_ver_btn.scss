@@ -1,5 +1,63 @@
+$moon_bg:#E4E9C8;
+$moon_text: #3C4145;
+$sun_bg:#86C4D8;
+$sun_text: #FFE06E;
+body.dark .cbt_position{
+    border-color: $moon_bg; 
+    &:after{content: '\f186';color:$moon_text;}
+    &.click{&:after{background-color: $moon_bg; color: $moon_text}}
+}
+body.light .cbt_position{
+    border-color: $sun_bg; 
+    &:after{content: '\f185';color: $sun_text;}
+    &.click{&:after{background-color: $sun_bg;}}
+}
+body .cbt_position{
+    position: fixed;
+    right: -120px;
+    padding: 0;
+    margin: 0;
+    background: none !important;
+    top: 50px;
+    z-index: 999;
+    height: 50px;
+    border-left: 20px solid;
+    border-radius: 10px;
+    transition: all .5s;
+    cursor: pointer;
+
+    .et_pb_row{padding: 0;}
+    &.click{
+        right: 0;
+        border: none;
+        &:after{
+            content: '\f105';
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            text-align: center;
+            line-height: 30px;
+            transform: translate(-26px, -50%);
+        }
+    }
+
+    &:after{
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 600;
+        font-family: "Font Awesome 5 Free";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-16px,-50%);
+    }
+}
+
 .cvb{
-    width: 100%;
+    width: 120px;
     position: relative;
     height: 50px;
 }

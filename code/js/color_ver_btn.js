@@ -41,4 +41,8 @@
             clickCount--;
         }
     });
+
+    $('.cbt_position').after().click(function () {
+        $('.cbt_position').toggleClass('click');
+    });
 })(jQuery);
