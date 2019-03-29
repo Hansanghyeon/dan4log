@@ -44,4 +44,12 @@
         //     $(this).parent().addClass('slick-slider');
         // }
     });
+
+    $('blockquote').each(function(){
+        var t = $(this);
+        var empty = t.text();
+        if(empty.length == 1){
+            t.remove();
+        }
+    });
 })(jQuery);
