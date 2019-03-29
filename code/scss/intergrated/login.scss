@@ -110,7 +110,7 @@ body.login{
         }
     }
 }
-@include media("(max-width:480)"){
+@include media("(max-width:480px)"){
     .notfound{
         h2{font-size: 22px;}
 
