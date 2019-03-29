@@ -4,12 +4,20 @@ $sun_bg:#86C4D8;
 $sun_text: #FFE06E;
 body.dark .cbt_position{
     border-color: $moon_bg; 
-    &:after{content: '\f186';color:$moon_text;}
+    &:after{
+        content: '\f186';
+        color:$moon_text;
+        text-shadow: 0px 0px 4px rgba(60, 65, 69, .5);
+    }
     &.click{&:after{background-color: $moon_bg; color: $moon_text}}
 }
 body.light .cbt_position{
     border-color: $sun_bg; 
-    &:after{content: '\f185';color: $sun_text;}
+    &:after{
+        content: '\f185';
+        color: $sun_text;
+        text-shadow: 0px 0px 4px rgba(255, 224, 110, .5);
+    }
     &.click{&:after{background-color: $sun_bg;}}
 }
 body .cbt_position{
@@ -18,7 +26,7 @@ body .cbt_position{
     padding: 0;
     margin: 0;
     background: none !important;
-    top: 50px;
+    margin-top: 70px;
     z-index: 999;
     height: 50px;
     border-left: 20px solid;
