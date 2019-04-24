@@ -119,48 +119,33 @@ body.dark{
         margin-left: 3px;
         white-space: nowrap;
     }
-}
-.instapaper_body .highlight{
-    margin-top: 12px;
-    position: relative;
-    border-radius: 15px;
-    box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
+    // code block setting
+    // window button style
+    .highlight{
+        margin-top: 12px;
+        position: relative;
+        border-radius: 15px;
+        //box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
 
-    // 닫기 내리기 확장 버튼
-    &::after{
-        content: '';
-        display: inline-block;
-        position: absolute;
-        top: 10px;
-        left: 11px;
-        width:11px;
-        height:11px;
-        background-image: url('/wp-content/uploads/site_character/cropped-favicon-1.png');
-        background-size: cover;
-        background-position: center;
-    }
-    &::before{
-        content: '\f111';
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 600;
-        font-family: "Font Awesome 5 Free";
-        position: absolute;
-        color: #FFBD2D;
-        top: 10px;
-        left: 30px;
-        font-size: 12px;
-        line-height: 12px;
-    }
-
-    pre{
-        padding-top: 40px;
-        border-radius: 5px;
-
-        *{font-family: 'D2 coding';}
+        @include media("(max-width:480px)"){
+            width: 108%;
+            transform: translateX(-4%);
+            border-radius: 0;
+        }
+    
+        // 닫기 내리기 확장 버튼
+        &::after{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            left: 11px;
+            width:11px;
+            height:11px;
+            background-image: url('/wp-content/uploads/site_character/cropped-favicon-1.png');
+            background-size: cover;
+            background-position: center;
+        }
         &::before{
             content: '\f111';
             display: inline-block;
@@ -169,16 +154,75 @@ body.dark{
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
             font-weight: 600;
-            font-family: "Font Awesome 5 Free" !important;
+            font-family: "Font Awesome 5 Free";
             position: absolute;
-            color: #2AC940;
+            color: #FFBD2D;
             top: 10px;
-            left: 50px;
+            left: 30px;
             font-size: 12px;
             line-height: 12px;
         }
+    
+        pre{
+            padding-top: 32px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'D2 coding';
+    
+            *{font-family: 'D2 coding';}
+            &::before{
+                content: '\f111';
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                font-weight: 600;
+                font-family: "Font Awesome 5 Free" !important;
+                position: absolute;
+                color: #2AC940;
+                top: 10px;
+                left: 50px;
+                font-size: 12px;
+                line-height: 12px;
+            }
+            // 
+            // TODO
+            // copy & paste button 제작하기
+            // 
+            // &::after{
+            //     content: '\f0c5';
+            //     display: inline-block;
+            //     font-style: normal;
+            //     font-variant: normal;
+            //     text-rendering: auto;
+            //     -webkit-font-smoothing: antialiased;
+            //     font-weight: 600;
+            //     font-family: "Font Awesome 5 Free" !important;
+            //     position: absolute;
+            //     color: #777;
+            //     top: 10px;
+            //     right: 11px;
+            //     font-size: 12px;
+            //     line-height: 12px;
+            //     cursor: pointer;
+            // }
+        }
     }
-} 
+    ol {
+        li > p:nth-of-type(1){
+            display: inline;
+            margin-left: 0;
+        }
+        p{margin-left: 20px;}
+        .highlight{
+            margin-left: 12px;
+    
+            @include media("(max-width:480px)"){margin-left: 0;}
+        }
+    }
+}
+
 body.dark{
     .markdown-body{
         color: #B9BDB4;
