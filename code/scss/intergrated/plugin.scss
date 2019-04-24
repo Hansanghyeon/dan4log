@@ -112,11 +112,16 @@ body.dark{
         p{line-height: 1.6em;}
     }
     code{
-        background: #282a36;
+        background: #eb5255;
+        color: #fff;
         box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+        margin-right: 3px;
+        margin-left: 3px;
+        white-space: nowrap;
     }
 }
 .instapaper_body .highlight{
+    margin-top: 12px;
     position: relative;
     border-radius: 15px;
     box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
@@ -126,11 +131,11 @@ body.dark{
         content: '';
         display: inline-block;
         position: absolute;
-        top: 13px;
-        left: 10px;
+        top: 10px;
+        left: 11px;
         width:11px;
         height:11px;
-        background-image: url('https://s3-ap-northeast-2.amazonaws.com/4log-media/wp-content/uploads/20190314184245/cropped-favicon-1.png');
+        background-image: url('/wp-content/uploads/site_character/cropped-favicon-1.png');
         background-size: cover;
         background-position: center;
     }
@@ -148,6 +153,7 @@ body.dark{
         top: 10px;
         left: 30px;
         font-size: 12px;
+        line-height: 12px;
     }
 
     pre{
@@ -169,6 +175,7 @@ body.dark{
             top: 10px;
             left: 50px;
             font-size: 12px;
+            line-height: 12px;
         }
     }
 } 
