@@ -2,7 +2,22 @@
 
 include('code/secret/function_secret.php');
 
+/********************************************************
+	
+				CONTENTS LIST
+	
+*********************************************************
 
+    01.00 - Style & Script & CDN loaded
+    02.00 - Theme bug repair
+
+*********************************************************/
+
+/*---------------------------------------------------
+
+        01.00 - Style & Script & CDN loaded
+
+---------------------------------------------------*/
 //custom css or js for header
 function themeslug_enqueue_style() {
 	wp_enqueue_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
@@ -52,6 +67,11 @@ function add_this_script_footer(){ ?>
 add_action('wp_footer', 'add_this_script_footer');
 
 
+/*---------------------------------------------------
+
+        02.00 - Theme bug repair
+
+---------------------------------------------------*/
 // DIVI 기본 폰트 로드 제거 : DIVI 오류
 function divi_child_theme_setup() {
 	remove_action( 'wp_enqueue_scripts', 'et_divi_load_fonts' );
