@@ -243,3 +243,10 @@ function admin_style() {
     wp_enqueue_style('WP_list_table', get_stylesheet_directory_uri().'/code/css/admin_dashborad.css');
 }
 add_action('admin_enqueue_scripts', 'admin_style');
+
+// Github hyperlink
+function githubHpyerlink(){
+    $githublink = get_field('github',$term->ID);
+    return $githublink;
+}
+add_shortcode('github_link','githubHpyerlink');
