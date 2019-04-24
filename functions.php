@@ -149,13 +149,21 @@ function docs_list(){
 }
 add_shortcode('docs_list', 'docs_list');
 
-//python post list
-function python_post_list(){
+//docs post list
+function docs_post_list($atts, $content){
+    $atts = shortcode_atts(
+        array(
+            'name' => 0,
+            'url' => 0,
+            'docs_id' => 0
+        ),
+        $atts
+    );
 
     //  여기에만 사용할 폰트
     $output = '<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">';
     //  title
-    $output .= '<a href="/library/doit-python/"><div class="book_title"><i class="fas fa-book"></i> Doit 점프투파이썬</div></a>';
+    $output .= '<a href="'.$atts[url].'"><div class="book_title"><i class="fas fa-book"></i> '.$atts[name].'</div></a>';
 
     $output .= '<div class="book_list_wrap">';
 
@@ -164,7 +172,8 @@ function python_post_list(){
     $current_filter_post = get_post()->ID;
     // 중간 장
     $custom_tax_name = 'library';
-    $custom_tax_id = 99; //99 -> python
+    // 책 카테고리의 ID값 넣기
+    $custom_tax_id = $atts[docs_id]; //99 -> python
     $termchildren = get_term_children( $custom_tax_id, $custom_tax_name );
     foreach ( $termchildren as $child ) {
         $term = get_term_by( 'id', $child, $custom_tax_name );
@@ -179,7 +188,6 @@ function python_post_list(){
                     'taxonomy' => $custom_tax_name,
                     'field' => 'slug',
                     'terms' => $term->slug,
-
                 )
             )
         );
@@ -188,6 +196,8 @@ function python_post_list(){
         foreach($terms as $term){
             $order = get_field('order',$term->ID);
             $output .= '<li id="docs_'.$term->ID.'" class="';
+            // TODO
+            // 부모 카테고리 자동으로 찾는 방법
             if($current_tax !== 99 && $current_tax !== 101){
                 if($current_filter_post == $term->ID){
                     $output .= 'current';
@@ -201,7 +211,7 @@ function python_post_list(){
 
     return  $output;
 }
-add_shortcode('python_post_list', 'python_post_list');
+add_shortcode('docs_post_list', 'docs_post_list');
 
 
 //custom wp-login.php
