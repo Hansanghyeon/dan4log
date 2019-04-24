@@ -160,6 +160,16 @@ strong, b {
         width: 100%;
         padding: 0 20px;
     }
+    .et_pb_section{
+        @include media("(max-width:480px)"){
+            padding-top: 0;
+        }
+    }
+    .et_pb_row{
+        @include media("(max-width:480px)"){
+            width: 100%;
+        }
+    }
 
     /*---------------------------------------------------
         01.03 - HEADER & FOOTER & NAVIGATION
@@ -280,8 +290,13 @@ strong, b {
     body.light .post_content_box{background-color: $L_post;}
     body #main-content .post_content_box{
         padding: 3%;
+        padding-bottom: 100px;
         border-radius: 8px;
         box-shadow: $shadow;
+        
+        @include media("(max-width:480px)"){
+            border-radius: 0;
+        }
     }
 
     // 02.01.01 - [ 포스트 | Taxonomy:module ] 기본 (섬네일 off)
