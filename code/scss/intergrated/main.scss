@@ -265,13 +265,6 @@ strong, b {
         02.01 - [ 포스트 | CPT ] 글
     ---------------------------------------------------*/
 
-    //  #LAYOUT
-    .et_pb_column .et_pb_module{
-        &.featured_image_topCPT{
-            padding: 0 !important;
-        }
-    }
-
     // thumbnail on
     .fallex {padding-top: 30% !important;}
 
@@ -305,14 +298,22 @@ strong, b {
     body.dark .post_content_box{background-color: $D_post;}
     body.light .post_content_box{background-color: $L_post;}
     body #main-content .post_content_box{
-        padding: 3%;
-        padding-bottom: 100px;
+        padding-top: 0;
+        padding-bottom: 3%;
         border-radius: 8px;
         box-shadow: $shadow;
+        overflow: hidden;
         
         @include media("(max-width:480px)"){
             border-radius: 0;
             padding: 0;
+        }
+        .et_pb_module{
+            padding-left: 3%;
+            padding-right: 3%;
+            &.featured_image_topCPT{
+                padding: 0 !important;
+            }
         }
     }
 
