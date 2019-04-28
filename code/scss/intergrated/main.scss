@@ -482,7 +482,12 @@ strong, b {
     /*---------------------------------------------------
         02.03 - [ 포스트 | Taxonomy ] 블로그
     ---------------------------------------------------*/
-    .desk_view .et_pb_section{background:transparent !important;}
+    .desk_view {
+        .et_pb_section{background:transparent !important;}
+        > div > .et_pb_row:nth-last-of-type(1){
+            display: none;
+        }
+    }
     .et_pb_cpt_loop_archive.desk_view{margin-bottom:50px !important;}
 
     /* btn */
@@ -531,7 +536,17 @@ strong, b {
         bottom: 36px;
         left: 4px;
     }
-
+    @include media("(max-width: 480px)"){
+        .desk_view{
+            .et_cpt_container_column{
+                display: none;
+                &:nth-of-type(1){
+                    display: block;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 
 
     /*---------------------------------------------------
