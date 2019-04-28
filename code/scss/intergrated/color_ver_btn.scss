@@ -34,6 +34,7 @@ body .cbt_position{
     transition: all .5s;
     cursor: pointer;
 
+    .et_pb_column .et_pb_module{padding: 0 !important;}
     .et_pb_row{padding: 0;}
     &.click{
         right: 0;
