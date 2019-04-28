@@ -264,10 +264,6 @@ strong, b {
     /*---------------------------------------------------
         02.01 - [ 포스트 | CPT ] 글
     ---------------------------------------------------*/
-
-    // thumbnail on
-    .fallex {padding-top: 30% !important;}
-
     // no_thumbnail disable
     body.no_thumbnail .post_featured_thumbnail{display: none !important;}
 
@@ -276,22 +272,6 @@ strong, b {
         .blog_list .et_pb_column_single{
             padding: 0;
         }
-    }
-    .blog_list{
-        .et_pb_row{padding-top:0;padding-bottom: 16px;}
-        .cpt_title{
-            display: inline-block;
-            padding-right: 10px;
-            font-size: 18px;
-            padding-bottom: 0;
-        }
-        .et_pb_title_meta_container{
-            display: inline-block;
-        }
-    }
-    @include media("(min-width: 1600px)"){
-        .blog_list .cpt_title{padding-bottom: 0;}
-        .et_pb_cpt_loop_archive .et_pb_title_meta_container{color:#000}
     }
 
     // post container
@@ -303,16 +283,28 @@ strong, b {
         border-radius: 8px;
         box-shadow: $shadow;
         overflow: hidden;
-        
         @include media("(max-width:480px)"){
             border-radius: 0;
-            padding: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        p{
+            padding-bottom: 0;
         }
         .et_pb_module{
             padding-left: 3%;
             padding-right: 3%;
             &.featured_image_topCPT{
                 padding: 0 !important;
+            }
+        }
+        .et_pb_cpt_title_0{
+            padding-top: 3%;
+            h1{
+                @include media("(max-width: 480px)"){
+                    font-size: 24px;
+                }
             }
         }
     }
@@ -452,7 +444,22 @@ strong, b {
     /*---------------------------------------------------
         02.02 - [ 포스트 | Taxonomy ] 기본 (섬네일on, 사이드바off)
     ---------------------------------------------------*/
-    
+    .blog_list{
+        .et_pb_row{padding-top:0;padding-bottom: 16px;}
+        .cpt_title{
+            display: inline-block;
+            padding-right: 10px;
+            font-size: 18px;
+            padding-bottom: 0;
+        }
+        .et_pb_title_meta_container{
+            display: inline-block;
+        }
+    }
+    @include media("(min-width: 1600px)"){
+        .blog_list .cpt_title{padding-bottom: 0;}
+        .et_pb_cpt_loop_archive .et_pb_title_meta_container{color:#000}
+    }
     
     /*---------------------------------------------------
         02.03 - [ 포스트 | Taxonomy ] Server&nas

@@ -491,8 +491,18 @@ button.slick-prev.slick-arrow:after{
     border-radius: 5px;
     padding: 5px !important;
     margin-top: 7.47% !important;
+
+    @include media("(max-width: 480px)"){
+        margin-top: 17.47% !important;
+        margin-bottom: 3% !important;
+    }
 }
 // 위젯영역 : 페이스북 최근댓글
+.et_pb_widget_area_left{
+    .heateor_ffcp_facebook_comments{
+        margin-top: 0 !important;
+    }
+}
 .heateor_ffcp_facebook_comment{
     display: flex;
     flex-wrap: wrap;
