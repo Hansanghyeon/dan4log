@@ -247,6 +247,13 @@ add_action('admin_enqueue_scripts', 'admin_style');
 // Github hyperlink
 function githubHpyerlink(){
     $githublink = get_field('github',$term->ID);
-    return $githublink;
+    $github = '<a href="'.$githublink.'">';
+        $github .= '<article class="cc_box">';
+            $github .= '<i class="fab fa-github"></i>';
+        $github .= '</article>';
+    $github .= '</a>';
+
+    if($githublink !== '')
+        return $github;
 }
 add_shortcode('github_link','githubHpyerlink');
