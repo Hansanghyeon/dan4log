@@ -170,9 +170,15 @@ strong, b {
             width: 100%;
         }
     }
+    .et_pb_column .et_pb_module{
+        @include media("(max-width:480px)"){
+            padding-right: 3% !important;
+            padding-left: 3% !important;
+        }
+    }
 
     /*---------------------------------------------------
-        01.03 - HEADER & FOOTER & NAVIGATION
+        01.03 - HEADER & FOOTER & NAVIGATION & SIDEBAR
     ---------------------------------------------------*/
 
     //page disable setting
@@ -261,6 +267,13 @@ strong, b {
         02.01 - [ 포스트 | CPT ] 글
     ---------------------------------------------------*/
 
+    //  #LAYOUT
+    .et_pb_column .et_pb_module{
+        &.featured_image_topCPT{
+            padding: 0 !important;
+        }
+    }
+
     // thumbnail on
     .fallex {padding-top: 30% !important;}
 
@@ -301,6 +314,7 @@ strong, b {
         
         @include media("(max-width:480px)"){
             border-radius: 0;
+            padding: 0;
         }
     }
 
