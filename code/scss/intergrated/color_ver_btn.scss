@@ -46,6 +46,10 @@ body .cbt_position{
             text-align: center;
             line-height: 30px;
             transform: translate(-26px, -50%);
+
+            @include media("(max-width: 980px)"){
+                transform: translate(-36px, -50%);
+            }
         }
     }
 
