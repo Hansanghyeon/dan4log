@@ -491,6 +491,13 @@ strong, b {
     /*---------------------------------------------------
         02.04 - [ 포스트 | Taxonomy ] 블로그
     ---------------------------------------------------*/
+    // star space
+    .size{
+        @include media("(min-width: 981px)"){
+            width: calc(100vw - 225px) !important;
+        }
+    }
+
     .desk_view {
         .et_pb_section{background:transparent !important;}
         > div > .et_pb_row:nth-last-of-type(1){
