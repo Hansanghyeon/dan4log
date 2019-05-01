@@ -29,7 +29,7 @@ body .cbt_position{
     margin-top: 100px;
     z-index: 999;
     height: 50px;
-    border-left: 20px solid;
+    border-left: 40px solid;
     border-radius: 10px;
     transition: all .5s;
     cursor: pointer;
@@ -65,7 +65,7 @@ body .cbt_position{
         position: absolute;
         left: 0;
         top: 50%;
-        transform: translate(-16px,-50%);
+        transform: translate(-30px,-50%);
     }
 }
 
