@@ -689,67 +689,65 @@ strong, b {
             @include media("(max-width: 980px)"){
                 left: 0;
             }
-
-            .docs_sub_list{
-                .book_title{
-                    text-align: center;
-                    padding-bottom: 5px;
-                    margin-bottom: 20px;
-                    border-bottom: 1px solid;
-                }
-                .book_list_wrap{
-                    letter-spacing: .07em;
-
-                    a{
-                        display: block;
-                        padding: 0 20px;
-                    }
-                    ul{
-                        list-style: none;
-                        padding: 0;
-
-                        li{
-                            padding-left: 1em;
-                            margin: .5em 0;
-                            a{line-height: 1.4em;}
-
-                            .order{
-                                font-size: 10px;
-                                transition: all .5s;
-                                margin-right: 10px;
-                                display: inline-block;
-                                font-family: 'Allerta Stencil', sans-serif;
-                                i{
-                                    font-size: 10px;
-                                    opacity: 0;
-                                    transition: all .5s;
-                                }
-                                &:hover{
-                                    color: $chateau;
-                                    i{
-                                        color: $chateau;
-                                        opacity: 1;
-                                    }
-                                }
-                            }
-                        }
-                        li.current{
-                            background: $chateau;
-                            font-weight: bold;
-                            padding-top: .5em;
-                            padding-bottom: .5em;
-                            a{color:#fff}
-                            .order{
-                                text-shadow: 3px 3px 2px rgba(0,0,0,.2);
-                                color: $D_post;
-                                i{color: $D_post;}
-                            }
-                        }
-                    }
-                }
-                
+        }
+        .docs_sub_list{
+            .book_title{
+                text-align: center;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid;
             }
+            .book_list_wrap{
+                letter-spacing: .07em;
 
+                a{
+                    display: block;
+                    padding: 0 20px;
+                }
+                ul{
+                    list-style: none;
+                    padding: 0;
+
+                    li{
+                        padding-left: 1em;
+                        margin: .5em 0;
+                        a{line-height: 1.4em;}
+
+                        .order{
+                            font-size: 10px;
+                            transition: all .5s;
+                            margin-right: 10px;
+                            display: inline-block;
+                            font-family: 'Allerta Stencil', sans-serif;
+                            i{
+                                font-size: 10px;
+                                opacity: 0;
+                                transition: all .5s;
+                            }
+                            &:hover{
+                                color: $chateau;
+                                i{
+                                    color: $chateau;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                    li.current{
+                        background: $chateau;
+                        font-weight: bold;
+                        padding-top: .5em;
+                        padding-bottom: .5em;
+                        a{color:#fff}
+                        .order{
+                            text-shadow: 3px 3px 2px rgba(0,0,0,.2);
+                            color: $D_post;
+                            i{color: $D_post;}
+                        }
+                    }
+                }
+            }
+            
         }
         //
         .content_wrap{
@@ -758,6 +756,7 @@ strong, b {
         }
         .post_content_box{
             padding: 3% !important;
+            .et_pb_module{padding: 0 !important;}
         }
     }
     body.tax-library, body[class*='docs-']{
