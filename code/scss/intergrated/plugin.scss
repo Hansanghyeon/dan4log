@@ -105,6 +105,7 @@ body.dark{
         &::after{content: none;}
     }
     > h1:nth-of-type(1){display: none;}
+    > h2:nth-of-type(1){margin-top: 0;}
     .anchor{display: none;}
     blockquote{
         background: #3a3a3a;
@@ -117,7 +118,9 @@ body.dark{
         box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
         margin-right: 3px;
         margin-left: 3px;
-        white-space: nowrap;
+    }
+    pre > code{
+        box-shadow: none;
     }
     // code block setting
     // window button style
@@ -215,12 +218,13 @@ body.dark{
             margin-left: 0;
         }
         p{margin-left: 20px;}
-        .highlight{
+        pre, .highlight{
             margin-left: 12px;
     
             @include media("(max-width:480px)"){margin-left: 0;}
         }
     }
+    p{margin-bottom:.6em;}
 }
 
 body.dark{
