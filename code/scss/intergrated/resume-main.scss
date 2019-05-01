@@ -1,6 +1,16 @@
 //resume
-body.dark .resume_wrap{background: $D_post;}
-body.light .resume_wrap{background: $L_post;}
+body.dark .resume_wrap{
+    background: $D_post;
+    @include media("(max-width: 1360px)"){
+        div[class*='resumeSection']{background:rgba(33,33,33,.4)}
+    }
+}
+body.light .resume_wrap{
+    background: $L_post;
+    @include media("(max-width: 1360px)"){
+        div[class*='resumeSection']{background:rgba(255,255,255,.4)}
+    }
+}
 
 .resume_wrap{
     margin: 100px auto;
@@ -43,7 +53,6 @@ body.light .resume_wrap{background: $L_post;}
         @include media("(max-width: 1360px)"){
             div[class*='resumeSection']{
                 position:relative;
-                background:rgba(255,255,255,.8);
                 z-index:2;
                 margin-bottom:20px;
             }
@@ -58,11 +67,12 @@ body.light .resume_wrap{background: $L_post;}
             }
         }
         .slogan{
-            font-size: .9rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            color: green !important;
+            color: #fff !important;
             margin-bottom: 0 !important;
-            text-shadow: 10px 10px 20px rgba(237,183,62,.4);
+            font-family: 'Yeon Sung', cursive;
+            text-shadow: 3px 3px 0 green, -1px -1px 0 green, 1px -1px 0 green, -1px 1px 0 green, 1px 1px 0 green;
             position:relative;
             z-index:3;
         }
@@ -114,4 +124,3 @@ body.light .resume_wrap{background: $L_post;}
         }
     }
 }
-
