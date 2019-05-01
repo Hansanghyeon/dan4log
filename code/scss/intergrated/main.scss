@@ -333,10 +333,13 @@ strong, b {
     .grid_tag{
         display: flex;
         align-items: center;
-
-        i{margin-right: 8px;}
+        
+        i{
+            margin-right: 8px;
+            font-size: 8px;
+        }
         .tag_item{
-            font-size: 12px;
+            font-size: 8px;
             padding: 0px 8px;
             margin-right: 5px;
             border-radius: 5px;
@@ -348,7 +351,7 @@ strong, b {
                 font-weight: 600;
                 font-style: normal;
                 font-variant: normal;
-                font-size: 12px;
+                font-size: 8px;
                 font-family: "Font Awesome 5 Free";
                 margin-right: 2px;
                 display: inline-block;
