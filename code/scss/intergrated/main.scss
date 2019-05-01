@@ -613,6 +613,9 @@ strong, b {
         transition: left .5s;
         //position
         left: 225px;
+        @include media("(max-width: 980px)"){
+            left: 0;
+        }
         &.main_disable{left: 0px;}
 
         .menu_inner{
@@ -676,10 +679,16 @@ strong, b {
             margin: 0;
             padding: 0;
             padding-top: 40px;
+            padding-bottom: 40px;
             height: 100%;
             width: 325px;
             box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.4);
             transition: all .5s;
+            overflow-x: scroll;
+
+            @include media("(max-width: 980px)"){
+                left: 0;
+            }
 
             .docs_sub_list{
                 .book_title{
@@ -747,12 +756,19 @@ strong, b {
             width: 100%;
             padding: 4% 0;
         }
+        .post_content_box{
+            padding: 3% !important;
+        }
     }
     body.tax-library, body[class*='docs-']{
         //test용
         #et-main-area{
             margin-left: 550px !important;
             transition: margin-left .5s;
+
+            @include media("(max-width: 980px)"){
+                margin-left: 325px !important;
+            }
         }
         #et-main-area.oneColum{
             margin-left: 325px !important;
@@ -763,9 +779,15 @@ strong, b {
         }
     }
     body.page-library{
+        .post_content_box{
+            padding-top: 3% !important;
+        }
         #et-main-area{
             margin-left: 450px !important;
             transition: margin-left .5s;
+            @include media("(max-width: 980px)"){
+                margin-left: 225px !important;
+            }
         }
         #et-main-area.oneColum{
             margin-left: 225px !important;
