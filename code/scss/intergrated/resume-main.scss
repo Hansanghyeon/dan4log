@@ -62,14 +62,34 @@ body.light .resume_wrap{
                 margin-bottom:20px;
             }
         }
+        .description{
+            // name
+            .company{
+                display: inline-block;
+                background: green;
+                color: #fff;
+                padding: 0 8px;
+                border-radius: 5px;
+            }
+            .date{
+                padding-left: 8px;
+                display: inline-block;
+            }
+            .department{
+                display: block;
+                padding-left: 8px;
+                margin-top: 4px;
+            }
+        }
         .innerProject{
-            padding-left:20px;
             .projectName{
-                margin-bottom:20px;
+                padding-bottom:20px;
                 &:nth-of-type(1){
-                    margin-top:20px;
+                    padding-top: 20px;
                 }
+                a>i{font-size: .9em;}
                 a:hover{color: green;}
+                .repair_ing{opacity: .5;}
             }
         }
         .slogan{
@@ -128,5 +148,46 @@ body.light .resume_wrap{
                 }
             }
         }
+    }
+}
+
+// company custom color
+.peterosea{
+    background: #f9c630 !important;
+    color: #221814 !important;
+    img{
+        width: 28px;
+        padding-top: 4px;
+        margin-right: 8px;
+    }
+}
+.indent{margin-left: 20px !important;}
+.indent.child{
+    font-size:12px;
+    i{transform: scale(.8)}
+}
+.dis{
+    text-decoration: line-through;
+    opacity: .8;
+    pointer-events: none;
+}
+.renew{
+    position: relative;
+    &:after{
+        content: 'renewed';
+        position: absolute;
+        left: 105%;
+        font-size: 12px;
+        top: 0;
+    }
+}
+.close{
+    position: relative;
+    &:after{
+        content: 'close';
+        position: absolute;
+        left: 105%;
+        font-size: 12px;
+        top: 0;
     }
 }
