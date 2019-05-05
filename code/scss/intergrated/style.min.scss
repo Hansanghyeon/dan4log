@@ -6,6 +6,7 @@ $border-color: #e5e5e5;
       @content;
     }
 }
+.hidden{display: none !important}
 
 // main scss
 @import 'main.scss';
