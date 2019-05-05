@@ -5,6 +5,7 @@ var pug = require('gulp-pug');
 var sourcemaps = require('gulp-sourcemaps');
 var babel = require('gulp-babel');
 var ts = require('gulp-typescript');
+const autoprefixer = require('gulp-autoprefixer');
 
 // gulp 4.0 변환
 
@@ -39,10 +40,20 @@ function typescript(){
         .pipe(gulp.dest('./js/TypeScript/'));
 }
 
+// Crossbrowser
+function cross_browser(){
+    return gulp.src('../style.min.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('../'));
+}
+
 
 // watch
 gulp.task('hello', function(){
-    gulp.watch('./scss/intergrated/*.scss', gulp.series(gulp.parallel(sass_integrated)));
+    gulp.watch('./scss/intergrated/*.scss', gulp.series(gulp.parallel(sass_integrated),cross_browser));
     gulp.watch('./scss/container/*.scss', gulp.series(gulp.parallel(sass_container)));
     gulp.watch('./Babel/*.js', gulp.series(babel));
     gulp.watch('./TypeScript/*.ts', gulp.series(typescript));
