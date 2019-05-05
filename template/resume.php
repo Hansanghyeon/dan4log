@@ -46,8 +46,8 @@ get_header();
             </p>
         </div>
         <div class="resumeSection3">
+            <hr style="margin:0 0 30px 0">
             <h2>경력사항 / 진행한 프로젝트</h2>
-            <hr>
             <ul class="timeline">
                 <li>
                     <p class="timeline-date">2017년5월</p>
