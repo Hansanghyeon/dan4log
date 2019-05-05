@@ -30,18 +30,23 @@ body.login{
             top: 50%;
             transform: translate(-50%, -50%);
 
-            //after
-            &:after{
-                content: '';
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50% , -50%);
-                width: 100%;
-                height: 600px;
-                background-color: rgba(255, 255, 255, 0.7);
-                z-index: -1;
+
+            @include media("(max-width: 480px)"){
+                padding: 0;
             }
+
+            // //after
+            // &:after{
+            //     content: '';
+            //     position: absolute;
+            //     left: 50%;
+            //     top: 50%;
+            //     transform: translate(-50% , -50%);
+            //     width: 100%;
+            //     height: 600px;
+            //     background-color: rgba(255, 255, 255, 0.7);
+            //     z-index: -1;
+            // }
 
             //size
             max-width: 600px;
@@ -65,15 +70,12 @@ body.login{
                     color: #222225;
                     font-weight: 500;
                     //text-transform: uppercase;
-                }
-                h2{
-                    font-family: 'Muli', sans-serif !important;
-                    font-size: 26px;
-                    font-weight: 400;
-                    //text-transform: uppercase;
-                    color: #222225;
-                    margin-top: 26px;
-                    margin-bottom: 20px;
+                    -webkit-text-stroke: 1px #fff;
+                    text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+
+                    @include media("(max-width:480px)"){
+                        font-size: 110px;
+                    }
                 }
             }
             a{
@@ -85,6 +87,13 @@ body.login{
                 color: #222225;
                 //text-transform: uppercase;
                 font-size: 14px;
+            }
+            h2{
+                font-family: 'Muli', sans-serif !important;
+                font-size: 16px;
+                font-weight: 400;
+                //text-transform: uppercase;
+                color: #fff;
             }
             .notfound-social{
                 margin-bottom: 15px;
@@ -116,8 +125,6 @@ body.login{
 
         .notfound-404{
             height: 146px;
-
-            h1{font-size: 146px;}
         }
     }
 }
@@ -150,12 +157,21 @@ $form_bg : #212121;
     opacity: 0;
     padding-top: 0 !important;
     left: 50%;
-    transform: translate(150%, 0px);
+    //transform: translate(150%, 0px);
     transition: all .5s;
+    @include media("(max-width:480px)"){
+        left: auto;
+        bottom: 50%;
+        transform: translateY(50%) !important; 
+    }
 
     &.active{
         opacity: 1;
         transform: translate(-50%, 0px);
+
+        @include media("(max-width: 480px)"){
+            transform: translate(0,0);
+        }
     }
 
     > h1{display: none;}
@@ -165,6 +181,11 @@ $form_bg : #212121;
         padding-bottom: 24px;
         border-radius: 15px 15px 0 0;
         background: $form_bg;
+
+
+        @include media("(max-width: 480px)"){
+            border-radius: 0;
+        }
 
         #wp-submit{
             background: none;
@@ -193,6 +214,10 @@ $form_bg : #212121;
         padding-top: 0;
         border-radius: 0 0 15px 15px;
         background: $form_bg;
+        
+        @include media("(max-width: 480px)"){
+            border-radius: 0;
+        }
     }
     #backtoblog{display: none;}
 }
