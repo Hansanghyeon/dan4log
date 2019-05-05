@@ -8,9 +8,10 @@ function login_custom() {?>
         <div class="notfound-bg"></div>
         <div class="notfound">
             <div class="notfound-404">
-                <h1>Login</h1>
+                <h1>4log</h1>
             </div>
-            <h2></h2>
+            <h2>Devlog</h2>
+            <h2>Blog</h2>
             <a href="#"></a>
         </div>
     </div>
