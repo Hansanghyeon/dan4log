@@ -118,8 +118,15 @@ function get_cpt($atts){
 	$default_atts = array(
 		'key'     	=> ''
 	);
-	extract( shortcode_atts( $default_atts, $atts ) );
-	$return_string = '<div class="region_badge">'.get_post_meta( get_the_ID(), $atts['key'], true ).'</div>';
+    extract( shortcode_atts( $default_atts, $atts ) );
+    $term = get_the_terms(get_the_ID(),'desk');
+    foreach($term as $terms){
+        if($terms->name == 'starbucks'){
+            $terms->name = '<img class="starbucks_logo" src="http://www.istarbucks.co.kr/common/img/common/logo.png">';
+            $class_name_starbucks = 'starbucks';
+        }
+        $return_string = '<div class="region_badge '.$class_name_starbucks.'">'.$terms->name.get_post_meta( get_the_ID(), $atts['key'], true ).'</div>';
+    };
 	return $return_string;
 }
 add_shortcode("get_cpt","get_cpt");
