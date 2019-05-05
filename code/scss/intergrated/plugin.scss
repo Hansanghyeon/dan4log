@@ -490,17 +490,14 @@ button.slick-prev.slick-arrow:after{
 /*---------------------------------------------------
         07.00 facebook comment
 ---------------------------------------------------*/
+// post content 영역
+.post_content_box > .et_pb_column_inner > .et_pb_code:nth-last-child(1){
+    padding: 0 !important;
+}
 // 댓글영역
 .heateor_ffcp_facebook_comments{
     background: #f2f4f7;
-    border-radius: 5px;
-    padding: 5px !important;
-    margin-top: 7.47% !important;
-
-    @include media("(max-width: 480px)"){
-        margin-top: 17.47% !important;
-        margin-bottom: 3% !important;
-    }
+    border-radius: 0 0 5px 5px;
 }
 // 위젯영역 : 페이스북 최근댓글
 .et_pb_widget_area_left{

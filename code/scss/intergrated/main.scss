@@ -285,7 +285,7 @@ body.dark .post_content_box{background-color: $D_post;}
 body.light .post_content_box{background-color: $L_post;}
 body #main-content .post_content_box{
     padding-top: 0;
-    padding-bottom: 3%;
+    padding-bottom: 0;
     border-radius: 8px;
     box-shadow: $shadow;
     overflow: hidden;
@@ -604,6 +604,7 @@ body.dark .post_content_box > .et_pb_column_inner > .et_pb_code:nth-last-child(2
 body.light .post_content_box > .et_pb_column_inner > .et_pb_code:nth-last-child(2){background-color: rgba($L_bg, .6)}
 .post_content_box > .et_pb_column_inner > .et_pb_code:nth-last-child(2){
     margin-top: 60px;
+    margin-bottom: 0;
     background-blend-mode: overlay;
     background: url(https://source.unsplash.com/collection/4746550/1600x900);
     background-size: cover;
@@ -870,6 +871,7 @@ body.dark{
 }
 
 .author_card{
+    .name{margin: 0;}
     .name .author_archive_title{
         font-size: 16px;
         &:after{
