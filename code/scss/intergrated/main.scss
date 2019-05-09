@@ -500,6 +500,8 @@ body .cc_box{
 /*---------------------------------------------------
     02.04 - [ 포스트 | Taxonomy ] 블로그
 ---------------------------------------------------*/
+// blog & default css
+html{overflow-x: hidden;}
 // star space
 .size{
     @include media("(min-width: 981px)"){
