@@ -4,6 +4,7 @@
   "description": "dan4log Divi-child theme develop setting",
   "main": "gulpfile.js",
   "dependencies": {
+    "fullpage.js": "^3.0.5",
     "gulp": "^4.0.0",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
