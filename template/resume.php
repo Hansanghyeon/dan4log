@@ -53,7 +53,7 @@ get_header();
                     <p class="timeline-date">2017년5월</p>
                     <div class="timeline-content">
                         <div class="projectName indent">
-                            <div class="description">
+                            <div class="description block">
                                 <div class="company"><b>UXUI디자인</b> </div>
                                 <div class="date">05월 ~ 12월</div>
                                 <div class="department">웹/앱에 관한 UIUX디자인 국비훈련 이수를 완료하였습니다.</div>
@@ -66,11 +66,16 @@ get_header();
                     <div class="timeline-content">
                         <div class="projectName indent">
                             <div class="description">
-                                <div class="company"><b>킨스데이즈</b></div>
-                                <div class="date">03월 ~ 11월</div>
-                                <div class="department">프리랜서</div>
+                                <div class="desciprtion_inner_wrap">
+                                    <div class="company"><b>킨스데이즈</b></div>
+                                    <div class="date">03월 ~ 11월</div>
+                                    <div class="department">프리랜서</div>
+                                </div>
+                                <div class="arrow_wrap">
+                                    <div class="action_wrap normal kinsdayz"><?php echo do_shortcode('[DiviShortcode id="2554"]') ?></div>
+                                </div>
                             </div>
-                            <div class="innerProject indent">
+                            <div class="innerProject indent kinsdayz" style="display:none;">
                                 <div class="projectName">
                                     <div>2018.03</div>
                                     <div>
@@ -142,11 +147,16 @@ get_header();
                     <div class="timeline-content">
                         <div class="projectName indent">
                             <div class="description">
-                                <div class="company peterosea"><img src="https://peterosea.com/wp-content/uploads/2018/10/logo_pr_512.png"><b>Peterosea</b></div>
-                                <div class="date">12월12일 ~ </div>
-                                <div class="department">Publisher</div>
+                                <div class="desciprtion_inner_wrap">
+                                    <div class="company peterosea"><img src="https://peterosea.com/wp-content/uploads/2018/10/logo_pr_512.png"><b>Peterosea</b></div>
+                                    <div class="date">12월12일 ~ </div>
+                                    <div class="department">Publisher</div>
+                                </div>
+                                <div class="arrow_wrap">
+                                    <div class="action_wrap normal peterosea_controller"><?php echo do_shortcode('[DiviShortcode id="2554"]') ?></div>
+                                </div>
                             </div>
-                            <div class="innerProject indent">
+                            <div class="innerProject indent peterosea_controller" style="display:none;">
                                 <div class="projectName">
                                     <div>2018.12</div>
                                     <div>
@@ -268,6 +278,6 @@ get_header();
         </div>
     </article>
 </section>
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/resume-green-ani.js"></script>
+<script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/resume-green-ani.js"></script>
 <?php
 get_footer();

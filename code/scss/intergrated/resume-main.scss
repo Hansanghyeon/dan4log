@@ -63,23 +63,33 @@ body.light .resume_wrap{
             }
         }
         .description{
-            // name
-            .company{
-                display: inline-block;
-                background: green;
-                color: #fff;
-                padding: 0 8px;
-                border-radius: 5px;
-            }
-            .date{
-                padding-left: 8px;
-                display: inline-block;
-            }
-            .department{
+            display: flex;
+            justify-content: space-between;
+            &.block{
                 display: block;
-                padding-left: 8px;
-                margin-top: 4px;
             }
+            
+            .desciprtion_inner_wrap{
+                // name
+                .company{
+                    display: inline-block;
+                    background: green;
+                    color: #fff;
+                    padding: 0 8px;
+                    border-radius: 5px;
+                }
+                .date{
+                    padding-left: 8px;
+                    display: inline-block;
+                }
+                .department{
+                    display: block;
+                    padding-left: 8px;
+                    margin-top: 4px;
+                }
+            }
+
+            
         }
         .innerProject{
             .projectName{

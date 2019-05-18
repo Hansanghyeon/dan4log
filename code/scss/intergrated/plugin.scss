@@ -105,7 +105,7 @@ body.dark{
         &::after{content: none;}
     }
     > h1:nth-of-type(1){display: none;}
-    > h2:nth-of-type(1){margin-top: 0;}
+    //> h2:nth-of-type(1){margin-top: 0;}
     .anchor{display: none;}
     blockquote{
         background: #3a3a3a;

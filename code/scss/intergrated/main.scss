@@ -144,9 +144,9 @@ body .et_pb_cpt_text a{
         width: 100%;
         position: absolute;
         height: .3em;
-        bottom: .2em;
+        bottom: .1em;
         left: 0;
-        opacity: .4;
+        opacity: .6;
         transition: all .5s;
     }
     &.anchor::after{content: none;}
@@ -647,7 +647,7 @@ body.tag-how-to-guide .how-to{display: block !important;}
     //setting
     padding: 0 !important;
     margin: 0;
-    z-index: 99999;
+    z-index: 1;
     *{padding: 0;margin: 0;}
     .menu_inner{
         width: 100%;
@@ -689,11 +689,36 @@ body.tag-how-to-guide .how-to{display: block !important;}
     // Menu close button
     body.dark .action_wrap .arrow{background: $D_bg}
     body.light .action_wrap .arrow{background: $L_bg}
+    .arrow_wrap{
+        position: relative;
+        .arrow{position: relative;}
+    }
     .action_wrap{
         position: fixed;
         bottom: 32px;
         padding: 0 !important;
         z-index: 999;
+        &.normal{
+            // normal left = bottom
+            position: relative;
+            bottom: auto;
+            padding-right: 20px !important;
+            .arrow{
+                position: absolute;
+                right: 0;
+                top: 0;
+                transform: rotate(-90deg) scale(.7);
+                left: auto !important;
+                z-index: 0;
+                &.left{z-index:1;}
+                &.click{left: auto !important;}
+                &.not_click{z-index: 10;}
+            }
+            .arrow.left{transform: rotate(90deg) scale(.7);}
+            .et_pb_code_inner{
+                display: flex;
+            }
+        }
 
         @import 'arrow_animation.scss';
 
@@ -704,6 +729,7 @@ body.tag-how-to-guide .how-to{display: block !important;}
             transition: all .5s;
             opacity: 1;
             border-radius: 999px;
+            cursor: pointer;
 
             &.click{
                 left: -64px !important;
