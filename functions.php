@@ -258,6 +258,13 @@ function docs_post_list($atts, $content){
 }
 add_shortcode('docs_post_list', 'docs_post_list');
 
+function docs_taxonomy_description(){
+    $obejct = get_queried_object()->term_id;
+    $output = do_shortcode(term_description($obejct));
+    return $output;
+}
+add_shortcode('docs_taxonomy_description', 'docs_taxonomy_description');
+
 
 //custom wp-login.php
 include('template/login.php');
