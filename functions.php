@@ -24,6 +24,7 @@ function themeslug_enqueue_style() {
 	wp_enqueue_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false ); 
     wp_enqueue_style( 'D2coding', '//cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css', false );
     wp_enqueue_style( 'Google Fonts', '//fonts.googleapis.com/css?family=Yeon+Sung', false );
+    wp_enqueue_style( 'core Fullpage.js', get_stylesheet_directory_uri().'/code/node_modules/fullpage.js/dist/fullpage.min.css', false );
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 
@@ -33,6 +34,7 @@ function themeslug_enqueue_script() {
 	wp_enqueue_script( 'jQuery cookie', '//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', false );
     wp_enqueue_script('infiniti.js', '//unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js', false );
     wp_enqueue_script('Vue', '//cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js', false );
+    wp_enqueue_script('core Fullpage.js', get_stylesheet_directory_uri().'/code/node_modules/fullpage.js/dist/fullpage.min.js', false );
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
 
@@ -57,13 +59,14 @@ add_action( 'wp_head', 'child_theme_head_script' );
 
 //add footer javascript
 function add_this_script_footer(){ ?>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/plugin.js"></script>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/ScrollReaval.js"></script>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/color_ver_btn.js"></script>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/slick-default.js"></script>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/infinitiScroll.js"></script>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/arrow_animation.js"></script>
-    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/Babel/ParallaxDepthCard.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/plugin.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/ScrollReaval.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/color_ver_btn.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/slick-default.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/infinitiScroll.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/arrow_animation.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/Babel/ParallaxDepthCard.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/fullpage.js"></script>
 <?php } 
 add_action('wp_footer', 'add_this_script_footer');
 
