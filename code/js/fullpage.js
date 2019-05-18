@@ -1,0 +1,2 @@
+new fullpage('#fullpage', {
+});
