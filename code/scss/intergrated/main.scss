@@ -687,10 +687,13 @@ body.tag-how-to-guide .how-to{display: block !important;}
     }
 }
     // Menu close button
+    body.dark .action_wrap .arrow{background: $D_bg}
+    body.light .action_wrap .arrow{background: $L_bg}
     .action_wrap{
-        position: absolute;
+        position: fixed;
         bottom: 32px;
         padding: 0 !important;
+        z-index: 999;
 
         @import 'arrow_animation.scss';
 
@@ -700,6 +703,7 @@ body.tag-how-to-guide .how-to{display: block !important;}
             left: -64px;
             transition: all .5s;
             opacity: 1;
+            border-radius: 999px;
 
             &.click{
                 left: -64px !important;
@@ -713,9 +717,7 @@ body.tag-how-to-guide .how-to{display: block !important;}
         }
     }
 
-//  02.06.02 - [ Docs | CPT ] Doit 점프투파이썬
-    //  [ Docs | Taxonomy ] Doit 점프투파이썬 – 01장 
-    //  [ Docs | Taxonomy ] Doit 점프투파이썬 – 02장 
+//  02.06.02 - [ Docs | CPT ] 기본
 
 $chateau : #46AD64;
 .docs_content{
@@ -740,6 +742,7 @@ $chateau : #46AD64;
         }
     }
     .docs_sub_list{
+        margin-bottom: 90px !important;
         .book_title{
             text-align: center;
             padding-bottom: 5px;
@@ -749,9 +752,16 @@ $chateau : #46AD64;
         .book_list_wrap{
             letter-spacing: .07em;
 
-            a{
+            a[class*="term_id_"]{
                 display: block;
                 padding: 0 20px;
+                &.current{
+                    background: $chateau;
+                    font-weight: bold;
+                    padding-top: .5em;
+                    padding-bottom: .5em;
+                    color:#fff;
+                }
             }
             ul{
                 list-style: none;
@@ -760,25 +770,40 @@ $chateau : #46AD64;
                 li{
                     padding-left: 1em;
                     margin: .5em 0;
-                    a{line-height: 1.4em;}
+                    a{
+                        line-height: 1;
+                        font-size: 12px;
+                    
+                        &:hover{
+                            .order{
+                                color: $chateau;
+                                i{
+                                    color: $chateau;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
 
                     .order{
+                        border-radius: 999px;
                         font-size: 10px;
                         transition: all .5s;
                         margin-right: 10px;
                         display: inline-block;
                         font-family: 'Allerta Stencil', sans-serif;
+                        position: relative;
+                        line-height: 1;
+                        padding: 6px 8px;
+                        background: rgba( $L_post, .1 );
+                        
                         i{
                             font-size: 10px;
                             opacity: 0;
                             transition: all .5s;
-                        }
-                        &:hover{
-                            color: $chateau;
-                            i{
-                                color: $chateau;
-                                opacity: 1;
-                            }
+                            position: absolute;
+                            right: -10px;
+                            top: -5px;
                         }
                     }
                 }
@@ -808,6 +833,7 @@ $chateau : #46AD64;
         .et_pb_module{padding: 0 !important;}
     }
 }
+
 body.tax-library, body[class*='docs-']{
     //test용
     #et-main-area{
