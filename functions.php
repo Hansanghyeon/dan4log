@@ -182,33 +182,49 @@ add_shortcode('docs_list', 'docs_list');
 
 //docs post list
 function docs_post_list($atts, $content){
-    $atts = shortcode_atts(
-        array(
-            'name' => 0,
-            'url' => 0,
-            'docs_id' => 0
-        ),
-        $atts
-    );
+    // 이제 숏코드에서 정보를 불러오지않아도 알아서 찾게만들었다.
+    // $atts = shortcode_atts(
+    //     array(
+    //         'name' => 0,
+    //         'url' => 0,
+    //         'docs_id' => 0
+    //     ),
+    //     $atts
+    // );
 
     //  여기에만 사용할 폰트
     $output = '<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">';
-    //  title
-    $output .= '<a href="'.$atts[url].'"><div class="book_title"><i class="fas fa-book"></i> '.$atts[name].'</div></a>';
 
-    $output .= '<div class="book_list_wrap">';
-
+    // 카테고리 taxonomy 분류
+    $custom_tax_name = 'library';
     // current 분류용 변수
     $current_tax = get_queried_object()->term_id;
     $current_filter_post = get_post()->ID;
-    // 중간 장
-    $custom_tax_name = 'library';
-    // 책 카테고리의 ID값 넣기
-    $custom_tax_id = $atts[docs_id]; //99 -> python
+
+    // 현제 term에서 최상위 부모카테고리 찾는 것
+    $terms = wp_get_post_terms( $current_filter_post, array($custom_tax_name));
+    if( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+        foreach($terms as $term){
+            $custom_tax_id = $term->parent;
+        }
+    }
+    $current_post_parent_term_info = get_term($custom_tax_id);
+
+    //  title
+    $output .= '<a href="/library/'.$current_post_parent_term_info->slug.'/"><div class="book_title"><i class="fas fa-book"></i> '.$current_post_parent_term_info->name.'</div></a>';
+    // 리스트 그룹 박스
+    $output .= '<div class="book_list_wrap">';
+
     $termchildren = get_term_children( $custom_tax_id, $custom_tax_name );
     foreach ( $termchildren as $child ) {
         $term = get_term_by( 'id', $child, $custom_tax_name );
-        $output .= '<a href="' . get_term_link( $child, $custom_tax_name ) . '">' . $term->name . '</a>';
+        $output .= '<a class="term_id_'.$term->term_id;
+        if(! empty(get_queried_object()->taxonomy)){
+            if(get_queried_object()->term_id == $term->term_id){
+                $output .= ' current';
+            }
+        };
+        $output .='" href="' . get_term_link( $child, $custom_tax_name ) . '">' . $term->name . '</a>';
 
         // 해당 장의 post
         $args = array(
@@ -227,9 +243,7 @@ function docs_post_list($atts, $content){
         foreach($terms as $term){
             $order = get_field('order',$term->ID);
             $output .= '<li id="docs_'.$term->ID.'" class="';
-            // TODO
-            // 부모 카테고리 자동으로 찾는 방법
-            if($current_tax !== 99 && $current_tax !== 101){
+            if(empty(get_queried_object()->taxonomy)){
                 if($current_filter_post == $term->ID){
                     $output .= 'current';
                 }
