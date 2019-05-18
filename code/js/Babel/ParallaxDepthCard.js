@@ -34,8 +34,8 @@ Vue.component('card', {
 			};
 		},
 		cardBgTransform: function cardBgTransform() {
-			var tX = this.mousePX * -40;
-			var tY = this.mousePY * -40;
+			var tX = this.mousePX * -30;
+			var tY = this.mousePY * -30;
 			return {
 				transform: 'translateX(' + tX + 'px) translateY(' + tY + 'px)'
 			};
@@ -49,8 +49,9 @@ Vue.component('card', {
 	methods: {
 		handleMouseMove: function handleMouseMove(e) {
 			this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
-			this.mouseX = this.mouseX - 225;
+			this.mouseX = this.mouseX - 425;
 			this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
+			this.mouseY = this.mouseY - 375;
 		},
 		handleMouseEnter: function handleMouseEnter() {
 			clearTimeout(this.mouseLeaveDelay);
