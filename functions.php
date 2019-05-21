@@ -230,6 +230,7 @@ function docs_post_list($atts, $content){
         $args = array(
             'post_type' => 'docs',
             'order' => 'ASC',
+            'posts_per_page' => 9999,
             'tax_query' => array(
                 array(
                     'taxonomy' => $custom_tax_name,
