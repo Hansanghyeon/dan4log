@@ -43,7 +43,7 @@ function child_theme_head_script() {
 	$theme_url = get_stylesheet_directory_uri();
 ?>
 	<!-- Open Graph -->
-	<meta property="og:image" content="<?php echo $theme_url ?>/seo/seoimg.jpg" />
+	<meta property="og:image" content="<?php echo $theme_url ?>/public/img/seoimg.jpg" />
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112785015-4"></script>
 	<script>
@@ -273,7 +273,7 @@ include('template/login.php');
 // Update CSS within in Admin
 function admin_style() {
     // disable WP_list_table
-    wp_enqueue_style('WP_list_table', get_stylesheet_directory_uri().'/code/css/admin_dashborad.css');
+    wp_enqueue_style('WP_list_table', get_stylesheet_directory_uri().'/public/css/admin_dashborad.css');
 }
 add_action('admin_enqueue_scripts', 'admin_style');
 
