@@ -6,4 +6,4 @@ Version:        0.1.0
 
 @import url("../Divi/style.css");
 
-@import 'style.min.css';
+@import 'public/css/style.min.css';

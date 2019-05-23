@@ -59,14 +59,14 @@ add_action( 'wp_head', 'child_theme_head_script' );
 
 //add footer javascript
 function add_this_script_footer(){ ?>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/plugin.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/ScrollReaval.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/color_ver_btn.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/slick-default.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/infinitiScroll.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/arrow_animation.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/Babel/ParallaxDepthCard.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/fullpage.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/plugin.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/ScrollReaval.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/color_ver_btn.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/slick-default.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/infinitiScroll.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/arrow_animation.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/Babel/ParallaxDepthCard.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/fullpage.js"></script>
 <?php } 
 add_action('wp_footer', 'add_this_script_footer');
 

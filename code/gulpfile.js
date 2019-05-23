@@ -15,7 +15,7 @@ function sass_integrated(){
         .pipe(sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError))
-        .pipe(gulp.dest('../')); // 출력 경로
+        .pipe(gulp.dest('../public/css/')); // 출력 경로
 }
 // 분리형 scss
 function sass_container(){
@@ -30,24 +30,24 @@ function babel(){
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(sourcemaps.write('./Babel/map/',{sourcRoot: '../src'}))
-        .pipe(gulp.dest('./js/Babel/'));
+        .pipe(gulp.dest('../public/js/Babel/'));
 }
 
 // TypeScript
 function typescript(){
     return gulp.src('./TypeScript/*.ts')
         .pipe(ts())
-        .pipe(gulp.dest('./js/TypeScript/'));
+        .pipe(gulp.dest('../public/js/TypeScript/'));
 }
 
 // Crossbrowser
 function cross_browser(){
-    return gulp.src('../style.min.css')
+    return gulp.src('../public/css/style.min.css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest('../'));
+        .pipe(gulp.dest('../public/css/'));
 }
 
 
