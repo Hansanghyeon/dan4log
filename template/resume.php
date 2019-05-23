@@ -266,7 +266,7 @@ get_header();
         </div>
         <div class="resumeSection4">
             <p class="slogan">
-                사계절이라는 거친 세상에서도<br>꾸준함으로 무럭무럭 성장하는 식물처럼<br>나도 그런 사람이 되자.
+                사계절이라는 거친 세상에서도<br>꾸준하게 무럭무럭 성장하는 식물처럼<br>나도 그런 사람이 되자.
             </p>
         </div>
         <span class="editCommit">update : 2019.05.01</span><br>
