@@ -21,7 +21,7 @@ function sass_integrated(){
 function sass_container(){
     return gulp.src('./scss/container/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest('./css/'));
+        .pipe(gulp.dest('../public/css/'));
 }
 
 // Babel
