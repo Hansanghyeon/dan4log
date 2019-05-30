@@ -1,20 +1,21 @@
 // gulpfile.js
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var pug = require('gulp-pug');
-var sourcemaps = require('gulp-sourcemaps');
-var babel = require('gulp-babel');
-var ts = require('gulp-typescript');
-const autoprefixer = require('gulp-autoprefixer');
+const   gulp = require('gulp');
+// gulp plugin
+const   sass = require('gulp-sass'),
+        pug = require('gulp-pug'),
+        sourcemaps = require('gulp-sourcemaps'),
+        babel = require('gulp-babel'),
+        ts = require('gulp-typescript'),
+        autoprefixer = require('gulp-autoprefixer'),
+        rename = require('gulp-rename');
+
 
 // gulp 4.0 변환
 
 // 통합 scss
 function sass_integrated(){
     return gulp.src('./scss/intergrated/style.min.scss') // 입력 경로
-        .pipe(sass({
-            outputStyle: 'compressed'
-        }).on('error', sass.logError))
+        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(gulp.dest('../public/css/')); // 출력 경로
 }
 // 분리형 scss
