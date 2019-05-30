@@ -14,41 +14,53 @@ const   sass = require('gulp-sass'),
 
 // 통합 scss
 function sass_integrated(){
-    return gulp.src('./scss/intergrated/style.min.scss') // 입력 경로
-        .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-        .pipe(gulp.dest('../public/css/')); // 출력 경로
+    return gulp
+        .src('./scss/intergrated/style.min.scss')               // 입력 경로
+        .pipe(sourcemaps.init())                                // 소스맵
+        .pipe(sass({ outputStyle: 'compressed' })               // minify
+        .on('error', sass.logError))                            // log
+        .pipe(sourcemaps.write('/map',{sourcRoot: '.'}))        // 소스맵 경로 주석첨부
+        .pipe(gulp.dest('../public/css/'));                     // 출력경로
 }
 // 분리형 scss
 function sass_container(){
-    return gulp.src('./scss/container/*.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest('../public/css/'));
+    return gulp
+        .src('./scss/container/*.scss')                         // 입력경로
+        .pipe(sourcemaps.init())                                // 소스맵
+        .pipe(sass({outputStyle: 'compressed'})                 // minify
+        .on('error', sass.logError))                            // log
+        .pipe(sourcemaps.write('/map',{sourcRoot: '.'}))        // 소스맵경로 주석첨부
+        .pipe(gulp.dest('../public/css/'));                     // 출력경로
 }
 
 // Babel
 function babel(){
-    return gulp.src('./Babel/*.js')
-        .pipe(sourcemaps.init())
-        .pipe(babel())
-        .pipe(sourcemaps.write('./Babel/map/',{sourcRoot: '../src'}))
-        .pipe(gulp.dest('../public/js/Babel/'));
+    return gulp
+        .src('./Babel/*.js')                                    // 입력경로
+        .pipe(sourcemaps.init())                                // 소스맵
+        .pipe(babel())                                          // complie
+        .pipe(sourcemaps.write('/map/',{sourcRoot: '.'}))       // 소스맵경로 주석첨부
+        .pipe(gulp.dest('../public/js/'));                      // 출력경로
 }
 
 // TypeScript
 function typescript(){
-    return gulp.src('./TypeScript/*.ts')
-        .pipe(ts())
-        .pipe(gulp.dest('../public/js/TypeScript/'));
+    return gulp
+        .src('./TypeScript/*.ts')                               // 입력경로
+        .pipe(ts())                                             // complie  
+        .pipe(gulp.dest('../public/js/TypeScript/'));           // 출력경로
 }
 
 // Crossbrowser
 function cross_browser(){
-    return gulp.src('../public/css/style.min.css')
-        .pipe(autoprefixer({
+    return gulp
+        .src('../public/css/style.min.css')                     // 입력경로
+        .pipe(autoprefixer({                                    // complie & option
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest('../public/css/'));
+        .pipe(rename('style.min.prefix.css'))                   // 출력이름 변경
+        .pipe(gulp.dest('../public/css/'));                     // 출력경로
 }
 
 
