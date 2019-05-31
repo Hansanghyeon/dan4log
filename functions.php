@@ -328,3 +328,10 @@ function class_to_body_admin($classes) {
     return $classes;
     return 'user-id-'.$user_ID;
 }
+
+include('template/depth_card.php');
+function depth_card(){
+    $output=depth_card_template();
+    return $output;
+}
+add_shortcode('depth_card','depth_card');
