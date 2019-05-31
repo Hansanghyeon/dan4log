@@ -6,8 +6,10 @@ package-lock.json
 code/secret/
 code/node_modules/
 bak/
+public/*/map/
 
 # 컴파일완료 파일 제외
 style.css
 style.min.css
 style.crossfix.min.css
+style.min.prefix.css
