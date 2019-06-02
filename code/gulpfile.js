@@ -70,7 +70,7 @@ function babel(){
         .pipe(sourcemaps.init())                                // 소스맵
         .pipe(bb())                                          // complie
         .pipe(sourcemaps.write('/map/',{sourcRoot: '.'}))       // 소스맵경로 주석첨부
-        .pipe(gulp.dest('../public/js/'));                      // 출력경로
+        .pipe(gulp.dest('../public/js/Babel/'));                      // 출력경로
 }
 
 // TypeScript
