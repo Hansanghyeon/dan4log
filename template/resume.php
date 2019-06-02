@@ -203,15 +203,14 @@ get_header();
                                     </p>
                                 </div>
                                 <div class="projectName">
-                                    <div class="repair_ing">
-                                        <div>2019.05</div>
-                                        <div>
-                                            <b><a target="_blank" href="" rel="noopener noreferrer"><i class="fas fa-link"></i> Koscom</a></b>
-                                        </div>
-                                        <p>
-                                            제작중
-                                        </p>
+                                    <div>2019.05</div>
+                                    <div>
+                                        <b><a target="_blank" href="https://newsroom.koscom.co.kr/" rel="noopener noreferrer"><i class="fas fa-link"></i> 코스콤 뉴스룸</a></b>
                                     </div>
+                                    <p>
+                                        Elegantthemes Extra테마를 기반으로 제작<br>
+                                        특별한 기능과 새로운 것은 이 프로젝트에서 접하지 못하였지만 3일이라는 시간동안 제작완료해서 컨펌완료하고 1주일동안 피드백을 받으면서 수정한 일정이 빡빡한 프로젝트였다.
+                                    </p>
                                 </div>
                                 <div class="projectName">
                                     <div class="repair_ing">

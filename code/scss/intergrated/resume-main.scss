@@ -201,3 +201,8 @@ body.light .resume_wrap{
         top: 0;
     }
 }
+
+// header 고정
+body.page-template-resume #page-container #main-header.click{
+    left: 0;
+}
