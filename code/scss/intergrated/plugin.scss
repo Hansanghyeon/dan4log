@@ -170,8 +170,8 @@ body.dark{
         }
     
         pre{
-            padding-top: 32px;
-            padding-bottom: 24px;
+            padding-top: 34px;
+            padding-bottom: 14px;
             border-radius: 5px;
             font-size: 16px;
             font-family: 'D2 coding';
@@ -194,7 +194,7 @@ body.dark{
                 line-height: 12px;
             }
             // 
-            // TODO
+            // TODO:
             // copy & paste button 제작하기
             // 
             // &::after{
@@ -214,6 +214,52 @@ body.dark{
             //     line-height: 12px;
             //     cursor: pointer;
             // }
+        }
+        // TODO: 언어표시만들기
+        // Javascript
+        &.highlight-source-js pre{
+            &::before{
+                content: 'JS';
+                left: auto;
+                top:8px;
+                right: 8px;
+                font-weight: bold;
+                color: #000;
+                background: #ffca54;
+                padding: 2px 3px 1px;
+                border-radius: 3px;
+            
+            }
+        }
+        // PHP
+        &.highlight-text-html-php pre{
+            &::before{
+                content: 'PHP';
+                left: auto;
+                top:8px;
+                right: 8px;
+                font-weight: bold;
+                color: #000;
+                padding: 2px 3px 1px;
+                background: #777bb4;
+                border-radius: 3px;
+            
+            }
+        }
+        // Shell
+        &.highlight-source-shell pre{
+            &::before{
+                content: 'Shell';
+                left: auto;
+                top:8px;
+                right: 8px;
+                font-weight: bold;
+                color: #000;
+                padding: 2px 3px 1px;
+                background: #2AC940;
+                border-radius: 3px;
+            
+            }
         }
     }
     ol {
