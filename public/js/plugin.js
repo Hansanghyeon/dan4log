@@ -1,4 +1,6 @@
 (function($){
+    'use strict'
+
     //theme
     if($('body').hasClass('logged-in') !== true){
         $('#top-menu .login_show').remove();
@@ -45,6 +47,9 @@
         // }
     });
 
+    // github md 가져올때 slick 슬라이드 적용시킬려고
+    // 슬라이드 defore after에다가 빈 blockquote를 만들었다.
+    // 그 DOM을 제거해주는 스크립트
     $('blockquote').each(function(){
         var t = $(this);
         var empty = t.text();
@@ -52,4 +57,8 @@
             t.remove();
         }
     });
+
+    // 코드는 번역제외
+    $('pre').addClass('notranslate');
+
 })(jQuery);
