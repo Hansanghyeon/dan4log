@@ -619,13 +619,14 @@ body.light .post_content_box > .et_pb_column_inner > .et_pb_code:nth-last-child(
     02.05 - [ 포스트 | Taxonomy:Tag ] 태그전체
 ---------------------------------------------------*/
 // 하우투?
-body.tag-how-to-guide{
+body .writing{
+    display: none;
     h2{border-bottom: 0;}
     p{font-size: 12px;}
     li{font-size: 14px;}
 }
 body.tag-reference .reference,
-body.tag-how-to-guide .how-to{display: block !important;}
+body.tag-how-to-guide .how-to-guide{display: block !important;}
 
 /*---------------------------------------------------
     02.06 - [ Docs | Taxonomy&Page ] 기본
