@@ -11,7 +11,9 @@
     04.00 글쓰기 아이템
     05.00 codepen copy btn
     06.00 나무위키 table css
-    07.00 facebook comment
+    07.00 comment
+        07.01 facebook comment
+        07.02 Disqus comment
 
 *********************************************************/
 
@@ -572,5 +574,22 @@ button.slick-prev.slick-arrow:after{
         background: none;
         padding: 0;
         border-radius: 0;
+    }
+}
+
+/*---------------------------------------------------
+        07.02 Disqus comment
+---------------------------------------------------*/
+#disqus_thread{
+    background: $L_bg;
+    padding: 3%;
+}
+// side bar
+#recentcomments{
+    .dsq-widget-item{
+        margin-top: 0;
+    }
+    .dsq-widget-meta > a:nth-of-type(1){
+        display: block;
     }
 }
