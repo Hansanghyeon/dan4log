@@ -335,3 +335,37 @@ function depth_card(){
     return $output;
 }
 add_shortcode('depth_card','depth_card');
+
+// 해당글에 관련된글 가져오기
+// 같은 태그가있는 글을 가져와서 뿌려준다.
+function relatedposts(){
+    $output = '<div class="relatedposts">';
+
+    $orig_post = $post;
+    global $post;
+    $tags = wp_get_post_tags($post->ID);
+
+
+    $output .= '<div class="relatedthumb"><ul>';
+    if ($tags) {
+        $tag_ids = array();
+        foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+        $args=array(
+            'tag__in' => $tag_ids,
+            'post__not_in' => array($post->ID),
+            'posts_per_page'=>2, // Number of related posts to display.
+            'caller_get_posts'=>1
+        );
+
+        $my_query = new wp_query( $args );
+        while( $my_query->have_posts() ) {
+            $my_query->the_post();
+            $output .= '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+        }
+    }
+    $output .= '</ul></div>';
+    $output .= '</div>';
+
+    return $output;
+}
+add_shortcode('relatedposts', 'relatedposts');

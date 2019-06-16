@@ -912,7 +912,10 @@ body.light .custom_section p{
     background: transparent !important;
     padding: 0 !important;
 }
-.bio_card_wrap{width: 100%;}
+body .bio_card_wrap{
+    width: 100%;
+    padding: 0;
+}
 
 body.light .author_card{
     .avatar.et_pb_module .avatar{
@@ -980,5 +983,18 @@ body.dark{
             border-radius: 999px;
             margin: 0;
         }
+    }
+}
+
+// 관련글
+body .related_card{
+    padding-left: 15px;
+    padding-right: 15px;
+    background: linear-gradient(to bottom, #479fde, transparent);
+
+    a{
+        color: #fff;
+        font-weight: bold;
+        word-break: keep-all;
     }
 }
