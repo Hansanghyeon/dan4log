@@ -620,22 +620,9 @@ body.light .post_content_box > .et_pb_column_inner > .et_pb_code:nth-last-child(
 ---------------------------------------------------*/
 // 하우투?
 body.tag-how-to-guide{
-    .writing{
-        display: none;
-
-        ul{
-            list-style: disc !important;
-            padding-left: 20px !important;
-        }
-        &>p{
-            border-bottom: 1px dashed $border-color;
-            padding: 10px 0;
-            margin-bottom: 20px;
-            font-style: italic;
-            font-size: 12px;
-        }
-        .content p{font-size: 12px;}
-    }
+    h2{border-bottom: 0;}
+    p{font-size: 12px;}
+    li{font-size: 14px;}
 }
 body.tag-reference .reference,
 body.tag-how-to-guide .how-to{display: block !important;}
