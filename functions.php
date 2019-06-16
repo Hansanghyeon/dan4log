@@ -43,7 +43,7 @@ function child_theme_head_script() {
 	$theme_url = get_stylesheet_directory_uri();
 ?>
 	<!-- Open Graph -->
-	<meta property="og:image" content="<?php echo $theme_url ?>/public/img/seoimg.jpg" />
+	<meta property="og:image" content="https://static4log.s3.ap-northeast-2.amazonaws.com/images/seoimg.jpg" />
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112785015-4"></script>
 	<script>
@@ -65,7 +65,7 @@ function add_this_script_footer(){ ?>
     <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/slick-default.js"></script>
     <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/infinitiScroll.js"></script>
     <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/arrow_animation.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/Babel/ParallaxDepthCard.js"></script>
+    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/ParallaxDepthCard.js"></script>
     <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/fullpage.js"></script>
 <?php } 
 add_action('wp_footer', 'add_this_script_footer');
