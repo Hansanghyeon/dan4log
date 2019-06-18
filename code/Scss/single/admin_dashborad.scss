@@ -14,3 +14,102 @@
 body.wp-admin #posts-filter .actions.ac-search > select{
 	display: none;
 }
+
+
+//---------------------------------------------------
+//       01.01 - TYPOGRAPHY  
+//---------------------------------------------------
+.copy_box{
+	display:flex;
+	align-items: center;
+	overflow:hidden;
+}
+.copy_box:nth-of-type(1){
+	margin-bottom: 5px;
+}
+.copy_box label {
+	display: block;
+	font-size: 0.85em;
+	font-weight: bold;
+	padding: 0;
+	user-select: none;
+	width:45px;
+}
+
+.copy_box input, .copy_box button {
+	font-size: 1em;
+	padding: 3px 6px;
+	margin: 0;
+	border: 1px solid #c5c5c5;
+	outline: 0;
+	box-shadow: none;
+}
+.copy_box input {
+	width: 500px;
+	border-right: 0 none;
+	border-radius: 3px 0 0 3px;
+}
+
+.copy_box button {
+	position: relative;
+	background-color: #aaa;
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+	color: #fff;
+}
+
+.copy_box .copied::after {
+	position: absolute;
+	top: 12%;
+	right: 110%;
+	display: block;
+	content: "copied";
+	font-size: 0.75em;
+	padding: 2px 3px;
+	color: #fff;
+	background-color: #46b450;
+	border-radius: 3px;
+	opacity: 0;
+	will-animate: opacity, transform;
+	animation: showcopied 1.5s ease;
+}
+
+@keyframes showcopied {
+0% {
+	opacity: 0;
+	transform: translateX(100%);
+}
+70% {
+	opacity: 1;
+	transform: translateX(0);
+}
+100% {
+	opacity: 0;
+}
+}
+
+.github_notice{
+	padding-left: 70px;
+	border-left: none;
+}
+.github_notice a{
+	all:unset;
+	cursor:pointer;
+	transition: all .3s;
+}
+.github_notice > a:hover{background-color:#46b450;}
+.github_notice .copy_box a:hover{color:#46b450;}
+.github_notice > a{
+	font-size:35px;
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	transform: translate(0, -50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	color: #fff;
+	background-color: #212121;
+	width: 50px;
+}
