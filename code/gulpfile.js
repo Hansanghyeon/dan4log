@@ -5,7 +5,7 @@ const gulp = require('gulp');
 const PROJECT = 'dan4log';
 
 // cdn url
-var CDN_URL = 'https://cdn.4log.dev';
+const CDN_URL = 'https://cdn.4log.dev';
 
 // gulp plugin
 const   sass 			= require('gulp-sass'),
@@ -44,10 +44,10 @@ const   publisher = awspublish.create(
     {
         region: 'ap-northeast-2', 
         params: {
-            Bucket: key.BUCKET_NAME.NAME
+            Bucket: key.BUCKET.NAME
         },
-        "accessKeyId": key.BUCKET_NAME.ACCESSKEYID,
-        "secretAccessKey": key.BUCKET_NAME.SECRETACCESSKEY
+        "accessKeyId": key.BUCKET.ACCESSKEYID,
+        "secretAccessKey": key.BUCKET.SECRETACCESSKEY
     }
 )
 var headers = {
@@ -57,7 +57,7 @@ var headers = {
 // gulp 4.0 변환
 
 // 통합 scss
-function sass_integrated(){
+function sass_mix(){
     return gulp
         .src('./Scss/mix/style.min.scss')
         // 해당파일 소스맵생성
@@ -85,7 +85,7 @@ function sass_integrated(){
             )
         )
         // source map 경로 css 마지막 추가
-        .pipe(sourcemaps.write('/map',{sourcRoot: '.'}))
+        .pipe(sourcemaps.write())
         // 소스맵할당 개발용 min파일
         .pipe(rename('style.min.dev.css'))
         // output
@@ -99,7 +99,7 @@ function sass_integrated(){
         .pipe(awspublish.reporter());
 }
 // 분리형 scss
-function sass_container(){
+function sass_single(){
     return gulp
         .src('./Scss/single/*.scss')
         // 해당파일 소스맵생성
@@ -127,7 +127,7 @@ function sass_container(){
             )
         )
         // source map 경로 css 마지막 추가
-        .pipe(sourcemaps.write('/map',{sourcRoot: '.'}))
+        .pipe(sourcemaps.write())
         // output
         .pipe(gulp.dest('../public/css/'))
         // s3upload
@@ -222,7 +222,6 @@ function cross_browser(){
             cascade: false
         }))
         .pipe(rename('style.min.css'))
-        .pipe(gulp.dest('../public/css/'))
         // s3upload
         .pipe(rename(function(path){
             path.dirname = PROJECT + '/css/' + path.dirname;
@@ -234,8 +233,8 @@ function cross_browser(){
 
 // watch
 gulp.task('hello', function(){
-    gulp.watch('./Scss/mix/*.scss', gulp.series(gulp.parallel(sass_integrated),cross_browser));
-    gulp.watch('./Scss/single/*.scss', gulp.series(gulp.parallel(sass_container)));
+    gulp.watch('./Scss/mix/*.scss', gulp.series(gulp.parallel(sass_mix),cross_browser));
+    gulp.watch('./Scss/single/*.scss', gulp.series(gulp.parallel(sass_single),cross_browser));
     gulp.watch('./Babel/*.js', gulp.series(babel));
     gulp.watch('./TypeScript/*.ts', gulp.series(typescript));
 });
