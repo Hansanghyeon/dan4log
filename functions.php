@@ -376,3 +376,21 @@ function relatedposts(){
     return $output;
 }
 add_shortcode('relatedposts', 'relatedposts');
+
+
+// TODO: github Markdown url 자동붙여넣기
+// ACF폼에 깃헙.md 불러오는 폼이 제작되어있는데 이거를 활용해서
+// 포스트의 컨텐츠에서 깃헙.md 숏코드만 불러와도 전부다 불러올수있도록
+// 이것을 왜 만드냐?
+// 깃헙.md 주소를 복사붙여넣기할때 2번씩이나 움직여서 붙여넣는 프로세스가 불편하다.
+function github_md_Refactoring($atts){
+    $default_atts = array(
+        'token' => ''
+    );
+    extract( shortcode_atts( $default_atts, $atts ) );
+    $githublink = get_field('github',$term->ID);
+    //$output = '[md_github token='.$atts->token.' url='.$githublink.']';
+    $output = '<div class="git_test">[md_github token='.$atts['token'].' url='.$githublink.']</div>';
+    return $output;
+}
+add_shortcode('gitmd_re','github_md_Refactoring');
