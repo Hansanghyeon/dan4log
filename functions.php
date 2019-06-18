@@ -274,6 +274,13 @@ include('template/login.php');
 function admin_style() {
     // disable WP_list_table
     wp_enqueue_style('WP_list_table', get_stylesheet_directory_uri().'/public/css/admin_dashborad.css');
+    // 워드프레스에 파일 위치 말해주기
+    wp_register_script( 'my_script', get_stylesheet_directory_uri() . '/public/js/copy_btn.js', array('jquery'), '1', true);  // true = 푸터에서 적용, false = 헤더에서 적용
+    wp_register_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
+
+    // 실제 사용 여부 결정 ( 컨디셔널 테그 이용하면 특정 페이지에만 적용할 수도 있음)
+    wp_enqueue_script( 'my_script' );
+    wp_enqueue_style( 'FontAwesome' );
 }
 add_action('admin_enqueue_scripts', 'admin_style');
 
