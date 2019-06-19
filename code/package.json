@@ -1,45 +1,32 @@
 {
-  "name": "dan4log",
+  "name": "wp_develop_space",
   "version": "1.0.0",
-  "description": "dan4log Divi-child theme develop setting",
+  "description": "sanghyeon 개발환경 기초 셋팅",
   "main": "gulpfile.js",
-  "dependencies": {
-    "fullpage.js": "^3.0.5",
-    "gulp": "^4.0.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.0.2",
-    "gulp-typescript": "^5.0.1",
-    "typescript": "^3.4.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-awspublish": "^4.0.0",
-    "gulp-babel": "^7.0.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-slack": "^0.1.2",
-    "gulp-sourcemaps": "^2.6.5"
-  },
   "scripts": {
-    "test": "test!"
+    "test": "TEST"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dan9509/dan4log-DIvi.git"
+    "url": "git+https://github.com/Dan9509/wp_develop_space.git"
   },
-  "keywords": [
-    "dan4log",
-    "wordpress",
-    "child-theme"
-  ],
   "author": "Dan9509",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Dan9509/dan4log-DIvi/issues"
+    "url": "https://github.com/Dan9509/wp_develop_space/issues"
   },
-  "homepage": "https://github.com/Dan9509/dan4log-DIvi#readme"
+  "homepage": "https://github.com/Dan9509/wp_develop_space#readme",
+  "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-slack": "^0.1.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.1"
+  }
 }
