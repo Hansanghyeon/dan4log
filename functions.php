@@ -20,8 +20,14 @@ include('code/secret/function_secret.php');
 ---------------------------------------------------*/
 
 function themeslug_enqueue() {
-    // CDN
+    // 변수
     $CDN = 'https://cdnjs.cloudflare.com/ajax/libs';
+    $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/dan4log';
+    $current_user = new WP_User(get_current_user_id());
+    $user_role = array_shift($current_user->roles);
+
+    // CDN
+    // ------------------
     // style
     wp_enqueue_style( 'Font: FontAwesome        ', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', array(), null, false);
     wp_enqueue_style( 'Font: D2coding           ', '//cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css', array(), null, false);
@@ -36,7 +42,7 @@ function themeslug_enqueue() {
     wp_enqueue_script( 'JS : Vue                ', $CDN.'/vue/2.0.1/vue.min.js', array(), null, false);
 
     // Static
-    $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/dan4log';
+    // ------------------
     // style
     wp_enqueue_style( 'core Fullpage.js', get_stylesheet_directory_uri().'/code/node_modules/fullpage.js/dist/fullpage.min.css', array(), null, false);
     // script
@@ -56,6 +62,17 @@ function themeslug_enqueue() {
         wp_enqueue_script( 'JS : Fullpage       ', $CDN.'/fullPage.js/3.0.5/fullpage.min.js', array(), null, false);
         wp_enqueue_script( 'DEV: Fullpage       ', $Static.'/js/fullpage.js', array(), null, true);
     }
+
+    // 특정유저에게만 불러오기
+    // -----------------
+    // 관리자
+    // role active css
+    if($user_role == 'administrator'){
+        wp_enqueue_style( 'Developer            ', $Static.'/css/style.min.dev.css', false );
+    }else{
+        wp_enqueue_style( 'End User             ', $Static.'/css/style.min.css', false );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue' );
 
@@ -280,8 +297,11 @@ include('template/login.php');
 
 // Update CSS within in Admin
 function admin_style() {
+    // 변수
+    $CDN = '';
+    $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/dan4log';
     // disable WP_list_table
-    wp_enqueue_style('WP_list_table', get_stylesheet_directory_uri().'/public/css/admin_dashborad.css');
+    wp_enqueue_style('WP_list_table', $Static.'/css/admin_dashborad.css');
     // 워드프레스에 파일 위치 말해주기
     wp_register_script( 'my_script', get_stylesheet_directory_uri() . '/public/js/copy_btn.js', array('jquery'), '1', true);  // true = 푸터에서 적용, false = 헤더에서 적용
     wp_register_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
