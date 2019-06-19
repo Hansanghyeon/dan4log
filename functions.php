@@ -1,6 +1,6 @@
 <?php
 
-include('code/secret/function_secret.php');
+include('function_secret.php');
 
 /********************************************************
 	
