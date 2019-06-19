@@ -18,32 +18,53 @@ include('code/secret/function_secret.php');
         01.00 - Style & Script & CDN loaded
 
 ---------------------------------------------------*/
-//custom css or js for header
-function themeslug_enqueue_style() {
-	wp_enqueue_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
-	wp_enqueue_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false ); 
-    wp_enqueue_style( 'D2coding', '//cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css', false );
-    wp_enqueue_style( 'Google Fonts', '//fonts.googleapis.com/css?family=Yeon+Sung', false );
-    wp_enqueue_style( 'core Fullpage.js', get_stylesheet_directory_uri().'/code/node_modules/fullpage.js/dist/fullpage.min.css', false );
-}
-add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
 
-function themeslug_enqueue_script() {
-	wp_enqueue_script( 'ScrollReveal', 'https://unpkg.com/scrollreveal', false);
-	wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', false );
-	wp_enqueue_script( 'jQuery cookie', '//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', false );
-    wp_enqueue_script('infiniti.js', '//unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js', false );
-    wp_enqueue_script('Vue', '//cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js', false );
-    wp_enqueue_script('core Fullpage.js', get_stylesheet_directory_uri().'/code/node_modules/fullpage.js/dist/fullpage.min.js', false );
+function themeslug_enqueue() {
+    // CDN
+    $CDN = 'https://cdnjs.cloudflare.com/ajax/libs';
+    // style
+    wp_enqueue_style( 'Font: FontAwesome        ', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', array(), null, false);
+    wp_enqueue_style( 'Font: D2coding           ', '//cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css', array(), null, false);
+    wp_enqueue_style( 'Font: Google Fonts       ', '//fonts.googleapis.com/css?family=Yeon+Sung', array(), null, false);
+    wp_enqueue_style( 'CSS : Slick              ', $CDN.'/slick-carousel/1.9.0/slick.min.css', array(), null, false); 
+    wp_enqueue_style( 'CSS : Fullpage           ', $CDN.'/fullPage.js/3.0.5/fullpage.min.css', array(), null, false);
+    // script
+    wp_enqueue_script( 'JS : ScrollReveal       ', $CDN.'/scrollReveal.js/4.0.5/scrollreveal.min.js', array(), null, false);
+    wp_enqueue_script( 'JS : Slick              ', $CDN.'/slick-carousel/1.9.0/slick.min.js', array(), null, false);
+    wp_enqueue_script( 'JS : jQuery cookie      ', $CDN.'/jquery-cookie/1.4.1/jquery.cookie.min.js', array(), null, false);
+    wp_enqueue_script( 'JS : Infinitie          ', $CDN.'/jquery-infinitescroll/3.0.6/infinite-scroll.pkgd.min.js', array(), null, false);
+    wp_enqueue_script( 'JS : Vue                ', $CDN.'/vue/2.0.1/vue.min.js', array(), null, false);
+
+    // Static
+    $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/dan4log';
+    // style
+    wp_enqueue_style( 'core Fullpage.js', get_stylesheet_directory_uri().'/code/node_modules/fullpage.js/dist/fullpage.min.css', array(), null, false);
+    // script
+    wp_enqueue_script( 'DEV: Plugin             ', $Static.'/js/plugin.js', array(), null, true);
+    wp_enqueue_script( 'DEV: ScrollReaval       ', $Static.'/js/ScrollReaval.js', array(), null, true);
+    wp_enqueue_script( 'DEV: Color ver btn      ', $Static.'/js/color_ver_btn.js', array(), null, true);
+    wp_enqueue_script( 'DEV: SlickSlider        ', $Static.'/js/slick-default.js', array(), null, true);
+    wp_enqueue_script( 'DEV: InfinitiScroll     ', $Static.'/js/infinitiScroll.js', array(), null, true);
+    wp_enqueue_script( 'DEV: Arrow animation    ', $Static.'/js/arrow_animation.js', array(), null, true);
+    wp_enqueue_script( 'DEV: ParallaxDepthCard  ', $Static.'/js/ParallaxDepthCard.js', array(), null, true);
+
+    // 특정페이지에서만 불러오기
+    // ------------------
+    // 메인페이지
+    // is_page('page slug')
+    if ( is_page( '' ) ){
+        wp_enqueue_script( 'JS : Fullpage       ', $CDN.'/fullPage.js/3.0.5/fullpage.min.js', array(), null, false);
+        wp_enqueue_script( 'DEV: Fullpage       ', $Static.'/js/fullpage.js', array(), null, true);
+    }
 }
-add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
+add_action( 'wp_enqueue_scripts', 'themeslug_enqueue' );
 
 //add header
 function child_theme_head_script() {
 	$theme_url = get_stylesheet_directory_uri();
 ?>
 	<!-- Open Graph -->
-	<meta property="og:image" content="https://static4log.s3.ap-northeast-2.amazonaws.com/images/seoimg.jpg" />
+	<meta property="og:image" content="https://static4log.s3.ap-northeast-2.amazonaws.com/images/seoimg.jpg"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112785015-4"></script>
 	<script>
@@ -56,19 +77,6 @@ function child_theme_head_script() {
 <?php
 }
 add_action( 'wp_head', 'child_theme_head_script' );
-
-//add footer javascript
-function add_this_script_footer(){ ?>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/plugin.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/ScrollReaval.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/color_ver_btn.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/slick-default.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/infinitiScroll.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/arrow_animation.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/ParallaxDepthCard.js"></script>
-    <script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/public/js/fullpage.js"></script>
-<?php } 
-add_action('wp_footer', 'add_this_script_footer');
 
 
 /*---------------------------------------------------
