@@ -13,7 +13,8 @@ const   sass 			= require('gulp-sass'),
         sourcemaps 		= require('gulp-sourcemaps'),
         bb 				= require('gulp-babel'),
         ts 				= require('gulp-typescript'),
-        autoprefixer	= require('gulp-autoprefixer'),
+        autoprefixer	= require('autoprefixer'),
+        postcss         = require('gulp-postcss'),
         rename 			= require('gulp-rename'),
         awspublish      = require('gulp-awspublish'),
         key             = require('./secret/key.js');
@@ -217,10 +218,7 @@ function typescript(){
 function cross_browser(){
     return gulp
         .src('../public/css/style.min.dev.css')
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
+        .pipe(postcss([ autoprefixer() ]))
         .pipe(rename('style.min.css'))
         // s3upload
         .pipe(rename(function(path){
