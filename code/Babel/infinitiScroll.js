@@ -17,7 +17,7 @@
             }
         }
 
-        $container = $('#infiniti').infiniteScroll({
+        var $container = $('#infiniti').infiniteScroll({
             path: getPenPath,
             append: '.thumbX_default',
             history: 'false',
