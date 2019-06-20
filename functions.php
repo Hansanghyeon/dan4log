@@ -33,7 +33,6 @@ function themeslug_enqueue() {
     wp_enqueue_style( 'Font: D2coding           ', '//cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css', array(), null, false);
     wp_enqueue_style( 'Font: Google Fonts       ', '//fonts.googleapis.com/css?family=Yeon+Sung', array(), null, false);
     wp_enqueue_style( 'CSS : Slick              ', $CDN.'/slick-carousel/1.9.0/slick.min.css', array(), null, false); 
-    wp_enqueue_style( 'CSS : Fullpage           ', $CDN.'/fullPage.js/3.0.5/fullpage.min.css', array(), null, false);
     // script
     wp_enqueue_script( 'JS : ScrollReveal       ', $CDN.'/scrollReveal.js/4.0.5/scrollreveal.min.js', array(), null, false);
     wp_enqueue_script( 'JS : Slick              ', $CDN.'/slick-carousel/1.9.0/slick.min.js', array(), null, false);
@@ -59,8 +58,6 @@ function themeslug_enqueue() {
     // 메인페이지
     // is_page('page slug')
     if ( is_page( '' ) ){
-        wp_enqueue_script( 'JS : Fullpage       ', $CDN.'/fullPage.js/3.0.5/fullpage.min.js', array(), null, false);
-        wp_enqueue_script( 'DEV: Fullpage       ', $Static.'/js/fullpage.js', array(), null, true);
     }
 
     // 특정유저에게만 불러오기
