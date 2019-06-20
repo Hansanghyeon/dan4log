@@ -158,10 +158,10 @@ body .et_pb_cpt_text a{
 /*---------------------------------------------------
     01.02 - LAYOUT
 ---------------------------------------------------*/
-.fullpage .et_pb_row{
-    max-width: none;
-    width: 100%;
-    padding: 0 20px;
+// blog & default css
+html{overflow-x: hidden;}
+html, #page-container{
+    height: 100%;
 }
 .et_pb_section{
     @include media("(max-width:480px)"){
@@ -501,8 +501,6 @@ body .cc_box{
 /*---------------------------------------------------
     02.04 - [ 포스트 | Taxonomy ] 블로그
 ---------------------------------------------------*/
-// blog & default css
-html{overflow-x: hidden;}
 // star space
 .size{
     @include media("(min-width: 981px)"){
