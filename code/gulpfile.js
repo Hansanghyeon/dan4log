@@ -17,7 +17,7 @@ const   sass 			= require('gulp-sass'),
         postcss         = require('gulp-postcss'),
         rename 			= require('gulp-rename'),
         awspublish      = require('gulp-awspublish'),
-        key             = require('./secret/key.js');
+        key             = require('key.js');
 
 // gulp notice plugin Slack
 // webhook url list
