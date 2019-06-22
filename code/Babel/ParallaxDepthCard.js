@@ -53,8 +53,10 @@ Vue.component('card', {
 	},
 	methods: {
 		handleMouseMove(e) {
-			this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
-			this.mouseX = this.mouseX - 225;
+			if(window.matchMedia('(max-width: 980px)').matches){
+				this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
+			}else
+				this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2 - 225;
 			this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
 		},
 		handleMouseEnter() {
