@@ -3,9 +3,9 @@
 *.log
 package-lock.json
 function_secret.php
+key.js
 
 # Folder
-code/secret/
 code/node_modules/
 bak/
 public/
