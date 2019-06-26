@@ -202,6 +202,7 @@ html, #page-container{
 .et_pb_widget_area_left{
     border: none;
     border-left: 1px solid rgba(0,0,0,.1);
+    border-right: none !important;
     padding-right: 0;
     padding-left: 30px;
     @include media("(max-width: 480px)"){
