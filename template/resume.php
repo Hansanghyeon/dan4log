@@ -15,8 +15,8 @@ get_header();
                 </h5>
             </div>
             <div class="profile">
-                <img src="/wp-content/uploads/site_character/profile_3ver.jpg">
-                <img src="/wp-content/uploads/site_character/m_photo.jpg">
+                <img src="https://4log.dev/20190605110513/profile_3ver.jpg">
+                <img src="https://4log.dev/20190605110513/m_photo.jpg">
             </div>
         </div>
         <div class="resumeSection1">
