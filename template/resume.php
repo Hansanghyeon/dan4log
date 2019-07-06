@@ -266,18 +266,12 @@ get_header();
         </div>
         <div class="resumeSection4">
             <p class="slogan">
-                사계절이라는 거친 세상에서도<br>꾸준하게 무럭무럭 성장하는 식물처럼<br>나도 그런 사람이 되자.
+                내가 가진 것은 꾸준함 밖에 없다.
             </p>
         </div>
-        <span class="editCommit">update : 2019.05.01</span><br>
-        <span class="editCommit up">제작 : 2018.12.04</span>
-    </article>
-    <article class="green-ani">
-        <div id="canvas_container_div">
-            <canvas id="canvas" width="1000" height="1000"></canvas> <!--(large size for higher resolution)-->
-        </div>
+        <span class="editCommit">update : 2019.07.06(토)</span><br>
+        <span class="editCommit up">제작 : 2018.12.04(화)</span>
     </article>
 </section>
-<script defer type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/code/js/resume-green-ani.js"></script>
 <?php
 get_footer();
