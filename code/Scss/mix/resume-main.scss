@@ -1,18 +1,25 @@
 //resume
-body.dark .resume_wrap{
+body.dark .resume_wrap {
     background: $D_post;
-    @include media("(max-width: 1360px)"){
-        div[class*='resumeSection']{background:rgba(33,33,33,.4)}
-    }
-}
-body.light .resume_wrap{
-    background: $L_post;
-    @include media("(max-width: 1360px)"){
-        div[class*='resumeSection']{background:rgba(255,255,255,.4)}
+
+    @include media("(max-width: 1360px)") {
+        div[class*='resumeSection'] {
+            background: rgba(33, 33, 33, .4)
+        }
     }
 }
 
-.resume_wrap{
+body.light .resume_wrap {
+    background: $L_post;
+
+    @include media("(max-width: 1360px)") {
+        div[class*='resumeSection'] {
+            background: rgba(255, 255, 255, .4)
+        }
+    }
+}
+
+.resume_wrap {
     margin: 100px auto;
     padding-top: 20px;
     border-radius: 15px;
@@ -20,128 +27,172 @@ body.light .resume_wrap{
     width: 80%;
     max-width: 1240px;
     position: relative;
-    *[id^='readlink']{padding-left:0 !important;}
 
-    @include media("(max-width:480px)"){
+    *[id^='readlink'] {
+        padding-left: 0 !important;
+    }
+
+    @include media("(max-width:480px)") {
         width: 100%;
         margin: 0;
         border-radius: 0;
     }
+
     //content
     .content_wrap {
 
-        .resumeHeader{
+        .resumeHeader {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding:0 20px;
+            padding: 0 20px;
 
-            div h5{
-                color:#666 !important;
+            div h5 {
+                color: #666 !important;
                 line-height: 1.2em;
                 font-weight: normal;
             }
-            .profile{
+
+            .profile {
                 font-size: 0;
-                img{width:100px;}
-                img:nth-of-type(1){border-radius:10px 0 0 10px;}
-                img:nth-of-type(2){border-radius:0 10px 10px 0;}
+
+                img {
+                    width: 100px;
+                }
+
+                img:nth-of-type(1) {
+                    border-radius: 10px 0 0 10px;
+                }
+
+                img:nth-of-type(2) {
+                    border-radius: 0 10px 10px 0;
+                }
             }
         }
-        @include media("(max-width: 540px)"){
-            .resumeHeader{
+
+        @include media("(max-width: 540px)") {
+            .resumeHeader {
                 flex-direction: column;
                 align-items: flex-start;
             }
         }
-        div[class*='resumeSection']{padding:20px;}
-        @include media("(max-width: 1360px)"){
-            div[class*='resumeSection']{
-                position:relative;
-                z-index:2;
-                margin-bottom:20px;
+
+        div[class*='resumeSection'] {
+            padding: 20px;
+        }
+
+        @include media("(max-width: 1360px)") {
+            div[class*='resumeSection'] {
+                position: relative;
+                z-index: 2;
+                margin-bottom: 20px;
             }
         }
-        .description{
+
+        .description {
             display: flex;
             justify-content: space-between;
-            &.block{
+
+            &.block {
                 display: block;
             }
-            
-            .desciprtion_inner_wrap{
+
+            .desciprtion_inner_wrap {
+
                 // name
-                .company{
+                .company {
                     display: inline-block;
                     background: green;
                     color: #fff;
                     padding: 0 8px;
                     border-radius: 5px;
                 }
-                .date{
+
+                .date {
                     padding-left: 8px;
                     display: inline-block;
                 }
-                .department{
+
+                .department {
                     display: block;
                     padding-left: 8px;
                     margin-top: 4px;
                 }
             }
 
-            
+
         }
-        .innerProject{
-            .projectName{
-                padding-bottom:20px;
-                &:nth-of-type(1){
+
+        .innerProject {
+            .projectName {
+                padding-bottom: 20px;
+
+                &:nth-of-type(1) {
                     padding-top: 20px;
                 }
-                a>i{font-size: .9em;}
-                a:hover{color: green;}
-                .repair_ing{opacity: .5;}
+
+                a>i {
+                    font-size: .9em;
+                }
+
+                a:hover {
+                    color: green;
+                }
+
+                .repair_ing {
+                    opacity: .5;
+
+                    a {
+                        pointer-events: none;
+                    }
+                }
             }
         }
-        .slogan{
+
+        .slogan {
             font-size: 1.8rem;
             font-weight: bold;
             color: #fff !important;
             margin-bottom: 0 !important;
             font-family: 'Yeon Sung', cursive;
             text-shadow: 3px 3px 0 green, -1px -1px 0 green, 1px -1px 0 green, -1px 1px 0 green, 1px 1px 0 green;
-            position:relative;
-            z-index:3;
+            position: relative;
+            z-index: 3;
         }
-        .editCommit{
+
+        .editCommit {
             display: inline-block;
             margin-top: 30px;
             color: #999 !important;
             padding-left: 3px;
         }
-        .editCommit.up{
+
+        .editCommit.up {
             margin-top: 0;
             padding-left: 20px;
         }
     }
+
     //green ani
-    .green-ani{
+    .green-ani {
         position: absolute;
         bottom: 0px;
         right: 0px;
         margin: 0;
         margin-bottom: 0 !important;
 
-        div#canvas_container_div{
-            max-width:500px;
-            max-height:500px;
-            position:relative;
+        div#canvas_container_div {
+            max-width: 500px;
+            max-height: 500px;
+            position: relative;
 
-            #canvas{
-                width:100% !important;
-                height:100% !important;
+            #canvas {
+                width: 100% !important;
+                height: 100% !important;
             }
         }
     }
+
     @include media("(max-width: 540px)") {
         .green-ani {
             max-width: 100%;
@@ -162,28 +213,39 @@ body.light .resume_wrap{
 }
 
 // company custom color
-.peterosea{
+.peterosea {
     background: #f9c630 !important;
     color: #221814 !important;
-    img{
+
+    img {
         width: 28px;
         padding-top: 4px;
         margin-right: 8px;
     }
 }
-.indent{margin-left: 20px !important;}
-.indent.child{
-    font-size:12px;
-    i{transform: scale(.8)}
+
+.indent {
+    margin-left: 20px !important;
 }
-.dis{
+
+.indent.child {
+    font-size: 12px;
+
+    i {
+        transform: scale(.8)
+    }
+}
+
+.dis {
     text-decoration: line-through;
     opacity: .8;
     pointer-events: none;
 }
-.renew{
+
+.renew {
     position: relative;
-    &:after{
+
+    &:after {
         content: 'renewed';
         position: absolute;
         left: 105%;
@@ -191,9 +253,11 @@ body.light .resume_wrap{
         top: 0;
     }
 }
-.close{
+
+.close {
     position: relative;
-    &:after{
+
+    &:after {
         content: 'close';
         position: absolute;
         left: 105%;
@@ -203,6 +267,6 @@ body.light .resume_wrap{
 }
 
 // header 고정
-body.page-template-resume #page-container #main-header.click{
+body.page-template-resume #page-container #main-header.click {
     left: 0;
 }
