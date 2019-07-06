@@ -235,13 +235,14 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="projectName">
-                                    <div class="repair_ing">
+                                    <div class="">
                                         <div>2019.05</div>
                                         <div>
                                             <b><a target="_blank" href="" rel="noopener noreferrer"><i class="fas fa-link"></i> VatecENG</a></b>
                                         </div>
                                         <p>
-                                            제작중
+                                            <a href="https://github.com/alvarotrigo/fullPage.js/tree/master/lang/korean">Fullpage.js</a> 라이브러리를 많이 공부할 수 있게해줬던 프로젝트였다.<br>
+                                            추후 나중에 풀페이지 스타일의 프로젝트를 한다하면 어떤 제약이있는지 어떤 효과들을 적용해줄 수 있을지 디자인에서 제외되야하는 부분들을 많이 느낄 수 있었다.
                                         </p>
                                     </div>
                                 </div>
