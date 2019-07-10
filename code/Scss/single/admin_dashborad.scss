@@ -11,7 +11,7 @@
 //---------------------------------------------------
 //       01.01 - TYPOGRAPHY  
 //---------------------------------------------------
-body.wp-admin #posts-filter .actions.ac-search > select{
+body.wp-admin #posts-filter .actions.ac-search>select {
 	display: none;
 }
 
@@ -19,24 +19,27 @@ body.wp-admin #posts-filter .actions.ac-search > select{
 //---------------------------------------------------
 //       01.01 - TYPOGRAPHY  
 //---------------------------------------------------
-.copy_box{
-	display:flex;
+.copy_box {
+	display: flex;
 	align-items: center;
-	overflow:hidden;
+	overflow: hidden;
 }
-.copy_box:nth-of-type(1){
+
+.copy_box:nth-of-type(1) {
 	margin-bottom: 5px;
 }
+
 .copy_box label {
 	display: block;
 	font-size: 0.85em;
 	font-weight: bold;
 	padding: 0;
 	user-select: none;
-	width:45px;
+	width: 45px;
 }
 
-.copy_box input, .copy_box button {
+.copy_box input,
+.copy_box button {
 	font-size: 1em;
 	padding: 3px 6px;
 	margin: 0;
@@ -44,6 +47,7 @@ body.wp-admin #posts-filter .actions.ac-search > select{
 	outline: 0;
 	box-shadow: none;
 }
+
 .copy_box input {
 	width: 500px;
 	border-right: 0 none;
@@ -75,32 +79,42 @@ body.wp-admin #posts-filter .actions.ac-search > select{
 }
 
 @keyframes showcopied {
-0% {
-	opacity: 0;
-	transform: translateX(100%);
-}
-70% {
-	opacity: 1;
-	transform: translateX(0);
-}
-100% {
-	opacity: 0;
-}
+	0% {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+
+	70% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
 
-.github_notice{
+.github_notice {
 	padding-left: 70px;
 	border-left: none;
 }
-.github_notice a{
-	all:unset;
-	cursor:pointer;
+
+.github_notice a {
+	all: unset;
+	cursor: pointer;
 	transition: all .3s;
 }
-.github_notice > a:hover{background-color:#46b450;}
-.github_notice .copy_box a:hover{color:#46b450;}
-.github_notice > a{
-	font-size:35px;
+
+.github_notice>a:hover {
+	background-color: #46b450;
+}
+
+.github_notice .copy_box a:hover {
+	color: #46b450;
+}
+
+.github_notice>a {
+	font-size: 35px;
 	position: absolute;
 	left: 0px;
 	top: 50%;
@@ -112,4 +126,13 @@ body.wp-admin #posts-filter .actions.ac-search > select{
 	color: #fff;
 	background-color: #212121;
 	width: 50px;
+}
+
+
+.LayoutsIframe {
+	height: 98% !important;
+
+	+div {
+		display: none !important;
+	}
 }
