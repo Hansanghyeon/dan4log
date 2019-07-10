@@ -22,8 +22,7 @@ const sass = require("gulp-sass"),
 // gulp notice plugin Slack
 // webhook url list
 const slack_dataset = {
-  space:
-    "https://hooks.slack.com/services/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",
+  space: key.SLACK.webhook,
   icon_url: {
     sass: CDN_URL + "/icons/sass.png",
     babel: CDN_URL + "/icons/babel.png",
