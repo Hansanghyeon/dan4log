@@ -1,13 +1,13 @@
-body.login{
+body.login {
     padding: 0;
     margin: 0;
-    overflow:hidden;
+    overflow: hidden;
 
-    #notfound{
+    #notfound {
         position: relative;
         height: 100vh;
 
-        .notfound-bg{
+        .notfound-bg {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -15,7 +15,7 @@ body.login{
             background-size: cover;
             background-position: center;
 
-            &::after{
+            &::after {
                 content: '';
                 position: absolute;
                 width: 100%;
@@ -23,7 +23,8 @@ body.login{
                 background-color: rgba(0, 0, 0, 0.25);
             }
         }
-        .notfound{
+
+        .notfound {
             //position
             position: absolute;
             left: 50%;
@@ -31,7 +32,7 @@ body.login{
             transform: translate(-50%, -50%);
 
 
-            @include media("(max-width: 480px)"){
+            @include media("(max-width: 480px)") {
                 padding: 0;
             }
 
@@ -55,11 +56,11 @@ body.login{
             padding: 30px;
             line-height: 1.4;
 
-            .notfound-404{
+            .notfound-404 {
                 position: relative;
                 height: 200px;
 
-                h1{
+                h1 {
                     font-family: 'Passion One', cursive !important;
                     position: absolute;
                     left: 50%;
@@ -73,12 +74,13 @@ body.login{
                     -webkit-text-stroke: 1px #fff;
                     text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 
-                    @include media("(max-width:480px)"){
+                    @include media("(max-width:480px)") {
                         font-size: 110px;
                     }
                 }
             }
-            a{
+
+            a {
                 font-family: 'Muli', sans-serif !important;
                 display: inline-block;
                 font-weight: 400;
@@ -88,17 +90,19 @@ body.login{
                 //text-transform: uppercase;
                 font-size: 14px;
             }
-            h2{
+
+            h2 {
                 font-family: 'Muli', sans-serif !important;
                 font-size: 16px;
                 font-weight: 400;
                 //text-transform: uppercase;
                 color: #fff;
             }
-            .notfound-social{
+
+            .notfound-social {
                 margin-bottom: 15px;
 
-                > a{
+                >a {
                     display: inline-block;
                     height: 40px;
                     line-height: 40px;
@@ -110,7 +114,7 @@ body.login{
                     -webkit-transition: 0.2s all;
                     transition: 0.2s all;
 
-                    &:hover{
+                    &:hover {
                         color: #fff;
                         background-color: #ff00b4;
                     }
@@ -119,21 +123,25 @@ body.login{
         }
     }
 }
-@include media("(max-width:480px)"){
-    .notfound{
-        h2{font-size: 22px;}
 
-        .notfound-404{
+@include media("(max-width:480px)") {
+    .notfound {
+        h2 {
+            font-size: 22px;
+        }
+
+        .notfound-404 {
             height: 146px;
         }
     }
 }
+
 //admin login button
-.btn{
+.btn {
     position: absolute;
     bottom: 2vh;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     padding: 10px 20px !important;
     background: transparent;
     border-radius: 999px;
@@ -144,14 +152,15 @@ body.login{
     outline: none;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
         opacity: 1;
     }
 }
 
 //default login style setting
 $form_bg : #212121;
-#login{
+
+#login {
     position: absolute;
     bottom: 5vh;
     opacity: 0;
@@ -159,65 +168,76 @@ $form_bg : #212121;
     left: 50%;
     //transform: translate(150%, 0px);
     transition: all .5s;
-    @include media("(max-width:480px)"){
+
+    @include media("(max-width:480px)") {
         left: auto;
         bottom: 50%;
-        transform: translateY(50%) !important; 
+        transform: translateY(50%) !important;
     }
 
-    &.active{
+    &.active {
         opacity: 1;
         transform: translate(-50%, 0px);
 
-        @include media("(max-width: 480px)"){
-            transform: translate(0,0);
+        @include media("(max-width: 480px)") {
+            transform: translate(0, 0);
         }
     }
 
-    > h1{display: none;}
+    >h1 {
+        display: none;
+    }
 
-    #loginform{
+    #loginform {
         margin: 0;
         padding-bottom: 24px;
         border-radius: 15px 15px 0 0;
         background: $form_bg;
 
 
-        @include media("(max-width: 480px)"){
+        @include media("(max-width: 480px)") {
             border-radius: 0;
         }
 
-        #wp-submit{
+        #wp-submit {
             background: none;
             box-shadow: none;
-            border:none;
-            text-shadow:none;
+            border: none;
+            text-shadow: none;
             color: #c5c5c5;
         }
-        .forgetmenot{display:none;}
-        .input{
+
+        .forgetmenot {
+            display: none;
+        }
+
+        .input {
             background: transparent;
             border: 2px solid #151515;
             border-radius: 999px;
             padding: 3px 14px;
             color: #fff;
 
-            &:focus{
+            &:focus {
                 box-shadow: none;
             }
         }
-        
+
     }
-    #nav{
+
+    #nav {
         margin-top: 0;
         padding: 24px;
         padding-top: 0;
         border-radius: 0 0 15px 15px;
         background: $form_bg;
-        
-        @include media("(max-width: 480px)"){
+
+        @include media("(max-width: 480px)") {
             border-radius: 0;
         }
     }
-    #backtoblog{display: none;}
+
+    #backtoblog {
+        display: none;
+    }
 }

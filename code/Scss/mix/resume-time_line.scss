@@ -1,5 +1,5 @@
 /* Mobile Timeline */
-.timeLine_wrap{
+.timeLine_wrap {
     padding-bottom: 170px;
 }
 
@@ -7,12 +7,13 @@
 .timeline {
     list-style: none;
 
-    >li{
+    >li {
         margin-bottom: 60px;
         overflow: hidden;
         margin: 0;
         position: relative;
     }
+
     .timeline-date {
         width: 110px;
         float: left;
@@ -20,6 +21,7 @@
         font-size: 18px;
         margin-bottom: 10px;
     }
+
     .timeline-content {
         padding-top: 48px;
         width: calc(100% - 110px);
@@ -39,17 +41,20 @@
         }
     }
 }
-@include media("(max-width: 640px)"){
-    .timeline{
+
+@include media("(max-width: 640px)") {
+    .timeline {
         .timeline-content {
             width: calc(100% - 4.5px);
             margin-left: 4.5px;
+
             :before {
                 left: 0;
                 top: 70px;
             }
         }
-        .timeline-date{
+
+        .timeline-date {
             margin-bottom: 0px;
         }
     }

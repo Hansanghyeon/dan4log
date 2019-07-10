@@ -1,12 +1,16 @@
 // 변수, 함수
 $pointcolor: #eb5255;
 $border-color: #e5e5e5;
-@mixin media($queryString){
-    @media #{$queryString} {
-      @content;
-    }
+
+@mixin media($queryString) {
+  @media #{$queryString} {
+    @content;
+  }
 }
-.hidden{display: none !important}
+
+.hidden {
+  display: none !important
+}
 
 // strcuture
 @import 'structure.scss';

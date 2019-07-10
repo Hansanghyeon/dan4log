@@ -5,9 +5,11 @@
     position: relative;
     width: 44px;
     height: 44px;
+
     &.left {
         transform: scaleX(-1);
     }
+
     i {
         display: block;
         position: absolute;
@@ -16,6 +18,7 @@
         height: 20px;
         left: 50%;
         top: 50%;
+
         &:before,
         &:after {
             content: '';
@@ -30,13 +33,16 @@
             display: block;
             transform-origin: 9px 50%;
         }
+
         &:before {
             transform: rotate(-40deg);
         }
+
         &:after {
             transform: rotate(40deg);
         }
     }
+
     &:before,
     &:after {
         content: '';
@@ -49,6 +55,7 @@
         border-radius: 50%;
         border: 2px solid var(--border);
     }
+
     svg {
         width: 44px;
         height: 44px;
@@ -61,15 +68,19 @@
         stroke-dasharray: 126 126 0;
         transform: rotate(0deg);
     }
+
     &.animate {
         svg {
             animation: stroke .6s ease forwards .3s;
         }
+
         i {
             animation: arrow .8s ease forwards;
+
             &:before {
                 animation: arrowUp .8s ease forwards;
             }
+
             &:after {
                 animation: arrowDown .8s ease forwards;
             }
@@ -82,10 +93,12 @@
         transform: rotate(-180deg);
         stroke-dashoffset: 0;
     }
+
     52.1% {
         transform: rotate(-360deg);
         stroke-dashoffset: 0;
     }
+
     100% {
         transform: rotate(-180deg);
         stroke-dashoffset: 126;
@@ -93,20 +106,24 @@
 }
 
 @keyframes arrow {
+
     0%,
     100% {
         transform: translateX(0);
         opacity: 1;
     }
+
     23% {
         transform: translateX(17px);
         opacity: 1;
     }
+
     24%,
     80% {
         transform: translateX(-22px);
         opacity: 0;
     }
+
     81% {
         opacity: 1;
         transform: translateX(-22px);
@@ -114,10 +131,12 @@
 }
 
 @keyframes arrowUp {
+
     0%,
     100% {
         transform: rotate(-40deg) scaleX(1);
     }
+
     20%,
     80% {
         transform: rotate(0deg) scaleX(.1);
@@ -125,10 +144,12 @@
 }
 
 @keyframes arrowDown {
+
     0%,
     100% {
         transform: rotate(40deg) scaleX(1);
     }
+
     20%,
     80% {
         transform: rotate(0deg) scaleX(.1);

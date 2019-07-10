@@ -22,36 +22,46 @@
 /*---------------------------------------------------
         01.00 syntaxhighlighter
 ---------------------------------------------------*/
-body.dark{
-    div[id*='highlighter_'].syntaxhighlighter{
+body.dark {
+    div[id*='highlighter_'].syntaxhighlighter {
         box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
     }
 }
-div[id*='highlighter_'].syntaxhighlighter{
-    padding:40px 20px 20px 0 !important;
+
+div[id*='highlighter_'].syntaxhighlighter {
+    padding: 40px 20px 20px 0 !important;
     border-radius: 5px;
     box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
-    *{font-family: "Noto sans" !important;}
+
+    * {
+        font-family: "Noto sans" !important;
+    }
 
     background-color: #1C1C1C !important;
-    .line{background-color: #1C1C1C !important;
-        .content{border-left:1px solid #333 !important}
+
+    .line {
+        background-color: #1C1C1C !important;
+
+        .content {
+            border-left: 1px solid #333 !important
+        }
     }
 
     // 닫기 내리기 확장 버튼
-    &::after{
+    &::after {
         content: '';
         display: inline-block;
         position: absolute;
         top: 12px;
         left: 10px;
-        width:11px;
-        height:11px;
+        width: 11px;
+        height: 11px;
         background-image: url('/wp-content/uploads/2018/10/cropped-cropped-favicon-1-32x32.png');
         background-size: cover;
         background-position: center;
     }
-    &::before{
+
+    &::before {
         content: '\f111';
         display: inline-block;
         font-style: normal;
@@ -66,8 +76,9 @@ div[id*='highlighter_'].syntaxhighlighter{
         left: 30px;
         font-size: 12px;
     }
-    .lines{
-        &::before{
+
+    .lines {
+        &::before {
             content: '\f111';
             display: inline-block;
             font-style: normal;
@@ -86,15 +97,23 @@ div[id*='highlighter_'].syntaxhighlighter{
 
 }
 
-body.dark{
-    div[id*='highlighter_'].syntaxhighlighter{
+body.dark {
+    div[id*='highlighter_'].syntaxhighlighter {
         background-color: #282A36 !important;
-        .line{background-color: #282A36 !important;
-            .content{border-left:1px solid #333 !important}
+
+        .line {
+            background-color: #282A36 !important;
+
+            .content {
+                border-left: 1px solid #333 !important
+            }
         }
     }
 }
-.et_right_sidebar #main-content .container:before{content: none;}
+
+.et_right_sidebar #main-content .container:before {
+    content: none;
+}
 
 
 /*---------------------------------------------------
@@ -103,58 +122,75 @@ body.dark{
 @import 'git_md_draculra.scss';
 
 .markdown-body {
-    .img_wrap_a{
-        &::after{content: none;}
+    .img_wrap_a {
+        &::after {
+            content: none;
+        }
     }
-    > h1:nth-of-type(1){display: none;}
+
+    >h1:nth-of-type(1) {
+        display: none;
+    }
+
     //> h2:nth-of-type(1){margin-top: 0;}
-    .anchor{display: none;}
-    blockquote{
+    .anchor {
+        display: none;
+    }
+
+    blockquote {
         background: #3a3a3a;
         font-size: 12px;
-        p{line-height: 1.6em;}
+
+        p {
+            line-height: 1.6em;
+        }
     }
-    code{
+
+    code {
         background: #eb5255;
         color: #fff;
-        box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
         margin-right: 3px;
         margin-left: 3px;
     }
-    pre > code{
+
+    pre>code {
         box-shadow: none;
     }
-    table{
+
+    table {
         border: none;
     }
+
     // code block setting
     // window button style
-    .highlight{
+    .highlight {
         margin-top: 12px;
         position: relative;
         border-radius: 5px;
         //box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
 
-        @include media("(max-width:480px)"){
+        @include media("(max-width:480px)") {
             width: 108%;
             transform: translateX(-4%);
             border-radius: 0;
         }
-    
+
         // 닫기 내리기 확장 버튼
-        &::after{
+        &::after {
             content: '';
             display: inline-block;
             position: absolute;
             top: 10px;
             left: 11px;
-            width:11px;
-            height:11px;
+            width: 11px;
+            height: 11px;
             background-image: url('/wp-content/uploads/site_character/cropped-favicon-1.png');
             background-size: cover;
             background-position: center;
         }
-        &::before{
+
+        &::before {
             content: '\f111';
             display: inline-block;
             font-style: normal;
@@ -170,16 +206,19 @@ body.dark{
             font-size: 12px;
             line-height: 12px;
         }
-    
-        pre{
+
+        pre {
             padding-top: 34px;
             padding-bottom: 14px;
             border-radius: 5px;
             font-size: 16px;
             font-family: 'D2 coding';
-    
-            *{font-family: 'D2 coding';}
-            &::before{
+
+            * {
+                font-family: 'D2 coding';
+            }
+
+            &::before {
                 content: '\f111';
                 display: inline-block;
                 font-style: normal;
@@ -195,6 +234,7 @@ body.dark{
                 font-size: 12px;
                 line-height: 12px;
             }
+
             // 
             // TODO:
             // copy & paste button 제작하기
@@ -217,79 +257,99 @@ body.dark{
             //     cursor: pointer;
             // }
         }
+
         // TODO: 언어표시만들기
         // Javascript
-        &.highlight-source-js pre{
-            &::before{
+        &.highlight-source-js pre {
+            &::before {
                 content: 'JS';
                 left: auto;
-                top:8px;
+                top: 8px;
                 right: 8px;
                 font-weight: bold;
                 color: #000;
                 background: #ffca54;
                 padding: 2px 3px 1px;
                 border-radius: 3px;
-            
+
             }
         }
+
         // PHP
-        &.highlight-text-html-php pre{
-            &::before{
+        &.highlight-text-html-php pre {
+            &::before {
                 content: 'PHP';
                 left: auto;
-                top:8px;
+                top: 8px;
                 right: 8px;
                 font-weight: bold;
                 color: #000;
                 padding: 2px 3px 1px;
                 background: #777bb4;
                 border-radius: 3px;
-            
+
             }
         }
+
         // Shell
-        &.highlight-source-shell pre{
-            &::before{
+        &.highlight-source-shell pre {
+            &::before {
                 content: 'Shell';
                 left: auto;
-                top:8px;
+                top: 8px;
                 right: 8px;
                 font-weight: bold;
                 color: #000;
                 padding: 2px 3px 1px;
                 background: #2AC940;
                 border-radius: 3px;
-            
+
             }
         }
     }
+
     ol {
-        li > p:nth-of-type(1){
+        li>p:nth-of-type(1) {
             display: inline;
             margin-left: 0;
         }
-        p{margin-left: 20px;}
-        pre, .highlight{
+
+        p {
+            margin-left: 20px;
+        }
+
+        pre,
+        .highlight {
             margin-left: 12px;
-    
-            @include media("(max-width:480px)"){margin-left: 0;}
+
+            @include media("(max-width:480px)") {
+                margin-left: 0;
+            }
         }
     }
-    p{margin-bottom:.6em;}
-    hr{margin: 12px 0 24px;}
+
+    p {
+        margin-bottom: .6em;
+    }
+
+    hr {
+        margin: 12px 0 24px;
+    }
 }
 
-body.dark{
-    .markdown-body{
+body.dark {
+    .markdown-body {
         color: #B9BDB4;
 
-        hr{ background: rgba(0, 0, 0, 0.1); }
+        hr {
+            background: rgba(0, 0, 0, 0.1);
+        }
     }
-    .instapaper_body .highlight{
+
+    .instapaper_body .highlight {
         box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
-    
-        pre{
+
+        pre {
             background-color: #282A36;
             color: #B9BDB4;
         }
@@ -299,10 +359,11 @@ body.dark{
 /*---------------------------------------------------
         02.00 read more
 ---------------------------------------------------*/
-.show_more{
+.show_more {
     margin-bottom: 14px;
 }
-.wpsm-show{
+
+.wpsm-show {
     color: #16967d !important;
     transition: all 0.5s;
     padding: 6px 10px !important;
@@ -310,21 +371,21 @@ body.dark{
     border-radius: 5px;
     display: inline-block;
 
-    &:hover{
-        color:#0eefc3 !important;
-        border-bottom:none !important;
+    &:hover {
+        color: #0eefc3 !important;
+        border-bottom: none !important;
         text-decoration: none;
     }
 }
 
-.wpsm-content-hide{
+.wpsm-content-hide {
     color: #e5e5e5 !important;
 }
 
-.wpsm-content{
+.wpsm-content {
     margin-top: 0;
 
-    p.wpsm-hide{
+    p.wpsm-hide {
         display: inline-block;
         // padding: 6px 13.5px !important;
         border-radius: 50%;
@@ -338,13 +399,15 @@ body.dark{
         width: 20px;
         height: 20px;
 
-        &:last-child{
+        &:last-child {
             margin-top: 0;
         }
-        &:hover{
+
+        &:hover {
             background: $pointcolor;
         }
-        i{
+
+        i {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -358,9 +421,15 @@ body.dark{
 /*---------------------------------------------------
         03.00 slick
 ---------------------------------------------------*/
-.slick-slider{display: flex !important;}
-.slick-list{cursor: -webkit-grab}
-button.slick-arrow{
+.slick-slider {
+    display: flex !important;
+}
+
+.slick-list {
+    cursor: -webkit-grab
+}
+
+button.slick-arrow {
     font-size: 0;
     display: flex;
     justify-content: center;
@@ -369,16 +438,24 @@ button.slick-arrow{
     border: none;
     cursor: pointer;
 }
-button.slick-next.slick-arrow:hover:after{border-left:10px solid #eb5255}
-button.slick-next.slick-arrow:after{
+
+button.slick-next.slick-arrow:hover:after {
+    border-left: 10px solid #eb5255
+}
+
+button.slick-next.slick-arrow:after {
     content: '';
     display: block;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
     border-left: 10px solid #000;
 }
-button.slick-prev.slick-arrow:hover:after{border-right: 10px solid #eb5255}
-button.slick-prev.slick-arrow:after{
+
+button.slick-prev.slick-arrow:hover:after {
+    border-right: 10px solid #eb5255
+}
+
+button.slick-prev.slick-arrow:after {
     content: '';
     display: block;
     border-top: 7px solid transparent;
@@ -392,13 +469,51 @@ button.slick-prev.slick-arrow:after{
         04.00 글쓰기 아이템들
 ---------------------------------------------------*/
 /* Dark.ver */
-.list-dot{list-style:circle;/*margin-left: 20px;padding-bottom:20px;*/}
-.vue-box{background: #1b2426; color: #aaa9a9; padding: 20px;margin:20px 0;}
-.vue-ex{color:#eb5255;display:inline-block;padding-bottom:10px;border-bottom:2px solid;}
-.vue-ex > span{color:white;}
-.vue-result{padding:10px;}
-.vue-result > span{display: inline-block;padding:3px 5px;border-radius: 5px;background: #ff4d4d;color: white;margin-right: 5px;margin-bottom:5px;}
-.css-tip{display: inline-block;background:#333;padding:1px 2px;color:#ff4d4d;font-weight: bold;}
+.list-dot {
+    list-style: circle;
+    /*margin-left: 20px;padding-bottom:20px;*/
+}
+
+.vue-box {
+    background: #1b2426;
+    color: #aaa9a9;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.vue-ex {
+    color: #eb5255;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+}
+
+.vue-ex>span {
+    color: white;
+}
+
+.vue-result {
+    padding: 10px;
+}
+
+.vue-result>span {
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background: #ff4d4d;
+    color: white;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.css-tip {
+    display: inline-block;
+    background: #333;
+    padding: 1px 2px;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
 /* 글쓰기 아이템들 White.ver */
 
 
@@ -406,47 +521,48 @@ button.slick-prev.slick-arrow:after{
 /*---------------------------------------------------
         05.00 codepen - copy button
 ---------------------------------------------------*/
-.copy-btn1{
+.copy-btn1 {
     padding: 10px 0px 10px 10px;
     /* content black version */
     /* background:white; */
     /* content white version */
-    background:#29292a;
-    display:inline-block;
-    font-size:13px;
-    border-radius:5px;
-    color:#e0e0e0;
+    background: #29292a;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 5px;
+    color: #e0e0e0;
     margin: 10px;
-    width:200px;
+    width: 200px;
     margin-top: 0;
 
-    button{
-        background:none;
-        border:none;
-        padding:0 10px 0 15px;
-        font-size:20px;
-        outline:none;
-        cursor:pointer;
-        color:#eb5255;
-        float:right;
+    button {
+        background: none;
+        border: none;
+        padding: 0 10px 0 15px;
+        font-size: 20px;
+        outline: none;
+        cursor: pointer;
+        color: #eb5255;
+        float: right;
 
-        &:hover i{
-            background:-webkit-linear-gradient(left, $pointcolor 50%, #29292a 100%);
-            color:transparent;
+        &:hover i {
+            background: -webkit-linear-gradient(left, $pointcolor 50%, #29292a 100%);
+            color: transparent;
             background-clip: text;
         }
     }
-    .text{
-        display:inline-block;
+
+    .text {
+        display: inline-block;
         white-space: nowrap;
-        max-width:140px;
-        overflow:hidden;
+        max-width: 140px;
+        overflow: hidden;
         vertical-align: middle;
     }
 
-    i{
-        transition:all 0.5s;
-        background:transparent;
+    i {
+        transition: all 0.5s;
+        background: transparent;
     }
 }
 
@@ -501,37 +617,45 @@ button.slick-prev.slick-arrow:after{
     overflow-x: auto;
     margin: 10px 0;
 
-    &.table-center{
+    &.table-center {
         margin: 10px auto;
-    
-        .wiki-table{margin: auto;}
+
+        .wiki-table {
+            margin: auto;
+        }
     }
 }
+
 .wiki-table {
     background-color: #f5f5f5;
     border-collapse: collapse;
     /*margin: 10px 0;*/
     color: black;
 
-    td{
+    td {
         padding: 5px 10px;
         border: 1px solid #dddddd;
 
-        p{margin-bottom: 0;}
+        p {
+            margin-bottom: 0;
+        }
     }
 }
+
 .table-right {
     margin-left: 20px;
     margin-bottom: 20px;
     float: right;
 }
+
 .table td {
     word-wrap: break-word;
 }
+
 @media screen and (max-width: 420px) {
     .table-right {
-    float: none;
-    margin: 10px 0;
+        float: none;
+        margin: 10px 0;
     }
 }
 
@@ -541,36 +665,50 @@ button.slick-prev.slick-arrow:after{
         07.00 facebook comment
 ---------------------------------------------------*/
 // post content 영역
-.post_content_box > .et_pb_column_inner > .et_pb_code:nth-last-child(1){
+.post_content_box>.et_pb_column_inner>.et_pb_code:nth-last-child(1) {
     padding: 0 !important;
 }
+
 // 댓글영역
-.heateor_ffcp_facebook_comments{
+.heateor_ffcp_facebook_comments {
     background: #f2f4f7;
     border-radius: 0 0 5px 5px;
 }
+
 // 위젯영역 : 페이스북 최근댓글
-.et_pb_widget_area_left{
-    .heateor_ffcp_facebook_comments{
+.et_pb_widget_area_left {
+    .heateor_ffcp_facebook_comments {
         margin-top: 0 !important;
     }
 }
-.heateor_ffcp_facebook_comment{
+
+.heateor_ffcp_facebook_comment {
     display: flex;
     flex-wrap: wrap;
 
-    h6{
-        font-size:12px;
+    h6 {
+        font-size: 12px;
         order: 1;
 
         // 이름에 링크비활성화
-        a:nth-of-type(1){pointer-events: none;}
+        a:nth-of-type(1) {
+            pointer-events: none;
+        }
     }
-    time{order: 3;}
-    .heateor_ffcp_fb_message{order: 2;display: block;width: 100%;}
+
+    time {
+        order: 3;
+    }
+
+    .heateor_ffcp_fb_message {
+        order: 2;
+        display: block;
+        width: 100%;
+    }
 }
-.widget_heateor_ffcp_recent_facebook_comments{
-    .heateor_ffcp_facebook_comments{
+
+.widget_heateor_ffcp_recent_facebook_comments {
+    .heateor_ffcp_facebook_comments {
         background: none;
         padding: 0;
         border-radius: 0;
@@ -580,16 +718,18 @@ button.slick-prev.slick-arrow:after{
 /*---------------------------------------------------
         07.02 Disqus comment
 ---------------------------------------------------*/
-#disqus_thread{
+#disqus_thread {
     background: $L_bg;
     padding: 3%;
 }
+
 // side bar
-#recentcomments{
-    .dsq-widget-item{
+#recentcomments {
+    .dsq-widget-item {
         margin-top: 0;
     }
-    .dsq-widget-meta > a:nth-of-type(1){
+
+    .dsq-widget-meta>a:nth-of-type(1) {
         display: block;
     }
 }
