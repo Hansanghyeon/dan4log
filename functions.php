@@ -33,6 +33,7 @@ function themeslug_enqueue() {
     wp_enqueue_style( 'Font: D2coding           ', '//cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css', array(), null, false);
     wp_enqueue_style( 'Font: Google Fonts       ', '//fonts.googleapis.com/css?family=Yeon+Sung', array(), null, false);
     wp_enqueue_style( 'CSS : Slick              ', $CDN.'/slick-carousel/1.9.0/slick.min.css', array(), null, false); 
+    wp_enqueue_style( 'Font: Material icon      ', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), null, false);
     // script
     wp_enqueue_script( 'JS : ScrollReveal       ', $CDN.'/scrollReveal.js/4.0.5/scrollreveal.min.js', array(), null, false);
     wp_enqueue_script( 'JS : Slick              ', $CDN.'/slick-carousel/1.9.0/slick.min.js', array(), null, false);
@@ -418,3 +419,31 @@ function github_md_Refactoring($atts){
     return $output;
 }
 add_shortcode('gitmd_re','github_md_Refactoring');
+
+function category_notion_style(){
+    $term = get_queried_object();
+    $notion_style = get_field('notion-style', $term);
+    $how_to_use_icon = get_field('fontawesome__material', $term);
+    if($notion_style == true){
+        $output = '<meta class="diviLib_thumOff_sideOn" cover="open" cover-bg-data="'.get_field('taxonomy-bg',$term).'"></meta>';
+        $output .= '<div class="taxonomy_wrapper"><a href="'.get_category_link($term).'"><h1>';
+
+        switch($how_to_use_icon){
+            case 'fa':
+                $output .= '<i class="taxonomy_logo '.get_field('notion-fontawesome-icon', $term).'"></i>';
+                $output .= '</h1></a><h1>'.$term->name.'</h1></div>';
+                return $output;
+            case 'mdi':
+                $output .= '<i class="material-icons taxonomy_logo">'.get_field('notion-material-icon', $term).'</i>';
+                $output .= '</h1></a><h1>'.$term->name.'</h1></div>';
+                return $output;
+            default:
+                $output .= 'not chose';
+                return $output; 
+        }
+    }else{
+        $output = '<meta class="diviLib_thumOff_sideOn" corver="close" corver-bg-data="'.get_field('taxonomy-bg',$term).'"></meta>';
+        return $output;
+    }
+}
+add_shortcode('cns', 'category_notion_style');
