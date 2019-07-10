@@ -92,7 +92,7 @@ h6,
 p {
     letter-spacing: -0.02em;
     word-break: keep-all;
-    line-height: 1.8em;
+    line-height: 1.4em;
     letter-spacing: -.003em;
 }
 
@@ -112,25 +112,9 @@ b {
 /*---------------------------------------------------
     01.01 - TYPOGRAPHY  
 ---------------------------------------------------*/
-$shadow : 0px 3px 5px 1px rgba(0, 0, 0, .1);
-// light color var
-$L_default: #666;
-$L_bold: #333;
-$L_bg: #f2f4f7;
-$L_header: #fff;
-$L_post: #fff;
-$L_border: #c5c5c5;
-// dark color var
-$D_default: #c5c5c5;
-$D_bold: #ebebeb;
-$D_black: #000;
-$D_bg: #1c1c1c;
-$D_post: #212121;
-$D_header: #131313;
-
 // divi content bg remove
 #main-content {
-    background-color: transparent
+    background-color: transparent !important;
 }
 
 .et_pb_section {
@@ -642,6 +626,56 @@ body .cc_box {
 /*---------------------------------------------------
     02.02 - [ 포스트 | Taxonomy ] 기본 (섬네일on, 사이드바off)
 ---------------------------------------------------*/
+@mixin taxonomy_hero_section ($bg) {
+    .et_pb_section.category-hero-section {
+        padding: 0;
+        padding-top: 60px;
+        margin-bottom: 60px;
+        display: none;
+        background-size: cover;
+        background-position: center;
+
+        &.open {
+            display: block;
+        }
+
+        h1 {
+            padding: 0;
+        }
+
+        .taxonomy_wrapper {
+            display: flex;
+            align-items: flex-end;
+            transform: translate(-20px, 80%);
+
+            >h1 {
+                padding-bottom: 20px;
+                margin-left: 20px;
+                padding-left: 10px;
+            }
+        }
+
+        .taxonomy_logo {
+            font-size: 144px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color .3s;
+
+            &:hover {
+                background-color: rgba($bg, .3);
+            }
+        }
+    }
+}
+
+body.light {
+    @include taxonomy_hero_section($L_white);
+}
+
+body.dark {
+    @include taxonomy_hero_section($D_black);
+}
+
 .blog_list {
     .et_pb_row {
         padding-top: 0;
@@ -1263,7 +1297,9 @@ body.dark {
     }
 
     .name .author_archive_title {
+
         font-size: 16px;
+        padding-bottom: 0;
 
         &:after {
             content: '입니다.';
@@ -1277,7 +1313,7 @@ body.dark {
         max-width: 100px;
         padding: 0 !important;
         cursor: pointer;
-        margin-bottom: 18px;
+        margin-bottom: 18px !important;
         margin-left: 18px;
 
         &:hover:before {
@@ -1325,9 +1361,9 @@ body.dark {
 
 // 관련글
 body .related_card {
-    padding-left: 15px;
-    padding-right: 15px;
-    background: linear-gradient(to bottom, #479fde, transparent);
+    // padding-left: 15px;
+    // padding-right: 15px;
+    // background: linear-gradient(to bottom, #479fde, transparent);
 
     a {
         color: #fff;
