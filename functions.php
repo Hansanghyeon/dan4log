@@ -43,7 +43,6 @@ function themeslug_enqueue() {
     // Static
     // ------------------
     // style
-    wp_enqueue_style( 'core Fullpage.js', get_stylesheet_directory_uri().'/code/node_modules/fullpage.js/dist/fullpage.min.css', array(), null, false);
     // script
     wp_enqueue_script( 'DEV: Plugin             ', $Static.'/js/plugin.js', array(), null, true);
     wp_enqueue_script( 'DEV: ScrollReaval       ', $Static.'/js/ScrollReaval.js', array(), null, true);
@@ -52,12 +51,14 @@ function themeslug_enqueue() {
     wp_enqueue_script( 'DEV: InfinitiScroll     ', $Static.'/js/infinitiScroll.js', array(), null, true);
     wp_enqueue_script( 'DEV: Arrow animation    ', $Static.'/js/arrow_animation.js', array(), null, true);
     wp_enqueue_script( 'DEV: ParallaxDepthCard  ', $Static.'/js/ParallaxDepthCard.js', array(), null, true);
+    wp_enqueue_script( 'DEV: index              ', $Static.'/js/index.js', array(), null, true);
 
     // 특정페이지에서만 불러오기
     // ------------------
     // 메인페이지
     // is_page('page slug')
-    if ( is_page( '' ) ){
+    if ( is_page( 'resume' ) ){
+        wp_enqueue_script( 'DEV: Resume green   ', $Static.'/js/resume-green-ani.js', array(), null, true);
     }
 
     // 특정유저에게만 불러오기
@@ -297,10 +298,8 @@ function admin_style() {
     // 변수
     $CDN = '';
     $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/dan4log';
-    // disable WP_list_table
     wp_enqueue_style('WP_list_table', $Static.'/css/admin_dashborad.css');
-    // 워드프레스에 파일 위치 말해주기
-    wp_register_script( 'my_script', get_stylesheet_directory_uri() . '/public/js/copy_btn.js', array('jquery'), '1', true);  // true = 푸터에서 적용, false = 헤더에서 적용
+    wp_register_script( 'my_script', $Static.'/js/copy_btn.js', array('jquery'), '1', true);
     wp_register_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
 
     // 실제 사용 여부 결정 ( 컨디셔널 테그 이용하면 특정 페이지에만 적용할 수도 있음)
