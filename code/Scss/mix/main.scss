@@ -459,6 +459,11 @@ body #main-content .post_content_box {
             }
         }
     }
+
+    // markdown
+    .markdown-body>h2:nth-of-type(1) {
+        margin-top: 0;
+    }
 }
 
 // 02.01.01 - [ 포스트 | Taxonomy:module ] 기본 (섬네일 off)
