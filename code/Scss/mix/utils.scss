@@ -1,0 +1,26 @@
+// 변수, 함수
+$pointcolor: #eb5255;
+$border-color: #e5e5e5;
+
+@mixin media($queryString) {
+	@media #{$queryString} {
+		@content;
+	}
+}
+
+$shadow : 0px 3px 5px 1px rgba(0, 0, 0, .1);
+// light color var
+$L_default: #666;
+$L_bold: #333;
+$L_bg: #f2f4f7;
+$L_header: #fff;
+$L_post: #fff;
+$L_white: #fff;
+$L_border: #c5c5c5;
+// dark color var
+$D_default: #c5c5c5;
+$D_bold: #ebebeb;
+$D_black: #000;
+$D_bg: #1c1c1c;
+$D_post: #212121;
+$D_header: #131313;
