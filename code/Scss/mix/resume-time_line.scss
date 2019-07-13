@@ -42,7 +42,7 @@
   }
 }
 
-@include media("(max-width: 640px)") {
+@media (max-width: 640px) {
   .timeline {
     .timeline-content {
       width: calc(100% - 4.5px);
