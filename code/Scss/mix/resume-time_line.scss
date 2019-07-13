@@ -1,61 +1,61 @@
 /* Mobile Timeline */
 .timeLine_wrap {
-    padding-bottom: 170px;
+  padding-bottom: 170px;
 }
 
 // time line
 .timeline {
-    list-style: none;
+  list-style: none;
 
-    >li {
-        margin-bottom: 60px;
-        overflow: hidden;
-        margin: 0;
-        position: relative;
+  >li {
+    margin-bottom: 60px;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+  }
+
+  .timeline-date {
+    width: 110px;
+    float: left;
+    margin-top: 18px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .timeline-content {
+    padding-top: 48px;
+    width: calc(100% - 110px);
+    float: left;
+    border-left: 3px green solid;
+    padding-left: 10px;
+
+    &:before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: green;
+      position: absolute;
+      left: 106px;
+      top: 24px;
+      border-radius: 100%;
     }
-
-    .timeline-date {
-        width: 110px;
-        float: left;
-        margin-top: 18px;
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .timeline-content {
-        padding-top: 48px;
-        width: calc(100% - 110px);
-        float: left;
-        border-left: 3px green solid;
-        padding-left: 10px;
-
-        &:before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            background: green;
-            position: absolute;
-            left: 106px;
-            top: 24px;
-            border-radius: 100%;
-        }
-    }
+  }
 }
 
 @include media("(max-width: 640px)") {
-    .timeline {
-        .timeline-content {
-            width: calc(100% - 4.5px);
-            margin-left: 4.5px;
+  .timeline {
+    .timeline-content {
+      width: calc(100% - 4.5px);
+      margin-left: 4.5px;
 
-            :before {
-                left: 0;
-                top: 70px;
-            }
-        }
-
-        .timeline-date {
-            margin-bottom: 0px;
-        }
+      :before {
+        left: 0;
+        top: 70px;
+      }
     }
+
+    .timeline-date {
+      margin-bottom: 0px;
+    }
+  }
 }

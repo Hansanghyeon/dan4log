@@ -3,9 +3,39 @@ $pointcolor: #eb5255;
 $border-color: #e5e5e5;
 
 @mixin media($queryString) {
-	@media #{$queryString} {
-		@content;
-	}
+  @media #{$queryString} {
+    @content;
+  }
+}
+
+// Responsive Web Design
+$breakpoints: ('small': (max-width: 500px),
+  'medium': (max-width: 768px),
+  'large': (max-width: 980px),
+  'huge': (max-width: 1280px),
+);
+
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(type-of($raw-query)=='string',
+        unquote($raw-query),
+        inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  }
+
+  @else {
+    @error 'No value found for `#{$breakpoint}`. '
+    +'Please make sure it is defined in `$breakpoints` map.';
+  }
 }
 
 $shadow : 0px 3px 5px 1px rgba(0, 0, 0, .1);

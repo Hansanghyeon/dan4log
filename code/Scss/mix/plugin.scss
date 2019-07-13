@@ -23,96 +23,96 @@
         01.00 syntaxhighlighter
 ---------------------------------------------------*/
 body.dark {
-    div[id*='highlighter_'].syntaxhighlighter {
-        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
-    }
+  div[id*='highlighter_'].syntaxhighlighter {
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+  }
 }
 
 div[id*='highlighter_'].syntaxhighlighter {
-    padding: 40px 20px 20px 0 !important;
-    border-radius: 5px;
-    box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
+  padding: 40px 20px 20px 0 !important;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
 
-    * {
-        font-family: "Noto sans" !important;
-    }
+  * {
+    font-family: "Noto sans" !important;
+  }
 
+  background-color: #1C1C1C !important;
+
+  .line {
     background-color: #1C1C1C !important;
 
-    .line {
-        background-color: #1C1C1C !important;
-
-        .content {
-            border-left: 1px solid #333 !important
-        }
+    .content {
+      border-left: 1px solid #333 !important
     }
+  }
 
-    // 닫기 내리기 확장 버튼
-    &::after {
-        content: '';
-        display: inline-block;
-        position: absolute;
-        top: 12px;
-        left: 10px;
-        width: 11px;
-        height: 11px;
-        background-image: url('/wp-content/uploads/2018/10/cropped-cropped-favicon-1-32x32.png');
-        background-size: cover;
-        background-position: center;
-    }
+  // 닫기 내리기 확장 버튼
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    width: 11px;
+    height: 11px;
+    background-image: url('/wp-content/uploads/2018/10/cropped-cropped-favicon-1-32x32.png');
+    background-size: cover;
+    background-position: center;
+  }
 
+  &::before {
+    content: '\f111';
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    color: #FFBD2D;
+    top: 10px;
+    left: 30px;
+    font-size: 12px;
+  }
+
+  .lines {
     &::before {
-        content: '\f111';
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 600;
-        font-family: "Font Awesome 5 Free";
-        position: absolute;
-        color: #FFBD2D;
-        top: 10px;
-        left: 30px;
-        font-size: 12px;
+      content: '\f111';
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 600;
+      font-family: "Font Awesome 5 Free";
+      position: absolute;
+      color: #2AC940;
+      top: 10px;
+      left: 50px;
+      font-size: 12px;
     }
-
-    .lines {
-        &::before {
-            content: '\f111';
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            font-weight: 600;
-            font-family: "Font Awesome 5 Free";
-            position: absolute;
-            color: #2AC940;
-            top: 10px;
-            left: 50px;
-            font-size: 12px;
-        }
-    }
+  }
 
 }
 
 body.dark {
-    div[id*='highlighter_'].syntaxhighlighter {
-        background-color: #282A36 !important;
+  div[id*='highlighter_'].syntaxhighlighter {
+    background-color: #282A36 !important;
 
-        .line {
-            background-color: #282A36 !important;
+    .line {
+      background-color: #282A36 !important;
 
-            .content {
-                border-left: 1px solid #333 !important
-            }
-        }
+      .content {
+        border-left: 1px solid #333 !important
+      }
     }
+  }
 }
 
 .et_right_sidebar #main-content .container:before {
-    content: none;
+  content: none;
 }
 
 
@@ -122,298 +122,298 @@ body.dark {
 @import 'git_md_draculra.scss';
 
 .markdown-body {
-    .img_wrap_a {
-        &::after {
-            content: none;
-        }
+  .img_wrap_a {
+    &::after {
+      content: none;
+    }
+  }
+
+  >h1:nth-of-type(1) {
+    display: none;
+  }
+
+  //> h2:nth-of-type(1){margin-top: 0;}
+  .anchor {
+    display: none;
+  }
+
+  blockquote {
+    background: #3a3a3a;
+    font-size: 12px;
+
+    p {
+      line-height: 1.6em;
+    }
+  }
+
+  code {
+    background: #eb5255;
+    color: #fff;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+
+  pre>code {
+    box-shadow: none;
+  }
+
+  table {
+    border: none;
+  }
+
+  // code block setting
+  // window button style
+  .highlight {
+    margin-top: 12px;
+    position: relative;
+    border-radius: 5px;
+    //box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
+
+    @include media("(max-width:480px)") {
+      width: 108%;
+      transform: translateX(-4%);
+      border-radius: 0;
     }
 
-    >h1:nth-of-type(1) {
-        display: none;
+    // 닫기 내리기 확장 버튼
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 10px;
+      left: 11px;
+      width: 11px;
+      height: 11px;
+      background-image: url('/wp-content/uploads/site_character/cropped-favicon-1.png');
+      background-size: cover;
+      background-position: center;
     }
 
-    //> h2:nth-of-type(1){margin-top: 0;}
-    .anchor {
-        display: none;
+    &::before {
+      content: '\f111';
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 600;
+      font-family: "Font Awesome 5 Free";
+      position: absolute;
+      color: #FFBD2D;
+      top: 10px;
+      left: 30px;
+      font-size: 12px;
+      line-height: 12px;
     }
 
-    blockquote {
-        background: #3a3a3a;
+    pre {
+      padding-top: 34px;
+      padding-bottom: 14px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: 'D2 coding';
+
+      * {
+        font-family: 'D2 coding';
+      }
+
+      &::before {
+        content: '\f111';
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 600;
+        font-family: "Font Awesome 5 Free" !important;
+        position: absolute;
+        color: #2AC940;
+        top: 10px;
+        left: 50px;
         font-size: 12px;
+        line-height: 12px;
+      }
 
-        p {
-            line-height: 1.6em;
-        }
+      // 
+      // TODO:
+      // copy & paste button 제작하기
+      // 
+      // &::after{
+      //     content: '\f0c5';
+      //     display: inline-block;
+      //     font-style: normal;
+      //     font-variant: normal;
+      //     text-rendering: auto;
+      //     -webkit-font-smoothing: antialiased;
+      //     font-weight: 600;
+      //     font-family: "Font Awesome 5 Free" !important;
+      //     position: absolute;
+      //     color: #777;
+      //     top: 10px;
+      //     right: 11px;
+      //     font-size: 12px;
+      //     line-height: 12px;
+      //     cursor: pointer;
+      // }
     }
 
-    code {
-        background: #eb5255;
-        color: #fff;
-        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
-        margin-right: 3px;
-        margin-left: 3px;
+    // TODO: 언어표시만들기
+    // Javascript
+    &.highlight-source-js pre {
+      &::before {
+        content: 'JS';
+        left: auto;
+        top: 8px;
+        right: 8px;
+        font-weight: bold;
+        color: #000;
+        background: #ffca54;
+        padding: 2px 3px 1px;
+        border-radius: 3px;
+
+      }
     }
 
-    pre>code {
-        box-shadow: none;
+    // PHP
+    &.highlight-text-html-php pre {
+      &::before {
+        content: 'PHP';
+        left: auto;
+        top: 8px;
+        right: 8px;
+        font-weight: bold;
+        color: #000;
+        padding: 2px 3px 1px;
+        background: #777bb4;
+        border-radius: 3px;
+
+      }
     }
 
-    table {
-        border: none;
+    // Shell
+    &.highlight-source-shell pre {
+      &::before {
+        content: 'Shell';
+        left: auto;
+        top: 8px;
+        right: 8px;
+        font-weight: bold;
+        color: #000;
+        padding: 2px 3px 1px;
+        background: #2AC940;
+        border-radius: 3px;
+
+      }
     }
+  }
 
-    // code block setting
-    // window button style
-    .highlight {
-        margin-top: 12px;
-        position: relative;
-        border-radius: 5px;
-        //box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
-
-        @include media("(max-width:480px)") {
-            width: 108%;
-            transform: translateX(-4%);
-            border-radius: 0;
-        }
-
-        // 닫기 내리기 확장 버튼
-        &::after {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            top: 10px;
-            left: 11px;
-            width: 11px;
-            height: 11px;
-            background-image: url('/wp-content/uploads/site_character/cropped-favicon-1.png');
-            background-size: cover;
-            background-position: center;
-        }
-
-        &::before {
-            content: '\f111';
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            font-weight: 600;
-            font-family: "Font Awesome 5 Free";
-            position: absolute;
-            color: #FFBD2D;
-            top: 10px;
-            left: 30px;
-            font-size: 12px;
-            line-height: 12px;
-        }
-
-        pre {
-            padding-top: 34px;
-            padding-bottom: 14px;
-            border-radius: 5px;
-            font-size: 16px;
-            font-family: 'D2 coding';
-
-            * {
-                font-family: 'D2 coding';
-            }
-
-            &::before {
-                content: '\f111';
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                font-weight: 600;
-                font-family: "Font Awesome 5 Free" !important;
-                position: absolute;
-                color: #2AC940;
-                top: 10px;
-                left: 50px;
-                font-size: 12px;
-                line-height: 12px;
-            }
-
-            // 
-            // TODO:
-            // copy & paste button 제작하기
-            // 
-            // &::after{
-            //     content: '\f0c5';
-            //     display: inline-block;
-            //     font-style: normal;
-            //     font-variant: normal;
-            //     text-rendering: auto;
-            //     -webkit-font-smoothing: antialiased;
-            //     font-weight: 600;
-            //     font-family: "Font Awesome 5 Free" !important;
-            //     position: absolute;
-            //     color: #777;
-            //     top: 10px;
-            //     right: 11px;
-            //     font-size: 12px;
-            //     line-height: 12px;
-            //     cursor: pointer;
-            // }
-        }
-
-        // TODO: 언어표시만들기
-        // Javascript
-        &.highlight-source-js pre {
-            &::before {
-                content: 'JS';
-                left: auto;
-                top: 8px;
-                right: 8px;
-                font-weight: bold;
-                color: #000;
-                background: #ffca54;
-                padding: 2px 3px 1px;
-                border-radius: 3px;
-
-            }
-        }
-
-        // PHP
-        &.highlight-text-html-php pre {
-            &::before {
-                content: 'PHP';
-                left: auto;
-                top: 8px;
-                right: 8px;
-                font-weight: bold;
-                color: #000;
-                padding: 2px 3px 1px;
-                background: #777bb4;
-                border-radius: 3px;
-
-            }
-        }
-
-        // Shell
-        &.highlight-source-shell pre {
-            &::before {
-                content: 'Shell';
-                left: auto;
-                top: 8px;
-                right: 8px;
-                font-weight: bold;
-                color: #000;
-                padding: 2px 3px 1px;
-                background: #2AC940;
-                border-radius: 3px;
-
-            }
-        }
-    }
-
-    ol {
-        li>p:nth-of-type(1) {
-            display: inline;
-            margin-left: 0;
-        }
-
-        p {
-            margin-left: 20px;
-        }
-
-        pre,
-        .highlight {
-            margin-left: 12px;
-
-            @include media("(max-width:480px)") {
-                margin-left: 0;
-            }
-        }
+  ol {
+    li>p:nth-of-type(1) {
+      display: inline;
+      margin-left: 0;
     }
 
     p {
-        margin-bottom: .6em;
+      margin-left: 20px;
     }
 
-    hr {
-        margin: 12px 0 24px;
+    pre,
+    .highlight {
+      margin-left: 12px;
+
+      @include media("(max-width:480px)") {
+        margin-left: 0;
+      }
     }
+  }
+
+  p {
+    margin-bottom: .6em;
+  }
+
+  hr {
+    margin: 12px 0 24px;
+  }
 }
 
 body.dark {
-    .markdown-body {
-        color: #B9BDB4;
+  .markdown-body {
+    color: #B9BDB4;
 
-        hr {
-            background: rgba(0, 0, 0, 0.1);
-        }
+    hr {
+      background: rgba(0, 0, 0, 0.1);
     }
+  }
 
-    .instapaper_body .highlight {
-        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+  .instapaper_body .highlight {
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
 
-        pre {
-            background-color: #282A36;
-            color: #B9BDB4;
-        }
+    pre {
+      background-color: #282A36;
+      color: #B9BDB4;
     }
+  }
 }
 
 /*---------------------------------------------------
         02.00 read more
 ---------------------------------------------------*/
 .show_more {
-    margin-bottom: 14px;
+  margin-bottom: 14px;
 }
 
 .wpsm-show {
-    color: #16967d !important;
-    transition: all 0.5s;
-    padding: 6px 10px !important;
-    border-left: 6px solid;
-    border-radius: 5px;
-    display: inline-block;
+  color: #16967d !important;
+  transition: all 0.5s;
+  padding: 6px 10px !important;
+  border-left: 6px solid;
+  border-radius: 5px;
+  display: inline-block;
 
-    &:hover {
-        color: #0eefc3 !important;
-        border-bottom: none !important;
-        text-decoration: none;
-    }
+  &:hover {
+    color: #0eefc3 !important;
+    border-bottom: none !important;
+    text-decoration: none;
+  }
 }
 
 .wpsm-content-hide {
-    color: #e5e5e5 !important;
+  color: #e5e5e5 !important;
 }
 
 .wpsm-content {
-    margin-top: 0;
+  margin-top: 0;
 
-    p.wpsm-hide {
-        display: inline-block;
-        // padding: 6px 13.5px !important;
-        border-radius: 50%;
-        background: #e5e5e5;
-        color: white !important;
-        text-decoration: none !important;
-        position: absolute;
-        right: 0;
-        margin-top: -27px;
-        transition: background .3s;
-        width: 20px;
-        height: 20px;
+  p.wpsm-hide {
+    display: inline-block;
+    // padding: 6px 13.5px !important;
+    border-radius: 50%;
+    background: #e5e5e5;
+    color: white !important;
+    text-decoration: none !important;
+    position: absolute;
+    right: 0;
+    margin-top: -27px;
+    transition: background .3s;
+    width: 20px;
+    height: 20px;
 
-        &:last-child {
-            margin-top: 0;
-        }
-
-        &:hover {
-            background: $pointcolor;
-        }
-
-        i {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    &:last-child {
+      margin-top: 0;
     }
+
+    &:hover {
+      background: $pointcolor;
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 
@@ -422,45 +422,45 @@ body.dark {
         03.00 slick
 ---------------------------------------------------*/
 .slick-slider {
-    display: flex !important;
+  display: flex !important;
 }
 
 .slick-list {
-    cursor: -webkit-grab
+  cursor: -webkit-grab
 }
 
 button.slick-arrow {
-    font-size: 0;
-    display: flex;
-    justify-content: center;
-    width: 60px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  font-size: 0;
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 button.slick-next.slick-arrow:hover:after {
-    border-left: 10px solid #eb5255
+  border-left: 10px solid #eb5255
 }
 
 button.slick-next.slick-arrow:after {
-    content: '';
-    display: block;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 10px solid #000;
+  content: '';
+  display: block;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid #000;
 }
 
 button.slick-prev.slick-arrow:hover:after {
-    border-right: 10px solid #eb5255
+  border-right: 10px solid #eb5255
 }
 
 button.slick-prev.slick-arrow:after {
-    content: '';
-    display: block;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-right: 10px solid #000;
+  content: '';
+  display: block;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 10px solid #000;
 }
 
 
@@ -470,48 +470,48 @@ button.slick-prev.slick-arrow:after {
 ---------------------------------------------------*/
 /* Dark.ver */
 .list-dot {
-    list-style: circle;
-    /*margin-left: 20px;padding-bottom:20px;*/
+  list-style: circle;
+  /*margin-left: 20px;padding-bottom:20px;*/
 }
 
 .vue-box {
-    background: #1b2426;
-    color: #aaa9a9;
-    padding: 20px;
-    margin: 20px 0;
+  background: #1b2426;
+  color: #aaa9a9;
+  padding: 20px;
+  margin: 20px 0;
 }
 
 .vue-ex {
-    color: #eb5255;
-    display: inline-block;
-    padding-bottom: 10px;
-    border-bottom: 2px solid;
+  color: #eb5255;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
 }
 
 .vue-ex>span {
-    color: white;
+  color: white;
 }
 
 .vue-result {
-    padding: 10px;
+  padding: 10px;
 }
 
 .vue-result>span {
-    display: inline-block;
-    padding: 3px 5px;
-    border-radius: 5px;
-    background: #ff4d4d;
-    color: white;
-    margin-right: 5px;
-    margin-bottom: 5px;
+  display: inline-block;
+  padding: 3px 5px;
+  border-radius: 5px;
+  background: #ff4d4d;
+  color: white;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .css-tip {
-    display: inline-block;
-    background: #333;
-    padding: 1px 2px;
-    color: #ff4d4d;
-    font-weight: bold;
+  display: inline-block;
+  background: #333;
+  padding: 1px 2px;
+  color: #ff4d4d;
+  font-weight: bold;
 }
 
 /* 글쓰기 아이템들 White.ver */
@@ -522,48 +522,48 @@ button.slick-prev.slick-arrow:after {
         05.00 codepen - copy button
 ---------------------------------------------------*/
 .copy-btn1 {
-    padding: 10px 0px 10px 10px;
-    /* content black version */
-    /* background:white; */
-    /* content white version */
-    background: #29292a;
+  padding: 10px 0px 10px 10px;
+  /* content black version */
+  /* background:white; */
+  /* content white version */
+  background: #29292a;
+  display: inline-block;
+  font-size: 13px;
+  border-radius: 5px;
+  color: #e0e0e0;
+  margin: 10px;
+  width: 200px;
+  margin-top: 0;
+
+  button {
+    background: none;
+    border: none;
+    padding: 0 10px 0 15px;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+    color: #eb5255;
+    float: right;
+
+    &:hover i {
+      background: -webkit-linear-gradient(left, $pointcolor 50%, #29292a 100%);
+      color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .text {
     display: inline-block;
-    font-size: 13px;
-    border-radius: 5px;
-    color: #e0e0e0;
-    margin: 10px;
-    width: 200px;
-    margin-top: 0;
+    white-space: nowrap;
+    max-width: 140px;
+    overflow: hidden;
+    vertical-align: middle;
+  }
 
-    button {
-        background: none;
-        border: none;
-        padding: 0 10px 0 15px;
-        font-size: 20px;
-        outline: none;
-        cursor: pointer;
-        color: #eb5255;
-        float: right;
-
-        &:hover i {
-            background: -webkit-linear-gradient(left, $pointcolor 50%, #29292a 100%);
-            color: transparent;
-            background-clip: text;
-        }
-    }
-
-    .text {
-        display: inline-block;
-        white-space: nowrap;
-        max-width: 140px;
-        overflow: hidden;
-        vertical-align: middle;
-    }
-
-    i {
-        transition: all 0.5s;
-        background: transparent;
-    }
+  i {
+    transition: all 0.5s;
+    background: transparent;
+  }
 }
 
 /*---------------------------------------------------
@@ -612,51 +612,51 @@ button.slick-prev.slick-arrow:after {
         06.00 나무위키 table css
 ---------------------------------------------------*/
 .wiki-table-wrap {
-    display: block;
-    max-width: 100%;
-    overflow-x: auto;
-    margin: 10px 0;
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 10px 0;
 
-    &.table-center {
-        margin: 10px auto;
+  &.table-center {
+    margin: 10px auto;
 
-        .wiki-table {
-            margin: auto;
-        }
+    .wiki-table {
+      margin: auto;
     }
+  }
 }
 
 .wiki-table {
-    background-color: #f5f5f5;
-    border-collapse: collapse;
-    /*margin: 10px 0;*/
-    color: black;
+  background-color: #f5f5f5;
+  border-collapse: collapse;
+  /*margin: 10px 0;*/
+  color: black;
 
-    td {
-        padding: 5px 10px;
-        border: 1px solid #dddddd;
+  td {
+    padding: 5px 10px;
+    border: 1px solid #dddddd;
 
-        p {
-            margin-bottom: 0;
-        }
+    p {
+      margin-bottom: 0;
     }
+  }
 }
 
 .table-right {
-    margin-left: 20px;
-    margin-bottom: 20px;
-    float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  float: right;
 }
 
 .table td {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 @media screen and (max-width: 420px) {
-    .table-right {
-        float: none;
-        margin: 10px 0;
-    }
+  .table-right {
+    float: none;
+    margin: 10px 0;
+  }
 }
 
 
@@ -666,70 +666,70 @@ button.slick-prev.slick-arrow:after {
 ---------------------------------------------------*/
 // post content 영역
 .post_content_box>.et_pb_column_inner>.et_pb_code:nth-last-child(1) {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 // 댓글영역
 .heateor_ffcp_facebook_comments {
-    background: #f2f4f7;
-    border-radius: 0 0 5px 5px;
+  background: #f2f4f7;
+  border-radius: 0 0 5px 5px;
 }
 
 // 위젯영역 : 페이스북 최근댓글
 .et_pb_widget_area_left {
-    .heateor_ffcp_facebook_comments {
-        margin-top: 0 !important;
-    }
+  .heateor_ffcp_facebook_comments {
+    margin-top: 0 !important;
+  }
 }
 
 .heateor_ffcp_facebook_comment {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    h6 {
-        font-size: 12px;
-        order: 1;
+  h6 {
+    font-size: 12px;
+    order: 1;
 
-        // 이름에 링크비활성화
-        a:nth-of-type(1) {
-            pointer-events: none;
-        }
+    // 이름에 링크비활성화
+    a:nth-of-type(1) {
+      pointer-events: none;
     }
+  }
 
-    time {
-        order: 3;
-    }
+  time {
+    order: 3;
+  }
 
-    .heateor_ffcp_fb_message {
-        order: 2;
-        display: block;
-        width: 100%;
-    }
+  .heateor_ffcp_fb_message {
+    order: 2;
+    display: block;
+    width: 100%;
+  }
 }
 
 .widget_heateor_ffcp_recent_facebook_comments {
-    .heateor_ffcp_facebook_comments {
-        background: none;
-        padding: 0;
-        border-radius: 0;
-    }
+  .heateor_ffcp_facebook_comments {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
 }
 
 /*---------------------------------------------------
         07.02 Disqus comment
 ---------------------------------------------------*/
 #disqus_thread {
-    background: $L_bg;
-    padding: 3%;
+  background: $L_bg;
+  padding: 3%;
 }
 
 // side bar
 #recentcomments {
-    .dsq-widget-item {
-        margin-top: 0;
-    }
+  .dsq-widget-item {
+    margin-top: 0;
+  }
 
-    .dsq-widget-meta>a:nth-of-type(1) {
-        display: block;
-    }
+  .dsq-widget-meta>a:nth-of-type(1) {
+    display: block;
+  }
 }

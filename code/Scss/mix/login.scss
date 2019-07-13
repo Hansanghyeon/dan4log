@@ -1,243 +1,243 @@
 body.login {
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 
-    #notfound {
-        position: relative;
-        height: 100vh;
+  #notfound {
+    position: relative;
+    height: 100vh;
 
-        .notfound-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: url(' https://source.unsplash.com/collection/4566403/1600x900');
-            background-size: cover;
-            background-position: center;
+    .notfound-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url(' https://source.unsplash.com/collection/4566403/1600x900');
+      background-size: cover;
+      background-position: center;
 
-            &::after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.25);
-            }
-        }
-
-        .notfound {
-            //position
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-
-
-            @include media("(max-width: 480px)") {
-                padding: 0;
-            }
-
-            // //after
-            // &:after{
-            //     content: '';
-            //     position: absolute;
-            //     left: 50%;
-            //     top: 50%;
-            //     transform: translate(-50% , -50%);
-            //     width: 100%;
-            //     height: 600px;
-            //     background-color: rgba(255, 255, 255, 0.7);
-            //     z-index: -1;
-            // }
-
-            //size
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            padding: 30px;
-            line-height: 1.4;
-
-            .notfound-404 {
-                position: relative;
-                height: 200px;
-
-                h1 {
-                    font-family: 'Passion One', cursive !important;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    font-size: 220px;
-                    margin: 0px;
-                    color: #222225;
-                    font-weight: 500;
-                    //text-transform: uppercase;
-                    -webkit-text-stroke: 1px #fff;
-                    text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-
-                    @include media("(max-width:480px)") {
-                        font-size: 110px;
-                    }
-                }
-            }
-
-            a {
-                font-family: 'Muli', sans-serif !important;
-                display: inline-block;
-                font-weight: 400;
-                text-decoration: none;
-                background-color: transparent;
-                color: #222225;
-                //text-transform: uppercase;
-                font-size: 14px;
-            }
-
-            h2 {
-                font-family: 'Muli', sans-serif !important;
-                font-size: 16px;
-                font-weight: 400;
-                //text-transform: uppercase;
-                color: #fff;
-            }
-
-            .notfound-social {
-                margin-bottom: 15px;
-
-                >a {
-                    display: inline-block;
-                    height: 40px;
-                    line-height: 40px;
-                    width: 40px;
-                    font-size: 14px;
-                    color: #fff;
-                    background-color: #222225;
-                    margin: 3px;
-                    -webkit-transition: 0.2s all;
-                    transition: 0.2s all;
-
-                    &:hover {
-                        color: #fff;
-                        background-color: #ff00b4;
-                    }
-                }
-            }
-        }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.25);
+      }
     }
+
+    .notfound {
+      //position
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+
+      @include respond-to('small') {
+        padding: 0;
+      }
+
+      // //after
+      // &:after{
+      //     content: '';
+      //     position: absolute;
+      //     left: 50%;
+      //     top: 50%;
+      //     transform: translate(-50% , -50%);
+      //     width: 100%;
+      //     height: 600px;
+      //     background-color: rgba(255, 255, 255, 0.7);
+      //     z-index: -1;
+      // }
+
+      //size
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      padding: 30px;
+      line-height: 1.4;
+
+      .notfound-404 {
+        position: relative;
+        height: 200px;
+
+        h1 {
+          font-family: 'Passion One', cursive !important;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 220px;
+          margin: 0px;
+          color: #222225;
+          font-weight: 500;
+          //text-transform: uppercase;
+          -webkit-text-stroke: 1px #fff;
+          text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+
+          @include respond-to('small') {
+            font-size: 110px;
+          }
+        }
+      }
+
+      a {
+        font-family: 'Muli', sans-serif !important;
+        display: inline-block;
+        font-weight: 400;
+        text-decoration: none;
+        background-color: transparent;
+        color: #222225;
+        //text-transform: uppercase;
+        font-size: 14px;
+      }
+
+      h2 {
+        font-family: 'Muli', sans-serif !important;
+        font-size: 16px;
+        font-weight: 400;
+        //text-transform: uppercase;
+        color: #fff;
+      }
+
+      .notfound-social {
+        margin-bottom: 15px;
+
+        >a {
+          display: inline-block;
+          height: 40px;
+          line-height: 40px;
+          width: 40px;
+          font-size: 14px;
+          color: #fff;
+          background-color: #222225;
+          margin: 3px;
+          -webkit-transition: 0.2s all;
+          transition: 0.2s all;
+
+          &:hover {
+            color: #fff;
+            background-color: #ff00b4;
+          }
+        }
+      }
+    }
+  }
 }
 
-@include media("(max-width:480px)") {
-    .notfound {
-        h2 {
-            font-size: 22px;
-        }
-
-        .notfound-404 {
-            height: 146px;
-        }
+@include respond-to('small') {
+  .notfound {
+    h2 {
+      font-size: 22px;
     }
+
+    .notfound-404 {
+      height: 146px;
+    }
+  }
 }
 
 //admin login button
 .btn {
-    position: absolute;
-    bottom: 2vh;
-    left: 50%;
-    transform: translate(-50%, 0);
-    padding: 10px 20px !important;
-    background: transparent;
-    border-radius: 999px;
-    color: #fff;
-    text-transform: uppercase;
-    opacity: .3;
-    transition: all .5s;
-    outline: none;
-    cursor: pointer;
+  position: absolute;
+  bottom: 2vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px 20px !important;
+  background: transparent;
+  border-radius: 999px;
+  color: #fff;
+  text-transform: uppercase;
+  opacity: .3;
+  transition: all .5s;
+  outline: none;
+  cursor: pointer;
 
-    &:hover {
-        opacity: 1;
-    }
+  &:hover {
+    opacity: 1;
+  }
 }
 
 //default login style setting
 $form_bg : #212121;
 
 #login {
-    position: absolute;
-    bottom: 5vh;
-    opacity: 0;
-    padding-top: 0 !important;
-    left: 50%;
-    //transform: translate(150%, 0px);
-    transition: all .5s;
+  position: absolute;
+  bottom: 5vh;
+  opacity: 0;
+  padding-top: 0 !important;
+  left: 50%;
+  //transform: translate(150%, 0px);
+  transition: all .5s;
 
-    @include media("(max-width:480px)") {
-        left: auto;
-        bottom: 50%;
-        transform: translateY(50%) !important;
+  @include respond-to('small') {
+    left: auto;
+    bottom: 50%;
+    transform: translateY(50%) !important;
+  }
+
+  &.active {
+    opacity: 1;
+    transform: translate(-50%, 0px);
+
+    @include respond-to('small') {
+      transform: translate(0, 0);
+    }
+  }
+
+  >h1 {
+    display: none;
+  }
+
+  #loginform {
+    margin: 0;
+    padding-bottom: 24px;
+    border-radius: 15px 15px 0 0;
+    background: $form_bg;
+
+
+    @include respond-to('small') {
+      border-radius: 0;
     }
 
-    &.active {
-        opacity: 1;
-        transform: translate(-50%, 0px);
-
-        @include media("(max-width: 480px)") {
-            transform: translate(0, 0);
-        }
+    #wp-submit {
+      background: none;
+      box-shadow: none;
+      border: none;
+      text-shadow: none;
+      color: #c5c5c5;
     }
 
-    >h1 {
-        display: none;
+    .forgetmenot {
+      display: none;
     }
 
-    #loginform {
-        margin: 0;
-        padding-bottom: 24px;
-        border-radius: 15px 15px 0 0;
-        background: $form_bg;
+    .input {
+      background: transparent;
+      border: 2px solid #151515;
+      border-radius: 999px;
+      padding: 3px 14px;
+      color: #fff;
 
-
-        @include media("(max-width: 480px)") {
-            border-radius: 0;
-        }
-
-        #wp-submit {
-            background: none;
-            box-shadow: none;
-            border: none;
-            text-shadow: none;
-            color: #c5c5c5;
-        }
-
-        .forgetmenot {
-            display: none;
-        }
-
-        .input {
-            background: transparent;
-            border: 2px solid #151515;
-            border-radius: 999px;
-            padding: 3px 14px;
-            color: #fff;
-
-            &:focus {
-                box-shadow: none;
-            }
-        }
-
+      &:focus {
+        box-shadow: none;
+      }
     }
 
-    #nav {
-        margin-top: 0;
-        padding: 24px;
-        padding-top: 0;
-        border-radius: 0 0 15px 15px;
-        background: $form_bg;
+  }
 
-        @include media("(max-width: 480px)") {
-            border-radius: 0;
-        }
-    }
+  #nav {
+    margin-top: 0;
+    padding: 24px;
+    padding-top: 0;
+    border-radius: 0 0 15px 15px;
+    background: $form_bg;
 
-    #backtoblog {
-        display: none;
+    @include respond-to('small') {
+      border-radius: 0;
     }
+  }
+
+  #backtoblog {
+    display: none;
+  }
 }
