@@ -697,6 +697,10 @@ body.dark {
   .et_pb_title_meta_container {
     display: inline-block;
   }
+
+  .et_pb_column_single {
+    padding: 0;
+  }
 }
 
 @include respond-to('over') {
