@@ -266,6 +266,13 @@ html,
     01.03 - HEADER & FOOTER & NAVIGATION & SIDEBAR
 ---------------------------------------------------*/
 
+// sidebar Google AdSense
+.ads_wrap .adsbygoogle>ins {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: $shadow;
+}
+
 //page disable setting
 .et_vertical_nav #page-container #main-header {
   transition: all .5s;
