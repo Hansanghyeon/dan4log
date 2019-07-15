@@ -1,6 +1,6 @@
 <?php
 
-include('function_secret.php');
+include('secret/function_secret.php');
 
 /********************************************************
 	
@@ -75,7 +75,7 @@ function themeslug_enqueue() {
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_enqueue' );
 
-//add header
+//add head
 function child_theme_head_script() {
 	$theme_url = get_stylesheet_directory_uri();
 ?>
@@ -300,7 +300,7 @@ function admin_style() {
     $CDN = '';
     $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/dan4log';
     wp_enqueue_style('WP_list_table', $Static.'/css/admin_dashborad.css');
-    wp_register_script( 'my_script', $Static.'/js/copy_btn.js', array('jquery'), '1', true);
+    wp_register_script( 'my_script', $Static.'/js/copy_btn.js', array('jquery'), '1.0.0', true);
     wp_register_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
 
     // 실제 사용 여부 결정 ( 컨디셔널 테그 이용하면 특정 페이지에만 적용할 수도 있음)
