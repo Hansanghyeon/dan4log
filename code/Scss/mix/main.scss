@@ -434,7 +434,7 @@ body.light .post_content_box {
 
 body #main-content .post_content_box {
   padding-top: 0;
-  padding-bottom: 0;
+  padding-bottom: 3%;
   border-radius: 8px;
   box-shadow: $shadow;
   overflow: hidden;
@@ -895,17 +895,26 @@ body.category-nas {
   }
 }
 
+// Post Footer box Section
+.post_footer_box {
+  margin-top: 100px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+  padding-top: 0px !important;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+}
+
 // author & tag cloud
-body.dark .post_content_box>.et_pb_column_inner>.et_pb_code:nth-last-child(2) {
+body.dark .post_footer_box>.et_pb_column_inner>.et_pb_code:nth-last-child(2) {
   background-color: rgba($D_bg, .6)
 }
 
-body.light .post_content_box>.et_pb_column_inner>.et_pb_code:nth-last-child(2) {
+body.light .post_footer_box>.et_pb_column_inner>.et_pb_code:nth-last-child(2) {
   background-color: rgba($L_bg, .6)
 }
 
-.post_content_box>.et_pb_column_inner>.et_pb_code:nth-last-child(2) {
-  margin-top: 60px;
+.post_footer_box>.et_pb_column_inner>.et_pb_code:nth-last-child(2) {
   margin-bottom: 0 !important;
   background-blend-mode: overlay;
   background: url(https://source.unsplash.com/collection/4746550/1600x900);
@@ -1399,10 +1408,12 @@ body.dark {
 }
 
 // 관련글
-body .related_card {
+.related_card {
   // padding-left: 15px;
   // padding-right: 15px;
   // background: linear-gradient(to bottom, #479fde, transparent);
+  display: flex;
+  flex-direction: column;
 
   a {
     color: #fff;
