@@ -17,3 +17,10 @@ if (_diviLib_thumOff_sideOn) {
 
   cover_meta.getAttribute("cover") == "open" ? _open() : _close();
 }
+
+(function($) {
+  $(".disqus_btn").on("click", function() {
+    $("#disqus_thread").toggle();
+    $(this).toggleClass("active");
+  });
+})(jQuery);

@@ -1293,7 +1293,29 @@ body.light .custom_section p {
 
 body .bio_card_wrap {
   width: 100%;
-  padding: 0;
+  padding: 0 5%;
+}
+
+body .comment_more_btn {
+  width: auto;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+
+  .disqus_btn {
+    font-size: 30px;
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover {
+      color: $pointcolor;
+    }
+
+    &.active {
+      color: $pointcolor;
+
+    }
+  }
 }
 
 body.light .author_card {
@@ -1387,4 +1409,9 @@ body .related_card {
     font-weight: bold;
     word-break: keep-all;
   }
+}
+
+// Disqus
+#disqus_thread {
+  display: none;
 }
