@@ -273,6 +273,18 @@ get_header();
                     </p>
                   </div>
                 </div>
+                <div class="projectName">
+                  <div class="repair_ing">
+                    <div>2019.06</div>
+                    <div>
+                      <b><a target="_blank" href="" rel="noopener noreferrer"><i class="fas fa-link"></i> Peterosea App</a></b>
+                    </div>
+                    <p>
+                      React + Firebase<br>
+                      Google Calendar API<br>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
