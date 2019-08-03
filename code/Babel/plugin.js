@@ -29,9 +29,14 @@
   $(".markdown-body img")
     .parent()
     .addClass("img_wrap_a");
-  document.querySelector(
-    ".markdown-body .img_wrap_a"
-  ).parentElement.style.lineHeight = 0;
+
+  var mdImg = document.querySelector(".markdown-body .img_wrap_a");
+  if (mdImg !== null) {
+    document.querySelector(
+      ".markdown-body .img_wrap_a"
+    ).parentElement.style.lineHeight = 0;
+  }
+
   $(".markdown-body img").each(function() {
     let alt = $(this).attr("alt");
 
