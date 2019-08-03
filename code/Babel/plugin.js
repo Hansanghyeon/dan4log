@@ -32,9 +32,8 @@
 
   var mdImg = document.querySelector(".markdown-body .img_wrap_a");
   if (mdImg !== null) {
-    document.querySelector(
-      ".markdown-body .img_wrap_a"
-    ).parentElement.style.lineHeight = 0;
+    mdImg.parentElement.style.lineHeight = 0;
+    mdImg.parentElement.style.marginTop = "40px";
   }
 
   $(".markdown-body img").each(function() {
