@@ -306,7 +306,8 @@ body.dark {
 
       }
     }
-    &.highlight-source-viml pre{
+
+    &.highlight-source-viml pre {
       &::before {
         content: 'Viml';
         left: auto;
@@ -342,7 +343,7 @@ body.dark {
   }
 
   p {
-    margin-bottom: .6em;
+    margin-bottom: 1.6em;
   }
 
   hr {
