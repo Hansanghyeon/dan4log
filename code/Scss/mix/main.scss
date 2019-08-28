@@ -26,7 +26,6 @@
 
 *********************************************************/
 
-
 /*---------------------------------------------------
 
     01.00 - GENERAL & BASIC STYLES
@@ -35,7 +34,7 @@
 
 ---------------------------------------------------*/
 
-/* 	본문 폰트 : 영문 Montserrat, 한글 노토 산스 */
+/*  본문 폰트 : 영문 Montserrat, 한글 노토 산스 */
 body,
 div,
 a,
@@ -46,11 +45,10 @@ td,
 label,
 li,
 b {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
-
-/* 	제목 폰트 : 영문 Montserrat, 한글 나눔스퀘어 */
+/*  제목 폰트 : 영문 Montserrat, 한글 나눔스퀘어 */
 h1,
 h2,
 h3,
@@ -69,7 +67,7 @@ b,
 textarea,
 select,
 input {
-  font-family: 'Noto Sans KR', sans-serif !important;
+  font-family: "Noto Sans KR", sans-serif !important;
   word-break: keep-all;
   line-height: 1.6em;
 }
@@ -93,7 +91,7 @@ p {
   letter-spacing: -0.02em;
   word-break: keep-all;
   line-height: 2;
-  letter-spacing: -.003em;
+  letter-spacing: -0.003em;
   font-weight: 400;
 }
 
@@ -106,9 +104,6 @@ b {
 .cursor {
   cursor: pointer;
 }
-
-
-
 
 /*---------------------------------------------------
     01.01 - TYPOGRAPHY  
@@ -131,7 +126,7 @@ body.light {
   }
 
   p {
-    color: $L_default
+    color: $L_default;
   }
 
   h1,
@@ -163,7 +158,7 @@ body.light {
   }
 
   #footer-bottom {
-    background: $L_header
+    background: $L_header;
   }
 }
 
@@ -172,11 +167,11 @@ body.dark {
   color: $D_default;
 
   a {
-    color: $D_default
+    color: $D_default;
   }
 
   p {
-    color: $D_default
+    color: $D_default;
   }
 
   h1,
@@ -196,7 +191,7 @@ body.dark {
   }
 
   #footer-bottom {
-    background: $D_header
+    background: $D_header;
   }
 }
 
@@ -213,23 +208,21 @@ body .et_pb_cpt_text a {
   }
 
   &::after {
-    content: '';
+    content: "";
     background: #eb5255;
     width: 100%;
     position: absolute;
-    height: .3em;
-    bottom: .1em;
+    height: 0.3em;
+    bottom: 0.1em;
     left: 0;
-    opacity: .6;
-    transition: all .5s;
+    opacity: 0.6;
+    transition: all 0.5s;
   }
 
   &.anchor::after {
     content: none;
   }
 }
-
-
 
 /*---------------------------------------------------
     01.02 - LAYOUT
@@ -245,19 +238,19 @@ html,
 }
 
 .et_pb_section {
-  @include respond-to('small') {
+  @include respond-to("small") {
     padding-top: 0;
   }
 }
 
 .et_pb_row {
-  @include respond-to('small') {
+  @include respond-to("small") {
     width: 100%;
   }
 }
 
 .et_pb_column .et_pb_module {
-  @include respond-to('small') {
+  @include respond-to("small") {
     padding-right: 3% !important;
     padding-left: 3% !important;
   }
@@ -268,7 +261,7 @@ html,
 ---------------------------------------------------*/
 
 // sidebar Google AdSense
-.ads_wrap .adsbygoogle>ins {
+.ads_wrap .adsbygoogle > ins {
   border-radius: 5px;
   overflow: hidden;
   box-shadow: $shadow;
@@ -276,7 +269,7 @@ html,
 
 //page disable setting
 .et_vertical_nav #page-container #main-header {
-  transition: all .5s;
+  transition: all 0.5s;
 
   &.click {
     left: -225px;
@@ -293,21 +286,20 @@ html,
 
 .et_pb_widget_area_left {
   border: none;
-  border-left: 1px solid rgba(0, 0, 0, .1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
   border-right: none !important;
   padding-right: 0;
   padding-left: 30px;
 
-  @include respond-to('small') {
+  @include respond-to("small") {
     border: none;
     padding-left: 3%;
     padding-right: 3%;
   }
 }
 
-// mobile menu 
-@include respond-to('large') {
-
+// mobile menu
+@include respond-to("large") {
   // admin bar
   html {
     margin-top: 48px;
@@ -331,9 +323,6 @@ html,
     max-width: 30%;
   }
 }
-
-
-
 
 /*---------------------------------------------------
     01.04 - POST
@@ -361,7 +350,7 @@ span.author.vcard {
       color: $pointcolor;
     }
 
-    article>p {
+    article > p {
       display: inline-block;
       margin: 0;
     }
@@ -400,8 +389,6 @@ blockquote {
   box-shadow: $shadow;
 }
 
-
-
 /*---------------------------------------------------
 
     02.00 DIVI LIBRARY
@@ -417,7 +404,7 @@ body.no_thumbnail .post_featured_thumbnail {
 }
 
 // thumbnail disable
-@include respond-to('large') {
+@include respond-to("large") {
   .blog_list .et_pb_column_single {
     padding: 0;
   }
@@ -439,7 +426,7 @@ body #main-content .post_content_box {
   box-shadow: $shadow;
   overflow: hidden;
 
-  @include respond-to('small') {
+  @include respond-to("small") {
     border-radius: 0;
     padding-left: 0;
     padding-right: 0;
@@ -462,14 +449,15 @@ body #main-content .post_content_box {
     padding-top: 3%;
 
     h1 {
-      @include respond-to('small') {
+      @include respond-to("small") {
         font-size: 24px;
       }
     }
   }
-
+}
+body.docs-tempate-default {
   // markdown
-  .markdown-body>h2:nth-of-type(1) {
+  .markdown-body > h2:nth-of-type(1) {
     margin-top: 0;
   }
 }
@@ -482,8 +470,8 @@ body #main-content .post_content_box {
 
 // 02.01.02 - tag, tag cloud, cc
 // tags setting
-$dark-tag_bg : #2b2b2b;
-$light-tag_bg : transparent;
+$dark-tag_bg: #2b2b2b;
+$light-tag_bg: transparent;
 
 // dark mode
 body.dark .grid_tag .tag_item {
@@ -512,11 +500,11 @@ body.light .grid_tag .tag_item {
     padding: 0px 8px;
     margin-right: 5px;
     border-radius: 5px;
-    transition: all .5s;
+    transition: all 0.5s;
     cursor: pointer;
 
     &::before {
-      content: '\f292';
+      content: "\f292";
       font-weight: 600;
       font-style: normal;
       font-variant: normal;
@@ -525,7 +513,7 @@ body.light .grid_tag .tag_item {
       margin-right: 2px;
       display: inline-block;
       text-rendering: auto;
-      transition: color .5s;
+      transition: color 0.5s;
     }
   }
 }
@@ -555,11 +543,11 @@ body.light .tagcloud a {
   padding: 3px 8px;
   margin-right: 5px;
   border-radius: 5px;
-  transition: all .5s;
+  transition: all 0.5s;
   cursor: pointer;
 
   &::before {
-    content: '\f292';
+    content: "\f292";
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
@@ -574,7 +562,6 @@ body.light .tagcloud a {
 body .tagcloud a:hover {
   border: 2px solid $pointcolor;
 }
-
 
 // Creative Commons
 //daark mode
@@ -600,10 +587,10 @@ body .cc_box {
   align-items: center;
   justify-content: center;
   height: 28px;
-  transition: all .5s;
+  transition: all 0.5s;
 
   div {
-    display: flex
+    display: flex;
   }
 
   div:nth-of-type(1) {
@@ -611,7 +598,7 @@ body .cc_box {
   }
 
   div:nth-of-type(2) {
-    transition: all .5s;
+    transition: all 0.5s;
 
     i {
       margin-right: 3px;
@@ -626,7 +613,7 @@ body .cc_box {
     border: 2px solid $pointcolor;
 
     div:nth-of-type(2) {
-      color: $pointcolor
+      color: $pointcolor;
     }
   }
 }
@@ -635,11 +622,10 @@ body .cc_box {
   overflow: hidden;
 }
 
-
 /*---------------------------------------------------
     02.02 - [ 포스트 | Taxonomy ] 기본 (섬네일on, 사이드바off)
 ---------------------------------------------------*/
-@mixin taxonomy_hero_section ($bg) {
+@mixin taxonomy_hero_section($bg) {
   .et_pb_section.category-hero-section {
     padding: 0;
     padding-top: 60px;
@@ -661,7 +647,7 @@ body .cc_box {
       align-items: flex-end;
       transform: translate(-20px, 80%);
 
-      >h1 {
+      > h1 {
         padding-bottom: 20px;
         margin-left: 20px;
         padding-left: 10px;
@@ -672,10 +658,10 @@ body .cc_box {
       font-size: 144px;
       padding: 10px;
       border-radius: 5px;
-      transition: background-color .3s;
+      transition: background-color 0.3s;
 
       &:hover {
-        background-color: rgba($bg, .3);
+        background-color: rgba($bg, 0.3);
       }
     }
   }
@@ -711,13 +697,13 @@ body.dark {
   }
 }
 
-@include respond-to('over') {
+@include respond-to("over") {
   .blog_list .cpt_title {
     padding-bottom: 0;
   }
 
   .et_pb_cpt_loop_archive .et_pb_title_meta_container {
-    color: #000
+    color: #000;
   }
 }
 
@@ -726,7 +712,7 @@ body.dark {
 ---------------------------------------------------*/
 
 // 위젯관련 스타일
-.server_sidebar>div {
+.server_sidebar > div {
   width: 100% !important;
   margin: 0 !important;
 }
@@ -767,8 +753,6 @@ body.category-nas {
   }
 }
 
-
-
 /*---------------------------------------------------
     02.04 - [ 포스트 | Taxonomy ] 블로그
 ---------------------------------------------------*/
@@ -784,7 +768,7 @@ body.category-nas {
     background: transparent !important;
   }
 
-  >div>.et_pb_row:nth-last-of-type(1) {
+  > div > .et_pb_row:nth-last-of-type(1) {
     display: none;
   }
 }
@@ -815,7 +799,6 @@ body.category-nas {
   }
 }
 
-
 // 책상 벳지
 .region_badge {
   position: absolute;
@@ -840,7 +823,7 @@ body.category-nas {
 
   &:after,
   &:before {
-    content: '';
+    content: "";
     display: block;
     width: 0;
     height: 0;
@@ -878,11 +861,12 @@ body.category-nas {
   .published {
     color: #fff;
     -webkit-text-stroke: 1px #fff;
-    text-shadow: 3px 3px 2px #000, -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;
+    text-shadow: 3px 3px 2px #000, -1px -1px 2px #000, 1px -1px 2px #000,
+      -1px 1px 2px #000, 1px 1px 2px #000;
   }
 }
 
-@include respond-to('small') {
+@include respond-to("small") {
   .desk_view {
     .et_cpt_container_column {
       display: none;
@@ -906,22 +890,27 @@ body.category-nas {
 }
 
 // author & tag cloud
-body.dark .post_footer_box>.et_pb_column_inner>.et_pb_code:nth-last-child(2) {
-  background-color: rgba($D_bg, .6)
+body.dark
+  .post_footer_box
+  > .et_pb_column_inner
+  > .et_pb_code:nth-last-child(2) {
+  background-color: rgba($D_bg, 0.6);
 }
 
-body.light .post_footer_box>.et_pb_column_inner>.et_pb_code:nth-last-child(2) {
-  background-color: rgba($L_bg, .6)
+body.light
+  .post_footer_box
+  > .et_pb_column_inner
+  > .et_pb_code:nth-last-child(2) {
+  background-color: rgba($L_bg, 0.6);
 }
 
-.post_footer_box>.et_pb_column_inner>.et_pb_code:nth-last-child(2) {
+.post_footer_box > .et_pb_column_inner > .et_pb_code:nth-last-child(2) {
   margin-bottom: 0 !important;
   background-blend-mode: overlay;
   background: url(https://source.unsplash.com/collection/4746550/1600x900);
   background-size: cover;
   background-position: center;
 }
-
 
 /*---------------------------------------------------
     02.05 - [ 포스트 | Taxonomy:Tag ] 태그전체
@@ -966,7 +955,7 @@ body.tag-how-to-guide .how-to-guide {
   .menu_inner {
     width: 100%;
 
-    >.et_pb_column {
+    > .et_pb_column {
       all: unset;
     }
   }
@@ -980,11 +969,11 @@ body.tag-how-to-guide .how-to-guide {
 
   position: fixed !important;
   height: 100%;
-  transition: left .5s;
+  transition: left 0.5s;
   //position
   left: 225px;
 
-  @include respond-to('small') {
+  @include respond-to("small") {
     left: 0;
   }
 
@@ -999,7 +988,7 @@ body.tag-how-to-guide .how-to-guide {
     padding: 0 !important;
 
     div[class*="menu_colum"] {
-      transition: width .5s;
+      transition: width 0.5s;
       box-sizing: border-box;
       padding: 0 20px;
       padding-top: 40px;
@@ -1008,18 +997,18 @@ body.tag-how-to-guide .how-to-guide {
 
     .menu_colum1 {
       width: 225px;
-      box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, .2);
+      box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
     }
   }
 }
 
 // Menu close button
 body.dark .action_wrap .arrow {
-  background: $D_bg
+  background: $D_bg;
 }
 
 body.light .action_wrap .arrow {
-  background: $L_bg
+  background: $L_bg;
 }
 
 .arrow_wrap {
@@ -1046,7 +1035,7 @@ body.light .action_wrap .arrow {
       position: absolute;
       right: 0;
       top: 0;
-      transform: rotate(-90deg) scale(.7);
+      transform: rotate(-90deg) scale(0.7);
       left: auto !important;
       z-index: 0;
 
@@ -1064,7 +1053,7 @@ body.light .action_wrap .arrow {
     }
 
     .arrow.left {
-      transform: rotate(90deg) scale(.7);
+      transform: rotate(90deg) scale(0.7);
     }
 
     .et_pb_code_inner {
@@ -1072,13 +1061,13 @@ body.light .action_wrap .arrow {
     }
   }
 
-  @import 'arrow_animation.scss';
+  @import "arrow_animation.scss";
 
   .arrow {
     position: absolute;
     bottom: 0;
     left: -64px;
-    transition: all .5s;
+    transition: all 0.5s;
     opacity: 1;
     border-radius: 999px;
     cursor: pointer;
@@ -1104,7 +1093,7 @@ body.light .action_wrap .arrow {
 
 //  02.06.02 - [ Docs | CPT ] 기본
 
-$chateau : #46AD64;
+$chateau: #46ad64;
 
 .docs_content {
   padding: 0 !important;
@@ -1121,10 +1110,10 @@ $chateau : #46AD64;
     height: 100%;
     width: 325px;
     box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.4);
-    transition: all .5s;
+    transition: all 0.5s;
     overflow-x: scroll;
 
-    @include respond-to('large') {
+    @include respond-to("large") {
       left: 0;
     }
   }
@@ -1140,7 +1129,7 @@ $chateau : #46AD64;
     }
 
     .book_list_wrap {
-      letter-spacing: .07em;
+      letter-spacing: 0.07em;
 
       a[class*="term_id_"] {
         display: block;
@@ -1149,8 +1138,8 @@ $chateau : #46AD64;
         &.current {
           background: $chateau;
           font-weight: bold;
-          padding-top: .5em;
-          padding-bottom: .5em;
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
           color: #fff;
         }
       }
@@ -1161,7 +1150,7 @@ $chateau : #46AD64;
 
         li {
           padding-left: 1em;
-          margin: .5em 0;
+          margin: 0.5em 0;
 
           a {
             line-height: 1;
@@ -1182,19 +1171,19 @@ $chateau : #46AD64;
           .order {
             border-radius: 999px;
             font-size: 10px;
-            transition: all .5s;
+            transition: all 0.5s;
             margin-right: 10px;
             display: inline-block;
-            font-family: 'Allerta Stencil', sans-serif;
+            font-family: "Allerta Stencil", sans-serif;
             position: relative;
             line-height: 1;
             padding: 6px 8px;
-            background: rgba($L_post, .1);
+            background: rgba($L_post, 0.1);
 
             i {
               font-size: 10px;
               opacity: 0;
-              transition: all .5s;
+              transition: all 0.5s;
               position: absolute;
               right: -10px;
               top: -5px;
@@ -1205,15 +1194,15 @@ $chateau : #46AD64;
         li.current {
           background: $chateau;
           font-weight: bold;
-          padding-top: .5em;
-          padding-bottom: .5em;
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
 
           a {
-            color: #fff
+            color: #fff;
           }
 
           .order {
-            text-shadow: 3px 3px 2px rgba(0, 0, 0, .2);
+            text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
             color: $D_post;
 
             i {
@@ -1223,7 +1212,6 @@ $chateau : #46AD64;
         }
       }
     }
-
   }
 
   //
@@ -1242,14 +1230,13 @@ $chateau : #46AD64;
 }
 
 body.tax-library,
-body[class*='docs-'] {
-
+body[class*="docs-"] {
   //test용
   #et-main-area {
     margin-left: 550px !important;
-    transition: margin-left .5s;
+    transition: margin-left 0.5s;
 
-    @include respond-to('large') {
+    @include respond-to("large") {
       margin-left: 325px !important;
     }
   }
@@ -1270,9 +1257,9 @@ body.page-library {
 
   #et-main-area {
     margin-left: 450px !important;
-    transition: margin-left .5s;
+    transition: margin-left 0.5s;
 
-    @include respond-to('large') {
+    @include respond-to("large") {
       margin-left: 225px !important;
     }
   }
@@ -1292,7 +1279,10 @@ body.page-library {
 body.light .custom_section p {
   color: $L_bold;
   //-webkit-text-stroke: 1px $L_bold;
-  text-shadow: 3px 3px 1px rgba(255, 255, 255, .4), -1px -1px 1px rgba(255, 255, 255, .4), 1px -1px 1px rgba(255, 255, 255, .4), -1px 1px 1px rgba(255, 255, 255, .4), 1px 1px 1px rgba(255, 255, 255, .4);
+  text-shadow: 3px 3px 1px rgba(255, 255, 255, 0.4),
+    -1px -1px 1px rgba(255, 255, 255, 0.4),
+    1px -1px 1px rgba(255, 255, 255, 0.4), -1px 1px 1px rgba(255, 255, 255, 0.4),
+    1px 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .custom_section {
@@ -1313,7 +1303,7 @@ body .comment_more_btn {
 
   .disqus_btn {
     font-size: 30px;
-    transition: all .3s;
+    transition: all 0.3s;
     cursor: pointer;
 
     &:hover {
@@ -1322,7 +1312,6 @@ body .comment_more_btn {
 
     &.active {
       color: $pointcolor;
-
     }
   }
 }
@@ -1345,12 +1334,11 @@ body.dark {
   }
 
   .name .author_archive_title {
-
     font-size: 16px;
     padding-bottom: 0;
 
     &:after {
-      content: '입니다.';
+      content: "입니다.";
       padding-left: 0.2em;
     }
   }
@@ -1365,7 +1353,7 @@ body.dark {
     margin-left: 18px;
 
     &:hover:before {
-      opacity: .3;
+      opacity: 0.3;
     }
 
     &:hover:after {
@@ -1373,7 +1361,7 @@ body.dark {
     }
 
     &:before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       width: 100%;
@@ -1381,23 +1369,24 @@ body.dark {
       border-radius: 999px;
       background: $pointcolor;
       opacity: 0;
-      transition: all .3s;
+      transition: all 0.3s;
     }
 
     &:after {
-      content: 'Resume';
+      content: "Resume";
       color: #fff;
       font-weight: bold;
       position: absolute;
       left: 50%;
       bottom: 30%;
       -webkit-text-stroke: 1px #fff;
-      text-shadow: 3px 3px 2px #000, -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;
+      text-shadow: 3px 3px 2px #000, -1px -1px 2px #000, 1px -1px 2px #000,
+        -1px 1px 2px #000, 1px 1px 2px #000;
       transform: translate(-50%, 0);
       font-size: 14px;
       visibility: visible;
       opacity: 0;
-      transition: all .3s;
+      transition: all 0.3s;
     }
 
     .avatar {
