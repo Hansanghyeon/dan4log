@@ -17,18 +17,16 @@
 
 *********************************************************/
 
-
-
 /*---------------------------------------------------
         01.00 syntaxhighlighter
 ---------------------------------------------------*/
 body.dark {
-  div[id*='highlighter_'].syntaxhighlighter {
+  div[id*="highlighter_"].syntaxhighlighter {
     box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
   }
 }
 
-div[id*='highlighter_'].syntaxhighlighter {
+div[id*="highlighter_"].syntaxhighlighter {
   padding: 40px 20px 20px 0 !important;
   border-radius: 5px;
   box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
@@ -37,32 +35,32 @@ div[id*='highlighter_'].syntaxhighlighter {
     font-family: "Noto sans" !important;
   }
 
-  background-color: #1C1C1C !important;
+  background-color: #1c1c1c !important;
 
   .line {
-    background-color: #1C1C1C !important;
+    background-color: #1c1c1c !important;
 
     .content {
-      border-left: 1px solid #333 !important
+      border-left: 1px solid #333 !important;
     }
   }
 
   // 닫기 내리기 확장 버튼
   &::after {
-    content: '';
+    content: "";
     display: inline-block;
     position: absolute;
     top: 12px;
     left: 10px;
     width: 11px;
     height: 11px;
-    background-image: url('/wp-content/uploads/2018/10/cropped-cropped-favicon-1-32x32.png');
+    background-image: url("/wp-content/uploads/2018/10/cropped-cropped-favicon-1-32x32.png");
     background-size: cover;
     background-position: center;
   }
 
   &::before {
-    content: '\f111';
+    content: "\f111";
     display: inline-block;
     font-style: normal;
     font-variant: normal;
@@ -71,7 +69,7 @@ div[id*='highlighter_'].syntaxhighlighter {
     font-weight: 600;
     font-family: "Font Awesome 5 Free";
     position: absolute;
-    color: #FFBD2D;
+    color: #ffbd2d;
     top: 10px;
     left: 30px;
     font-size: 12px;
@@ -79,7 +77,7 @@ div[id*='highlighter_'].syntaxhighlighter {
 
   .lines {
     &::before {
-      content: '\f111';
+      content: "\f111";
       display: inline-block;
       font-style: normal;
       font-variant: normal;
@@ -88,24 +86,23 @@ div[id*='highlighter_'].syntaxhighlighter {
       font-weight: 600;
       font-family: "Font Awesome 5 Free";
       position: absolute;
-      color: #2AC940;
+      color: #2ac940;
       top: 10px;
       left: 50px;
       font-size: 12px;
     }
   }
-
 }
 
 body.dark {
-  div[id*='highlighter_'].syntaxhighlighter {
-    background-color: #282A36 !important;
+  div[id*="highlighter_"].syntaxhighlighter {
+    background-color: #282a36 !important;
 
     .line {
-      background-color: #282A36 !important;
+      background-color: #282a36 !important;
 
       .content {
-        border-left: 1px solid #333 !important
+        border-left: 1px solid #333 !important;
       }
     }
   }
@@ -115,11 +112,10 @@ body.dark {
   content: none;
 }
 
-
 /*---------------------------------------------------
         01.01 Markdown Github
 ---------------------------------------------------*/
-@import 'git_md_draculra.scss';
+@import "git_md_draculra.scss";
 
 .markdown-body {
   .img_wrap_a {
@@ -128,7 +124,7 @@ body.dark {
     }
   }
 
-  >h1:nth-of-type(1) {
+  > h1:nth-of-type(1) {
     display: none;
   }
 
@@ -138,11 +134,13 @@ body.dark {
   }
 
   blockquote {
-    background: #3a3a3a;
+    background: #282a36;
     font-size: 12px;
+    border-radius: 3px;
 
     p {
       line-height: 1.6em;
+      color: #fff !important;
     }
   }
 
@@ -154,7 +152,7 @@ body.dark {
     margin-left: 3px;
   }
 
-  pre>code {
+  pre > code {
     box-shadow: none;
   }
 
@@ -170,7 +168,7 @@ body.dark {
     border-radius: 5px;
     //box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, 0.3);
 
-    @include respond-to('small') {
+    @include respond-to("small") {
       width: 108%;
       transform: translateX(-4%);
       border-radius: 0;
@@ -178,20 +176,20 @@ body.dark {
 
     // 닫기 내리기 확장 버튼
     &::after {
-      content: '';
+      content: "";
       display: inline-block;
       position: absolute;
       top: 10px;
       left: 11px;
       width: 11px;
       height: 11px;
-      background-image: url('https://4log.dev/20190605110522/cropped-favicon-1.png');
+      background-image: url("https://4log.dev/20190605110522/cropped-favicon-1.png");
       background-size: cover;
       background-position: center;
     }
 
     &::before {
-      content: '\f111';
+      content: "\f111";
       display: inline-block;
       font-style: normal;
       font-variant: normal;
@@ -200,7 +198,7 @@ body.dark {
       font-weight: 600;
       font-family: "Font Awesome 5 Free";
       position: absolute;
-      color: #FFBD2D;
+      color: #ffbd2d;
       top: 10px;
       left: 30px;
       font-size: 12px;
@@ -212,14 +210,14 @@ body.dark {
       padding-bottom: 14px;
       border-radius: 5px;
       font-size: 16px;
-      font-family: 'D2 coding';
+      font-family: "D2 coding";
 
       * {
-        font-family: 'D2 coding';
+        font-family: "D2 coding";
       }
 
       &::before {
-        content: '\f111';
+        content: "\f111";
         display: inline-block;
         font-style: normal;
         font-variant: normal;
@@ -228,17 +226,17 @@ body.dark {
         font-weight: 600;
         font-family: "Font Awesome 5 Free" !important;
         position: absolute;
-        color: #2AC940;
+        color: #2ac940;
         top: 10px;
         left: 50px;
         font-size: 12px;
         line-height: 12px;
       }
 
-      // 
+      //
       // TODO:
       // copy & paste button 제작하기
-      // 
+      //
       // &::after{
       //     content: '\f0c5';
       //     display: inline-block;
@@ -262,7 +260,7 @@ body.dark {
     // Javascript
     &.highlight-source-js pre {
       &::before {
-        content: 'JS';
+        content: "JS";
         left: auto;
         top: 8px;
         right: 8px;
@@ -271,14 +269,13 @@ body.dark {
         background: #ffca54;
         padding: 2px 3px 1px;
         border-radius: 3px;
-
       }
     }
 
     // PHP
     &.highlight-text-html-php pre {
       &::before {
-        content: 'PHP';
+        content: "PHP";
         left: auto;
         top: 8px;
         right: 8px;
@@ -287,29 +284,27 @@ body.dark {
         padding: 2px 3px 1px;
         background: #777bb4;
         border-radius: 3px;
-
       }
     }
 
     // Shell
     &.highlight-source-shell pre {
       &::before {
-        content: 'Shell';
+        content: "Shell";
         left: auto;
         top: 8px;
         right: 8px;
         font-weight: bold;
         color: #000;
         padding: 2px 3px 1px;
-        background: #2AC940;
+        background: #2ac940;
         border-radius: 3px;
-
       }
     }
 
     &.highlight-source-viml pre {
       &::before {
-        content: 'Viml';
+        content: "Viml";
         left: auto;
         top: 8px;
         right: 8px;
@@ -323,7 +318,7 @@ body.dark {
   }
 
   ol {
-    li>p:nth-of-type(1) {
+    li > p:nth-of-type(1) {
       display: inline;
       margin-left: 0;
     }
@@ -336,7 +331,7 @@ body.dark {
     .highlight {
       margin-left: 12px;
 
-      @include respond-to('small') {
+      @include respond-to("small") {
         margin-left: 0;
       }
     }
@@ -353,7 +348,7 @@ body.dark {
 
 body.dark {
   .markdown-body {
-    color: #B9BDB4;
+    color: #b9bdb4;
 
     hr {
       background: rgba(0, 0, 0, 0.1);
@@ -364,8 +359,8 @@ body.dark {
     box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
 
     pre {
-      background-color: #282A36;
-      color: #B9BDB4;
+      background-color: #282a36;
+      color: #b9bdb4;
     }
   }
 }
@@ -409,7 +404,7 @@ body.dark {
     position: absolute;
     right: 0;
     margin-top: -27px;
-    transition: background .3s;
+    transition: background 0.3s;
     width: 20px;
     height: 20px;
 
@@ -430,8 +425,6 @@ body.dark {
   }
 }
 
-
-
 /*---------------------------------------------------
         03.00 slick
 ---------------------------------------------------*/
@@ -440,7 +433,7 @@ body.dark {
 }
 
 .slick-list {
-  cursor: -webkit-grab
+  cursor: -webkit-grab;
 }
 
 button.slick-arrow {
@@ -454,11 +447,11 @@ button.slick-arrow {
 }
 
 button.slick-next.slick-arrow:hover:after {
-  border-left: 10px solid #eb5255
+  border-left: 10px solid #eb5255;
 }
 
 button.slick-next.slick-arrow:after {
-  content: '';
+  content: "";
   display: block;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
@@ -466,18 +459,16 @@ button.slick-next.slick-arrow:after {
 }
 
 button.slick-prev.slick-arrow:hover:after {
-  border-right: 10px solid #eb5255
+  border-right: 10px solid #eb5255;
 }
 
 button.slick-prev.slick-arrow:after {
-  content: '';
+  content: "";
   display: block;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
   border-right: 10px solid #000;
 }
-
-
 
 /*---------------------------------------------------
         04.00 글쓰기 아이템들
@@ -502,7 +493,7 @@ button.slick-prev.slick-arrow:after {
   border-bottom: 2px solid;
 }
 
-.vue-ex>span {
+.vue-ex > span {
   color: white;
 }
 
@@ -510,7 +501,7 @@ button.slick-prev.slick-arrow:after {
   padding: 10px;
 }
 
-.vue-result>span {
+.vue-result > span {
   display: inline-block;
   padding: 3px 5px;
   border-radius: 5px;
@@ -529,8 +520,6 @@ button.slick-prev.slick-arrow:after {
 }
 
 /* 글쓰기 아이템들 White.ver */
-
-
 
 /*---------------------------------------------------
         05.00 codepen - copy button
@@ -620,8 +609,6 @@ button.slick-prev.slick-arrow:after {
 //     }
 // }
 
-
-
 /*---------------------------------------------------
         06.00 나무위키 table css
 ---------------------------------------------------*/
@@ -673,13 +660,11 @@ button.slick-prev.slick-arrow:after {
   }
 }
 
-
-
 /*---------------------------------------------------
         07.00 facebook comment
 ---------------------------------------------------*/
 // post content 영역
-.post_content_box>.et_pb_column_inner>.et_pb_code:nth-last-child(1) {
+.post_content_box > .et_pb_column_inner > .et_pb_code:nth-last-child(1) {
   padding: 0 !important;
 }
 
@@ -743,7 +728,7 @@ button.slick-prev.slick-arrow:after {
     margin-top: 0;
   }
 
-  .dsq-widget-meta>a:nth-of-type(1) {
+  .dsq-widget-meta > a:nth-of-type(1) {
     display: block;
   }
 }
