@@ -1,5 +1,5 @@
-# 4log.io wordpress Divi theme
+# dan4log wordpress Divi theme
 
-[4log.io](https://4log.io)
+[dan4log](https://dan4log.com)
 ---
 
