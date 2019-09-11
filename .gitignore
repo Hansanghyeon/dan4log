@@ -10,3 +10,6 @@ code/node_modules/
 bak/
 public/
 secret/
+
+# IDC
+.idea
