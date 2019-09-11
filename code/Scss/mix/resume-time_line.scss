@@ -13,11 +13,11 @@
     overflow: hidden;
     margin: 0;
     position: relative;
+    display:flex;
   }
 
   .timeline-date {
     width: 110px;
-    float: left;
     margin-top: 18px;
     font-size: 18px;
     margin-bottom: 10px;
@@ -26,7 +26,6 @@
   .timeline-content {
     padding-top: 48px;
     width: calc(100% - 110px);
-    float: left;
     border-left: 3px green solid;
     padding-left: 10px;
 
