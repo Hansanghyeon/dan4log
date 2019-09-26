@@ -199,7 +199,6 @@ get_header();
                             class="fas fa-link"></i> 트림블커넥트</a><br>
                         <a target="_blank" href="https://layout.buildingpoint.co.kr/" rel="noopener noreferrer"><i
                             class="fas fa-link"></i> 레이아웃</a>
-                      </div>
                     </div>
                     <p>
                       <div class="wordpress-work">workdpress</div>
