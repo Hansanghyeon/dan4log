@@ -3,7 +3,7 @@ function login_custom() {?>
     <title>dan4log | 로그인</title>
     <link href="https://fonts.googleapis.com/css?family=Muli:400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
-    <link href="<?php echo get_stylesheet_directory_uri() ?>/style.min.css" rel="stylesheet">
+    <link href="https://static4log.s3.ap-northeast-2.amazonaws.com/dan4log/css/style.min.css" rel="stylesheet">
     <div id="notfound">
         <div class="notfound-bg"></div>
         <div class="notfound">

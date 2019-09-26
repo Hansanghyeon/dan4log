@@ -293,26 +293,6 @@ get_header();
             </div>
           </li>
         </ul>
-
-        <ul class="timeline">
-          <div>개인작업</div>
-          <li>
-            <p class="timeline-date">2018년9월</p>
-            <div class="timeline-content">
-              <div class="projectName indent">
-                <div class="description block">
-                    <div>
-                      
-                    </div>
-                  <div class="company"><b><a target="_blank" href="https://kihyeon.page" target="_blank" rel="noopener noreferrer"><i
-                            class="fas fa-link"></i> PageI | 同價紅裳</a></b></div>
-                  <div class="date">2018년09월3일 ~ ing</div>
-                  <div class="department">산업디자인 학부생 김기현 포트폴리오 정리웹사이트</div>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
       </div>
     </div>
     <div class="resumeSection4">
