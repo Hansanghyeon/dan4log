@@ -160,10 +160,11 @@ get_header();
               <div class="projectName indent">
                 <div class="description">
                   <div class="desciprtion_inner_wrap">
-                    <div class="company peterosea"><img
-                        src="https://peterosea.com/wp-content/uploads/2018/10/logo_pr_512.png"><b>Peterosea</b></div>
+                    <div class="company peterosea">
+                      <img src="https://peterosea.com/wp-content/uploads/2018/10/logo_pr_512.png"><a href="peterosea.com"><b>Peterosea</b></a>
+                        </div>
                     <div class="date">12월12일 ~ </div>
-                    <div class="department">Publisher</div>
+                    <div class="department">FrontEnd</div>
                   </div>
                   <div class="arrow_wrap">
                     <div class="action_wrap normal peterosea_controller">
@@ -174,10 +175,11 @@ get_header();
                   <div class="projectName">
                     <div>2018.12</div>
                     <div>
-                      <b><a target="_blank" href="http://intonomad.com" rel="noopener noreferrer"><i
+                      <b><a target="_blank" href="https://intonomad.com" rel="noopener noreferrer"><i
                             class="fas fa-link"></i> 인투노마드</a></b>
                     </div>
                     <p>
+                      <div class="wordpress-work">workdpress</div>
                       Divi 테마를 이용한 사이트 퍼블리싱
                     </p>
                   </div>
@@ -200,6 +202,7 @@ get_header();
                       </div>
                     </div>
                     <p>
+                      <div class="wordpress-work">workdpress</div>
                       Divi 기반을둔 퍼블리싱작업 경험
                     </p>
                   </div>
@@ -210,6 +213,7 @@ get_header();
                             class="fas fa-link"></i> 캠퍼 회원관리 시스템</a></b>
                     </div>
                     <p>
+                      <div class="static-work">static</div>
                       jQgrid를 활용한 회원관리 시스템 퍼블리싱
                     </p>
                   </div>
@@ -220,6 +224,7 @@ get_header();
                           rel="noopener noreferrer"><i class="fas fa-link"></i> GE Additive Day 2019</a></b>
                     </div>
                     <p>
+                      <div class="func-work">func</div>
                       AWS API Gateway를 이용한 API 제작 경험<br>
                       <a href="/gravity_form_webhook/">
                         <i class="fas fa-archive"></i> Wordpress Gravity Forms <i class="fas fa-long-arrow-alt-right"></i>
@@ -233,33 +238,31 @@ get_header();
                             class="fas fa-link"></i> 코스콤 뉴스룸</a></b>
                     </div>
                     <p>
+                      <div class="wordpress-work">workdpress</div>
                       Elegantthemes Extra테마를 기반으로 제작<br>
                       특별한 기능과 새로운 것은 이 프로젝트에서 접하지 못하였지만 3일이라는 시간동안 제작완료해서 컨펌완료하고 1주일동안 피드백을 받으면서 수정한 일정이 빡빡한 프로젝트였다.
                     </p>
                   </div>
                   <div class="projectName">
-                    <div class="repair_ing">
-                      <div>2019.05</div>
-                      <div>
-                        <b><a target="_blank" href="" rel="noopener noreferrer"><i class="fas fa-link"></i> PORSCHE STUDIO
-                            CHEONGDAM</a></b>
-                      </div>
-                      <p>
-                        제작중
-                      </p>
+                    <div>2019.05</div>
+                    <div>
+                      <b><a target="_blank" href="http://porschestudio-cheongdam.co.kr/" rel="noopener noreferrer"><i class="fas fa-link"></i> PORSCHE STUDIO
+                          CHEONGDAM</a></b>
                     </div>
+                    <p>
+                      <div class="wordpress-work">workdpress</div>
+                      ...
+                    </p>
                   </div>
                   <div class="projectName">
-                    <div class="repair_ing">
-                      <div>2019.05</div>
-                      <div>
-                        <b><a target="_blank" href="" rel="noopener noreferrer"><i class="fas fa-link"></i> 스케치업
-                            스토어</a></b>
-                      </div>
-                      <p>
-                        제작중
-                      </p>
+                    <div>2019.05</div>
+                    <div>
+                      <b><a target="_blank" href="http://store.buildingpoint.co.kr/" rel="noopener noreferrer"><i class="fas fa-link"></i> 스케치업 & 빌딩 스토어</a></b>
                     </div>
+                    <p>
+                      <div class="static-work">static</div>
+                      ...
+                    </p>
                   </div>
                   <div class="projectName">
                     <div class="">
