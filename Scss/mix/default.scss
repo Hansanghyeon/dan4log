@@ -1,0 +1,4 @@
+.hidden {display: none !important}
+@include respond-to('medium') {
+  html, * html body {margin-top: 46px !important}
+}

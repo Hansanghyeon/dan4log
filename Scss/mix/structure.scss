@@ -20,3 +20,7 @@ body {
 body.et_vertical_nav #page-container #main-header {
   position: fixed;
 }
+body .et_mobile_menu {
+  max-height: calc(100vh - 92px);
+  overflow-y: scroll;
+}
