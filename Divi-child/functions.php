@@ -79,6 +79,12 @@ add_action( 'wp_enqueue_scripts', 'themeslug_enqueue' );
 function child_theme_head_script() {
 	$theme_url = get_stylesheet_directory_uri();
 ?>
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#29292a">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#29292a">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#29292a">
 	<!-- Open Graph -->
 	<meta property="og:image" content="https://static4log.s3.ap-northeast-2.amazonaws.com/images/seoimg.jpg"/>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
