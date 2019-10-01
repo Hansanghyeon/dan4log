@@ -30,5 +30,11 @@ body #top-menu .sub-menu{
 // LOGO
 body #main-header .logo_container{
   width:100%;
-  img#logo{margin-bottom: 40px;}
+  img#logo{
+    margin-bottom: 40px;
+
+    @include respond-to('medium') {
+      margin-bottom: 0;
+    }
+  }
 }
