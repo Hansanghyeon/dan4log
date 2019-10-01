@@ -24,3 +24,17 @@ body .et_mobile_menu {
   max-height: calc(100vh - 92px);
   overflow-y: scroll;
 }
+body #top-menu .sub-menu{
+  border-color: $pointcolor;
+}
+// LOGO
+body #main-header .logo_container{
+  width:100%;
+  img#logo{
+    margin-bottom: 40px;
+
+    @include respond-to('medium') {
+      margin-bottom: 0;
+    }
+  }
+}
