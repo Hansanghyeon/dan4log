@@ -1,19 +1,19 @@
 (function ($) {
-    var clickCount = 1;
-    var ver = $.cookie('ver');
-    if(ver == undefined){
-        $.cookie('ver', 'light', {path: "/", domain: ".dan4log.com"});
+    let clickCount = 1;
+    let ver = $.cookie('ver');
+    if(ver === undefined){
+        $.cookie('ver', 'light', {path: "/", domain: ".4log.io"});
         $('body').toggleClass('light');
-    }else if(ver == 'light'){
-        $.cookie('ver', 'light', {path: "/", domain: ".dan4log.com"});
+    }else if(ver === 'light'){
+        $.cookie('ver', 'light', {path: "/", domain: ".4log.io"});
         $('body').toggleClass('light');
-    }else if(ver == 'dark'){
-        $.cookie('ver', 'dark', {path: "/", domain: ".dan4log.com"});
+    }else if(ver === 'dark'){
+        $.cookie('ver', 'dark', {path: "/", domain: ".4log.io"});
         $('body').toggleClass('dark');
     }
     
 
-    if($.cookie('ver') == 'light'){
+    if($.cookie('ver') === 'light'){
         $('.toggle-handle').addClass('toggle-handle-day');
         $('body').addClass('light');
         $('.toggle-container').addClass('toggle-container-day');
@@ -30,10 +30,10 @@
         $('.star').toggleClass('star-day');
         $('.crater').toggleClass('crater-day');
         $('.mini-cloud').toggleClass('cloud-day');
-        if($.cookie('ver') == 'light'){
-            $.cookie('ver', 'dark', {path: "/", domain: ".dan4log.com"});
-        }else if($.cookie('ver') == 'dark'){
-            $.cookie('ver', 'light', {path: "/", domain: ".dan4log.com"});
+        if($.cookie('ver') === 'light'){
+            $.cookie('ver', 'dark', {path: "/", domain: ".4log.io"});
+        }else if($.cookie('ver') === 'dark'){
+            $.cookie('ver', 'light', {path: "/", domain: ".4log.io"});
         }
         if (clickCount === 0) {
             clickCount++;
