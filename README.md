@@ -1,9 +1,6 @@
 # 4log wordpress Divi theme
 
-[4log](https://4log.io)
----
-
 4log
-- Dev blog (main)
+- Dev blog [4log.io](https://4log.io)
 - Design blog
 - Daily blog
