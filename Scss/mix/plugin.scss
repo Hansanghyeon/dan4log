@@ -146,9 +146,6 @@ body.dark {
   }
 
   code {
-    background: $pointcolor;
-    color: #fff;
-    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.1);
     margin-right: 3px;
     margin-left: 3px;
   }
@@ -175,39 +172,8 @@ body.dark {
       border-radius: 0;
     }
 
-    // 닫기 내리기 확장 버튼
-    &::after {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      top: 10px;
-      left: 11px;
-      width: 11px;
-      height: 11px;
-      background-image: url("https://4log.dev/20190605110522/cropped-favicon-1.png");
-      background-size: cover;
-      background-position: center;
-    }
-
-    &::before {
-      content: "\f111";
-      display: inline-block;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      font-weight: 600;
-      font-family: "Font Awesome 5 Free";
-      position: absolute;
-      color: #ffbd2d;
-      top: 10px;
-      left: 30px;
-      font-size: 12px;
-      line-height: 12px;
-    }
-
     pre {
-      padding-top: 34px;
+      padding-top: 14px;
       padding-bottom: 14px;
       border-radius: 5px;
       font-size: 16px;
@@ -215,23 +181,6 @@ body.dark {
 
       * {
         font-family: "D2 coding";
-      }
-
-      &::before {
-        content: "\f111";
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 600;
-        font-family: "Font Awesome 5 Free" !important;
-        position: absolute;
-        color: #2ac940;
-        top: 10px;
-        left: 50px;
-        font-size: 12px;
-        line-height: 12px;
       }
 
       //
@@ -258,63 +207,55 @@ body.dark {
     }
 
     // TODO: 언어표시만들기
+    // ** 위치 통합
+    &[class*='highlight-source'] pre::before{
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      font-weight: bold;
+      position: absolute;
+      top: -8px;
+      right: 8px;
+      font-size: 12px;
+      line-height: 12px;
+      padding: 2px 3px 1px;
+      border-radius: 3px;
+      box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+    }
     // Javascript
-    &.highlight-source-js pre {
-      &::before {
-        content: "JS";
-        left: auto;
-        top: 8px;
-        right: 8px;
-        font-weight: bold;
-        color: #000;
-        background: #ffca54;
-        padding: 2px 3px 1px;
-        border-radius: 3px;
-      }
+    &.highlight-source-js pre::before {
+      content: "JS";
+      color: #000;
+      background: #ffca54;
     }
 
     // PHP
-    &.highlight-text-html-php pre {
-      &::before {
-        content: "PHP";
-        left: auto;
-        top: 8px;
-        right: 8px;
-        font-weight: bold;
-        color: #000;
-        padding: 2px 3px 1px;
-        background: #777bb4;
-        border-radius: 3px;
-      }
+    &.highlight-text-html-php pre::before {
+      content: "PHP";
+      color: #000;
+      background: #777bb4;
     }
 
     // Shell
-    &.highlight-source-shell pre {
-      &::before {
-        content: "Shell";
-        left: auto;
-        top: 8px;
-        right: 8px;
-        font-weight: bold;
-        color: #000;
-        padding: 2px 3px 1px;
-        background: #2ac940;
-        border-radius: 3px;
-      }
+    &.highlight-source-shell pre::before {
+      content: "Shell";
+      color: #000;
+      background: #2ac940;
     }
 
-    &.highlight-source-viml pre {
-      &::before {
-        content: "Vim";
-        left: auto;
-        top: 8px;
-        right: 8px;
-        font-weight: bold;
-        color: #000;
-        padding: 2px 3px 1px;
-        background: #029833;
-        border-radius: 3px;
-      }
+    // VIM
+    &.highlight-source-viml pre::before {
+      content: "Vim";
+      color: #000;
+      background: #029833;
+    }
+
+    // Yaml
+    &.highlight-source-yaml pre::before {
+      content: "YAML";
+      color: #000;
+      background: #be9967;
     }
   }
 
