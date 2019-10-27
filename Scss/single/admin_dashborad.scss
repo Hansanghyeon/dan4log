@@ -4,7 +4,8 @@
 	
 *********************************************************
 
-    01.00 WP_LIST_TABEL
+    01.00 - Git shortcode
+    02.00 - 광고제거
 
 *********************************************************/
 
@@ -17,7 +18,7 @@ body.wp-admin #posts-filter .actions.ac-search>select {
 
 
 //---------------------------------------------------
-//       01.01 - TYPOGRAPHY  
+//       01.00 - Git shortcode
 //---------------------------------------------------
 .copy_box {
 	display: flex;
@@ -135,4 +136,12 @@ body.wp-admin #posts-filter .actions.ac-search>select {
 	+div {
 		display: none !important;
 	}
+}
+
+
+//---------------------------------------------------
+//       02.00 - 광고제거
+//---------------------------------------------------
+.update-nag.dpro-admin-notice{
+	display:none !important;
 }
