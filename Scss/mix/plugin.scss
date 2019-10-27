@@ -14,6 +14,7 @@
     07.00 comment
         07.01 facebook comment
         07.02 Disqus comment
+    08.00 elfsight instagram feed
 
 *********************************************************/
 
@@ -731,4 +732,14 @@ button.slick-prev.slick-arrow:after {
   .dsq-widget-meta > a:nth-of-type(1) {
     display: block;
   }
+}
+
+
+
+/*---------------------------------------------------
+        08.00 elfsight instagram feed
+---------------------------------------------------*/
+.eapps-instagram-feed-posts-item-template-classic{
+  border:none;
+  border-radius: 15px;
 }
