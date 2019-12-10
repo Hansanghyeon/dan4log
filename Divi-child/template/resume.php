@@ -199,11 +199,12 @@ get_header();
                             class="fas fa-link"></i> 트림블커넥트</a><br>
                         <a target="_blank" href="https://layout.buildingpoint.co.kr/" rel="noopener noreferrer"><i
                             class="fas fa-link"></i> 레이아웃</a>
+                      </div>
+                      <p>
+                        <div class="wordpress-work">workdpress</div>
+                        Divi 기반을둔 퍼블리싱작업 경험
+                      </p>
                     </div>
-                    <p>
-                      <div class="wordpress-work">workdpress</div>
-                      Divi 기반을둔 퍼블리싱작업 경험
-                    </p>
                   </div>
                   <div class="projectName">
                     <div>2019.01</div>
