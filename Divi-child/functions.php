@@ -22,7 +22,7 @@ include('secret/function_secret.php');
 function themeslug_enqueue() {
     // 변수
     $CDN = 'https://cdnjs.cloudflare.com/ajax/libs';
-    $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/dan4log';
+    $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/4log';
     $current_user = new WP_User(get_current_user_id());
     $user_role = array_shift($current_user->roles);
 
@@ -79,21 +79,41 @@ add_action( 'wp_enqueue_scripts', 'themeslug_enqueue' );
 function child_theme_head_script() {
 	$theme_url = get_stylesheet_directory_uri();
 ?>
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#29292a">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#29292a">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#29292a">
 	<!-- Open Graph -->
 	<meta property="og:image" content="https://static4log.s3.ap-northeast-2.amazonaws.com/images/seoimg.jpg"/>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112785015-4"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'UA-112785015-4');
-	</script>
+	<!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PTM9Q7M');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5667196186327747",
+            enable_page_level_ads: true
+      });
+  </script>
 <?php
 }
 add_action( 'wp_head', 'child_theme_head_script' );
-
+//add body after
+function body_after_dom() {
+  ?>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTM9Q7M"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <?php
+}
+add_action('after_body', 'body_after_dom');
 
 /*---------------------------------------------------
 
@@ -292,13 +312,13 @@ add_shortcode('docs_taxonomy_description', 'docs_taxonomy_description');
 
 
 //custom wp-login.php
-include('template/login.php');
+// include('template/login.php');
 
 // Update CSS within in Admin
 function admin_style() {
     // 변수
     $CDN = '';
-    $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/dan4log';
+    $Static = 'https://static4log.s3.ap-northeast-2.amazonaws.com/4log';
     wp_enqueue_style('WP_list_table', $Static.'/css/admin_dashborad.css');
     wp_register_script( 'my_script', $Static.'/js/copy_btn.js', array('jquery'), '1.0.0', true);
     wp_register_style( 'FontAwesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false );
