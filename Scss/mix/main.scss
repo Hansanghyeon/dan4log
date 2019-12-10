@@ -209,7 +209,7 @@ body .et_pb_cpt_text a {
 
   &::after {
     content: "";
-    background: #eb5255;
+    background: $cc1;
     width: 100%;
     position: absolute;
     height: 2px;
@@ -348,7 +348,7 @@ span.author.vcard {
     margin-bottom: 20px;
 
     i:nth-of-type(1) {
-      color: $pointcolor;
+      color: $cc1;
     }
 
     article > p {
@@ -528,10 +528,10 @@ body.light .grid_tag .tag_item {
 }
 
 body .grid_tag .tag_item:hover {
-  border: 2px solid $pointcolor;
+  border: 2px solid $cc1;
 
   &::before {
-    color: $pointcolor;
+    color: $cc1;
   }
 }
 
@@ -569,7 +569,7 @@ body.light .tagcloud a {
 }
 
 body .tagcloud a:hover {
-  border: 2px solid $pointcolor;
+  border: 2px solid $cc1;
 }
 
 // Creative Commons
@@ -619,10 +619,10 @@ body .cc_box {
   }
 
   &:hover {
-    border: 2px solid $pointcolor;
+    border: 2px solid $cc1;
 
     div:nth-of-type(2) {
-      color: $pointcolor;
+      color: $cc1;
     }
   }
 }
@@ -813,7 +813,7 @@ body.category-nas {
   position: absolute;
   bottom: 10px;
   color: white;
-  background: #eb5255;
+  background: $cc1;
   padding-left: 4px;
   display: flex;
   align-items: center;
@@ -843,12 +843,12 @@ body.category-nas {
   }
 
   &:after {
-    border-bottom: 23px solid #eb5255;
+    border-bottom: 23px solid $cc1;
     bottom: 0;
   }
 
   &:before {
-    border-top: 23px solid #eb5255;
+    border-top: 23px solid $cc1;
     top: 0;
   }
 
@@ -1316,11 +1316,11 @@ body .comment_more_btn {
     cursor: pointer;
 
     &:hover {
-      color: $pointcolor;
+      color: $cc1;
     }
 
     &.active {
-      color: $pointcolor;
+      color: $cc1;
     }
   }
 }
@@ -1376,7 +1376,7 @@ body.dark {
       width: 100%;
       height: 100%;
       border-radius: 999px;
-      background: $pointcolor;
+      background: $cc1;
       opacity: 0;
       transition: all 0.3s;
     }

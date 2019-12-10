@@ -21,7 +21,7 @@
       right: 0;
       color: transparent;
       /* webkit only for graceful degradation to IE */
-      background: -webkit-repeating-linear-gradient(-45deg, #EB5255, #D0E9EF, #93ACC8, #97A0B6, #B8BCC7, #B8B3B9, #E3A7A0, #AD898F, #56445F, #4C4764, #373D61, #23365A, #142F4A);
+      background: -webkit-repeating-linear-gradient(-45deg, $cc1, #D0E9EF, #93ACC8, #97A0B6, #B8BCC7, #B8B3B9, #E3A7A0, #AD898F, #56445F, #4C4764, #373D61, #23365A, #142F4A);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-size: 400%;
