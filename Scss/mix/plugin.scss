@@ -351,7 +351,7 @@ body.dark {
     }
 
     &:hover {
-      background: $pointcolor;
+      background: $cc1;
     }
 
     i {
@@ -385,7 +385,7 @@ button.slick-arrow {
 }
 
 button.slick-next.slick-arrow:hover:after {
-  border-left: 10px solid #eb5255;
+  border-left: 10px solid $cc1;
 }
 
 button.slick-next.slick-arrow:after {
@@ -397,7 +397,7 @@ button.slick-next.slick-arrow:after {
 }
 
 button.slick-prev.slick-arrow:hover:after {
-  border-right: 10px solid #eb5255;
+  border-right: 10px solid $cc1;
 }
 
 button.slick-prev.slick-arrow:after {
@@ -425,7 +425,7 @@ button.slick-prev.slick-arrow:after {
 }
 
 .vue-ex {
-  color: #eb5255;
+  color: $cc1;
   display: inline-block;
   padding-bottom: 10px;
   border-bottom: 2px solid;
@@ -483,11 +483,11 @@ button.slick-prev.slick-arrow:after {
     font-size: 20px;
     outline: none;
     cursor: pointer;
-    color: #eb5255;
+    color: $cc1;
     float: right;
 
     &:hover i {
-      background: -webkit-linear-gradient(left, $pointcolor 50%, #29292a 100%);
+      background: -webkit-linear-gradient(left, $cc1 50%, #29292a 100%);
       color: transparent;
       background-clip: text;
     }
